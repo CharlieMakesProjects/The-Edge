@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Edge v3 — Investment Intelligence Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg0:#07090e;--bg1:#0d1018;--bg2:#131720;--bg3:#1a1f2e;--bg4:#222838;
+  --border:#1e2435;--border2:#28304a;
+  --t1:#e8ecf5;--t2:#8b94b0;--t3:#4a5270;
+  --green:#00d97e;--gdim:rgba(0,217,126,.1);--gbrd:rgba(0,217,126,.2);
+  --red:#ff4560;--rdim:rgba(255,69,96,.1);--rbrd:rgba(255,69,96,.2);
+  --amber:#f5a623;--adim:rgba(245,166,35,.1);--abrd:rgba(245,166,35,.2);
+  --blue:#4f9cf9;--bdim:rgba(79,156,249,.1);--bbrd:rgba(79,156,249,.2);
+  --purple:#a78bfa;--pdim:rgba(167,139,250,.1);--pbrd:rgba(167,139,250,.2);
+  --cyan:#22d3ee;--cdim:rgba(34,211,238,.1);
+  --font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh}
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.shell{display:flex;min-height:100vh}
+.sidebar{width:224px;background:var(--bg1);border-right:.5px solid var(--border);padding:1.25rem 0;position:fixed;top:0;left:0;bottom:0;display:flex;flex-direction:column;z-index:100;overflow-y:auto}
+.main{margin-left:224px;flex:1;display:flex;flex-direction:column;min-width:0}
+.topbar{background:var(--bg1);border-bottom:.5px solid var(--border);padding:.75rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:90}
+.content{padding:1.5rem;max-width:1120px}
+.brand{display:flex;align-items:center;gap:10px;padding:0 1.25rem 1.25rem;border-bottom:.5px solid var(--border);margin-bottom:1rem}
+.brand-icon{width:36px;height:36px;background:linear-gradient(135deg,#4f9cf9,#a78bfa);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-icon i{color:#fff;font-size:20px}
+.brand-name{font-size:15px;font-weight:600;color:var(--t1)}.brand-tag{font-size:10px;color:var(--t3);margin-top:1px}
+.nav-sec{padding:0 .75rem;margin-bottom:1.25rem}
+.nav-lbl{font-size:9px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.1em;padding:0 .5rem;margin-bottom:.375rem}
+.nav-item{display:flex;align-items:center;gap:8px;padding:.5rem .75rem;border-radius:7px;cursor:pointer;color:var(--t3);font-size:13px;transition:all .15s;margin-bottom:1px;border:none;background:none;width:100%;text-align:left;font-family:var(--font)}
+.nav-item:hover{background:var(--bg3);color:var(--t2)}.nav-item.active{background:var(--bg4);color:var(--t1);font-weight:500}
+.nav-item i{font-size:16px;flex-shrink:0}
+.nbadge{margin-left:auto;font-size:9px;padding:1px 6px;border-radius:10px;font-weight:600}
+.nb-g{background:var(--gdim);color:var(--green)}.nb-a{background:var(--adim);color:var(--amber)}.nb-r{background:var(--rdim);color:var(--red)}.nb-b{background:var(--bdim);color:var(--blue)}.nb-p{background:var(--pdim);color:var(--purple)}
+.sb-footer{margin-top:auto;padding:1rem 1.25rem;border-top:.5px solid var(--border)}
+.live-pill{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--t3)}
+.ldot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+.tb-l{display:flex;align-items:center;gap:12px}
+.pg-title{font-size:15px;font-weight:500;color:var(--t1)}.pg-sub{font-size:11px;color:var(--t3)}
+.tb-r{display:flex;align-items:center;gap:8px}
+.clock{font-family:var(--mono);font-size:12px;color:var(--t3)}
+.tb-btn{display:flex;align-items:center;gap:5px;background:var(--bg3);border:.5px solid var(--border2);border-radius:7px;padding:5px 10px;font-size:11px;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .15s}
+.tb-btn:hover{background:var(--bg4);color:var(--t1)}
+.ai-open-btn{display:flex;align-items:center;gap:6px;background:linear-gradient(135deg,rgba(79,156,249,.15),rgba(167,139,250,.15));border:.5px solid rgba(167,139,250,.3);border-radius:7px;padding:5px 12px;font-size:11px;font-weight:500;color:var(--purple);cursor:pointer;font-family:var(--font);transition:all .15s}
+.ai-open-btn:hover{background:linear-gradient(135deg,rgba(79,156,249,.25),rgba(167,139,250,.25))}
+.tape-wrap{background:var(--bg1);border-bottom:.5px solid var(--border);overflow:hidden;padding:6px 0}
+.tape-inner{display:flex;animation:scroll 50s linear infinite;white-space:nowrap}
+.tape-inner:hover{animation-play-state:paused}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tick{display:inline-flex;align-items:center;gap:6px;padding:0 1.25rem;border-right:.5px solid var(--border);font-size:12px}
+.t-sym{font-weight:600;color:var(--t2);font-family:var(--mono)}.t-p{color:var(--t1)}
+.up{color:var(--green)}.dn{color:var(--red)}.fl{color:var(--t3)}
+.page{display:none}.page.active{display:block}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin-bottom:1rem}
+.row4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1.25rem}
+.slbl{font-size:10px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;display:flex;align-items:center;gap:5px;margin-bottom:.75rem}
+.card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;overflow:hidden}
+.cp{padding:1rem 1.25rem}
+.mcard{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.875rem 1rem}
+.mlbl{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.mval{font-size:22px;font-weight:500;color:var(--t1);line-height:1.2}.msub{font-size:11px;color:var(--t3);margin-top:3px}
+.icard{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:1rem}
+.iname{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.ival{font-size:20px;font-weight:500;color:var(--t1)}.ichg{font-size:12px;margin-top:3px}.isub{font-size:10px;color:var(--t3);margin-top:2px}
+.chart-wrap{position:relative;width:100%;height:200px}.chart-sm{position:relative;width:100%;height:160px}
+.news-stack{display:flex;flex-direction:column;gap:8px}
+.nc{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.875rem 1rem;display:flex;gap:12px;cursor:pointer;transition:border-color .15s}
+.nc:hover{border-color:var(--border2)}
+.nbar{width:3px;border-radius:2px;flex-shrink:0;align-self:stretch}.ncontent{flex:1}
+.nhead{font-size:13px;font-weight:500;color:var(--t1);line-height:1.5;margin-bottom:5px}
+.nmeta{display:flex;align-items:center;flex-wrap:wrap;gap:7px}
+.nsrc{font-size:10px;color:var(--t3)}.ndate{font-size:10px;color:var(--t3)}
+.stag{font-size:10px;padding:1px 7px;border-radius:4px;font-weight:500}
+.s-bull{background:var(--gdim);color:var(--green)}.s-bear{background:var(--rdim);color:var(--red)}.s-neut{background:rgba(74,82,112,.2);color:var(--t3)}.s-watch{background:var(--adim);color:var(--amber)}.s-new{background:var(--pdim);color:var(--purple)}
+.elink{display:inline-flex;align-items:center;gap:3px;font-size:10px;color:var(--blue);background:var(--bdim);border:.5px solid var(--bbrd);border-radius:5px;padding:2px 7px;margin-top:5px;cursor:pointer;text-decoration:none}
+.elink:hover{background:rgba(79,156,249,.18)}
+.callout{border-radius:10px;padding:.875rem 1rem;margin-bottom:1rem;font-size:12px;line-height:1.7;display:flex;gap:10px}
+.c-blue{background:var(--bdim);border:.5px solid var(--bbrd);color:var(--t2)}.c-amber{background:var(--adim);border:.5px solid var(--abrd);color:var(--t2)}.c-green{background:var(--gdim);border:.5px solid var(--gbrd);color:var(--t2)}.c-red{background:var(--rdim);border:.5px solid var(--rbrd);color:var(--t2)}.c-purple{background:var(--pdim);border:.5px solid var(--pbrd);color:var(--t2)}
+.callout i{font-size:16px;flex-shrink:0;margin-top:1px}
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1.25rem}
+.sector-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;padding:1rem;cursor:pointer;transition:all .15s}
+.sector-card:hover{border-color:var(--border2);background:var(--bg3)}
+.sc-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+.sc-name{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:3px}
+.sc-desc{font-size:11px;color:var(--t3);margin-bottom:.5rem;line-height:1.5}
+.sc-tickers{display:flex;flex-wrap:wrap;gap:4px}
+.sc-tick{font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:4px;font-weight:600}
+.heat-bar{height:3px;border-radius:2px;margin-top:.625rem;overflow:hidden;background:var(--bg4)}
+.heat-fill{height:100%;border-radius:2px}
+.disc-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:8px}
+.disc-hdr{display:flex;align-items:flex-start;gap:12px;margin-bottom:.5rem}
+.disc-tick{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--t1);min-width:54px}
+.disc-name{font-size:12px;font-weight:500;color:var(--t1)}.disc-sect{font-size:11px;color:var(--t3)}
+.disc-thesis{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:.5rem}
+.disc-tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{display:inline-flex;align-items:center;gap:3px;font-size:10px;padding:2px 8px;border-radius:20px}
+.tg{background:var(--gdim);color:var(--green)}.tb{background:var(--bdim);color:var(--blue)}.tp{background:var(--pdim);color:var(--purple)}.ta{background:var(--adim);color:var(--amber)}.tr{background:var(--rdim);color:var(--red)}.tc{background:var(--cdim);color:var(--cyan)}
+.wlrow{display:flex;align-items:center;gap:10px;padding:.625rem .875rem;border-bottom:.5px solid var(--border);transition:background .1s}
+.wlrow:last-child{border-bottom:none}.wlrow:hover{background:var(--bg3)}
+.wltick{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--t1);min-width:56px}
+.wlname{font-size:12px;color:var(--t3);flex:1}
+.wlprice{font-size:13px;font-weight:500;color:var(--t1);text-align:right;min-width:72px}
+.wlchg{font-size:11px;min-width:54px;text-align:right}
+.gem-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:8px}
+.gem-hdr{display:flex;align-items:center;gap:12px;padding:.875rem 1rem;cursor:pointer;transition:background .15s}
+.gem-hdr:hover{background:var(--bg3)}
+.gem-tick{font-family:var(--mono);font-size:13px;font-weight:600;padding:5px 11px;border-radius:7px;min-width:56px;text-align:center}
+.gem-info{flex:1}.gem-name{font-size:13px;font-weight:500;color:var(--t1)}.gem-sect{font-size:11px;color:var(--t3);margin-top:1px}
+.gem-stat{text-align:right;margin-right:4px}.gem-v{font-size:12px;color:var(--t2)}.gem-u{font-size:11px;margin-top:2px}
+.rpill{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;flex-shrink:0}
+.r-buy{background:var(--gdim);color:var(--green);border:.5px solid var(--gbrd)}.r-str{background:var(--bdim);color:var(--blue);border:.5px solid var(--bbrd)}
+.chev{font-size:14px;color:var(--t3);transition:transform .2s;flex-shrink:0}.chev.open{transform:rotate(180deg)}
+.gem-body{display:none;border-top:.5px solid var(--border);padding:1rem}.gem-body.open{display:block}
+.dg2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.875rem}
+.dbox{background:var(--bg3);border-radius:8px;padding:.75rem}
+.dtitle{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.dbody{font-size:12px;color:var(--t2);line-height:1.65}
+.stat-row{display:flex;gap:8px;margin-bottom:.875rem}
+.sbox{flex:1;background:var(--bg3);border-radius:7px;padding:.5rem .625rem;text-align:center}
+.sv{font-size:14px;font-weight:500;color:var(--t1)}.sl{font-size:10px;color:var(--t3);margin-top:2px}
+.tbl-wrap{overflow-x:auto}
+.ins-tbl{width:100%;border-collapse:collapse}
+.ins-tbl th{font-size:10px;font-weight:600;color:var(--t3);text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:8px 12px;border-bottom:.5px solid var(--border);background:var(--bg2);white-space:nowrap}
+.ins-tbl td{font-size:12px;color:var(--t2);padding:10px 12px;border-bottom:.5px solid var(--border);vertical-align:middle}
+.ins-tbl tr:last-child td{border-bottom:none}.ins-tbl tr:hover td{background:var(--bg3)}
+.iticker{font-family:var(--mono);font-weight:600;color:var(--t1);font-size:13px}
+.ibuy{color:var(--green);font-weight:500}.isell{color:var(--red);font-weight:500}
+.sigtag{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:500;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.sg-bull{background:var(--gdim);color:var(--green)}.sg-bear{background:var(--rdim);color:var(--red)}.sg-neut{background:rgba(74,82,112,.2);color:var(--t3)}
+.ec-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:1rem}
+.ec-day{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.75rem;min-height:110px}
+.ec-hdr{font-size:11px;font-weight:600;color:var(--t2);margin-bottom:6px;padding-bottom:5px;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.ec-date{font-size:10px;color:var(--t3)}
+.ec-item{font-size:11px;color:var(--t2);padding:3px 0;display:flex;align-items:center;gap:5px;border-bottom:.5px solid rgba(30,36,53,.5)}
+.ec-item:last-child{border-bottom:none}
+.ec-tick{font-family:var(--mono);font-weight:600;color:var(--t1);font-size:11px;min-width:38px}
+.ec-today{border:.5px solid var(--blue)}.ec-big{background:var(--bg3)}
+.macro-item{display:flex;align-items:flex-start;gap:10px;padding:.625rem .875rem;border-bottom:.5px solid var(--border)}
+.macro-item:last-child{border-bottom:none}.macro-item:hover{background:var(--bg3)}
+.macro-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.macro-info{flex:1}.macro-event{font-size:12px;font-weight:500;color:var(--t1)}.macro-sub{font-size:11px;color:var(--t3);margin-top:1px}
+.macro-date{font-size:11px;font-weight:500;text-align:right;min-width:70px}
+.impact-h{color:var(--red)}.impact-m{color:var(--amber)}.impact-l{color:var(--t3)}
+.short-bar{display:flex;align-items:center;gap:10px;padding:.5rem .875rem;border-bottom:.5px solid var(--border)}
+.short-bar:last-child{border-bottom:none}
+.short-tick{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--t1);min-width:56px}
+.short-track{flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.short-fill{height:100%;border-radius:3px}
+.short-pct{font-size:12px;font-weight:500;min-width:40px;text-align:right}
+.short-note{font-size:10px;color:var(--t3);min-width:90px;text-align:right}
+.fg-wrap{display:flex;align-items:center;gap:1.5rem}
+.fg-labels{display:flex;flex-direction:column;gap:4px;flex:1}
+.fg-main{font-size:28px;font-weight:600}.fg-sub{font-size:11px;color:var(--t3)}
+.fg-history{display:flex;gap:6px;margin-top:.5rem}
+.fgh{background:var(--bg3);border-radius:6px;padding:5px 8px;text-align:center;flex:1}
+.fgh-v{font-size:13px;font-weight:500;color:var(--t1)}.fgh-l{font-size:9px;color:var(--t3);margin-top:1px}
+.flow-item{display:flex;align-items:center;gap:10px;padding:.625rem .875rem;border-bottom:.5px solid var(--border)}
+.flow-item:last-child{border-bottom:none}.flow-item:hover{background:var(--bg3)}
+.fl-type{font-size:10px;font-weight:600;padding:2px 7px;border-radius:4px;min-width:54px;text-align:center}
+.ft-call{background:var(--gdim);color:var(--green);border:.5px solid var(--gbrd)}.ft-put{background:var(--rdim);color:var(--red);border:.5px solid var(--rbrd)}
+.fl-info{flex:1}.fl-ticker{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--t1)}.fl-detail{font-size:11px;color:var(--t3);margin-top:1px}
+.fl-prem{font-size:13px;font-weight:600;text-align:right}.fl-sent{font-size:10px;text-align:right;margin-top:2px}
+.pol-item{display:flex;align-items:center;gap:10px;padding:.625rem .875rem;border-bottom:.5px solid var(--border)}
+.pol-item:last-child{border-bottom:none}.pol-item:hover{background:var(--bg3)}
+.pol-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0}
+.av-r{background:var(--rdim);color:var(--red)}.av-d{background:var(--bdim);color:var(--blue)}
+.pol-info{flex:1}.pol-name{font-size:12px;font-weight:500;color:var(--t1)}.pol-role{font-size:10px;color:var(--t3)}
+.pol-stock{font-family:var(--mono);font-size:13px;font-weight:600}.pol-amt{font-size:11px;color:var(--t3);text-align:right}
+.chain-stat{background:var(--bg3);border-radius:8px;padding:.75rem 1rem;margin-bottom:8px}
+.cs-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.cs-label{font-size:12px;font-weight:500;color:var(--t1)}.cs-value{font-size:14px;font-weight:600}
+.cs-desc{font-size:11px;color:var(--t3)}.cs-bar{height:4px;border-radius:2px;background:var(--bg4);margin-top:6px;overflow:hidden}.cs-fill{height:100%;border-radius:2px}
+.ipo-card{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.875rem 1rem;margin-bottom:8px}
+.ipo-hdr{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.ipo-tick{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--t1)}
+.ipo-name{font-size:12px;font-weight:500;color:var(--t1);flex:1}
+.ipo-date{font-size:11px;font-weight:500;color:var(--amber)}
+.ipo-desc{font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:.5rem}
+.ipo-meta{display:flex;gap:8px;font-size:11px;color:var(--t3);flex-wrap:wrap}
+.rot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:1rem}
+.rot-card{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.75rem}
+.rot-name{font-size:11px;font-weight:500;color:var(--t1);margin-bottom:4px}
+.rot-arrow{font-size:18px;margin-bottom:3px}.rot-status{font-size:10px;margin-bottom:4px;font-weight:500}
+.rot-bar{height:4px;border-radius:2px;background:var(--bg4);overflow:hidden}.rot-fill{height:100%;border-radius:2px}
+.rot-note{font-size:10px;color:var(--t3);margin-top:4px}
+.note-card{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:8px}
+.note-hdr{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.note-tick{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--t1)}
+.note-date{font-size:10px;color:var(--t3);margin-left:auto}
+.note-body{font-size:12px;color:var(--t2);line-height:1.6;white-space:pre-wrap}
+.note-input{width:100%;background:var(--bg3);border:.5px solid var(--border2);border-radius:7px;padding:.625rem .875rem;font-size:12px;color:var(--t1);font-family:var(--font);resize:vertical;min-height:80px;outline:none}
+.note-input:focus{border-color:var(--blue)}
+.note-row{display:flex;gap:8px;margin-top:.5rem;align-items:center}
+.ntick-input{background:var(--bg3);border:.5px solid var(--border2);border-radius:7px;padding:.5rem .75rem;font-size:12px;color:var(--t1);font-family:var(--mono);font-weight:600;width:100px;outline:none}
+.ntick-input:focus{border-color:var(--blue)}
+.cname-input{background:var(--bg3);border:.5px solid var(--border2);border-radius:7px;padding:.5rem .75rem;font-size:12px;color:var(--t1);font-family:var(--font);width:160px;outline:none}
+.cname-input:focus{border-color:var(--blue)}
+.save-btn{background:var(--blue);color:#fff;border:none;border-radius:7px;padding:.5rem 1rem;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font)}
+.save-btn:hover{opacity:.88}
+.alert-item{display:flex;align-items:flex-start;gap:10px;padding:.75rem .875rem;border-bottom:.5px solid var(--border)}
+.alert-item:last-child{border-bottom:none}
+.alert-chk{width:18px;height:18px;border-radius:4px;border:.5px solid var(--border2);background:var(--bg3);flex-shrink:0;display:flex;align-items:center;justify-content:center;cursor:pointer;margin-top:2px}
+.alert-chk.done{background:var(--green);border-color:var(--green)}
+.alert-info{flex:1}
+.alert-text{font-size:12px;font-weight:500;color:var(--t2)}
+.alert-cond{font-size:11px;color:var(--t3);margin-top:2px;line-height:1.5}
+.alert-pri{font-size:10px;padding:2px 7px;border-radius:4px;font-weight:500;flex-shrink:0;margin-top:2px}
+.ap-h{background:var(--rdim);color:var(--red)}.ap-m{background:var(--adim);color:var(--amber)}.ap-l{background:var(--gdim);color:var(--green)}
+.ai-panel{position:fixed;right:0;top:0;bottom:0;width:380px;background:var(--bg1);border-left:.5px solid var(--border);display:flex;flex-direction:column;z-index:200;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.ai-panel.open{transform:translateX(0)}
+.ai-hdr{padding:1rem 1.25rem;border-bottom:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.ai-hdr-left{display:flex;align-items:center;gap:8px}
+.ai-avatar{width:30px;height:30px;background:linear-gradient(135deg,#4f9cf9,#a78bfa);border-radius:8px;display:flex;align-items:center;justify-content:center}
+.ai-avatar i{color:#fff;font-size:16px}
+.ai-title{font-size:13px;font-weight:500;color:var(--t1)}.ai-sub{font-size:10px;color:var(--t3)}
+.ai-close{background:none;border:none;color:var(--t3);cursor:pointer;font-size:18px;padding:2px}.ai-close:hover{color:var(--t1)}
+.ai-messages{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:10px}
+.ai-msg{display:flex;gap:8px}.ai-msg.user{flex-direction:row-reverse}
+.ai-bubble{background:var(--bg3);border:.5px solid var(--border);border-radius:10px;padding:.625rem .875rem;font-size:12px;color:var(--t2);line-height:1.65;max-width:88%}
+.ai-msg.user .ai-bubble{background:var(--bdim);border-color:var(--bbrd);color:var(--t1)}
+.ai-thinking{display:flex;align-items:center;gap:4px;padding:.375rem 0}
+.ai-dot{width:5px;height:5px;border-radius:50%;background:var(--purple);animation:blink 1.2s infinite}
+.ai-dot:nth-child(2){animation-delay:.2s}.ai-dot:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+.ai-input-wrap{padding:.875rem 1rem;border-top:.5px solid var(--border);flex-shrink:0}
+.ai-quick-btns{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:.625rem}
+.ai-quick{background:var(--bg3);border:.5px solid var(--border2);border-radius:6px;padding:4px 9px;font-size:10px;color:var(--t2);cursor:pointer;font-family:var(--font);transition:all .15s}
+.ai-quick:hover{background:var(--bg4);color:var(--t1)}
+.ai-input-row{display:flex;gap:6px}
+.ai-input{flex:1;background:var(--bg2);border:.5px solid var(--border2);border-radius:8px;padding:.5rem .75rem;font-size:12px;color:var(--t1);font-family:var(--font);outline:none}
+.ai-input:focus{border-color:var(--blue)}
+.ai-send{background:var(--purple);border:none;border-radius:8px;padding:.5rem .75rem;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .15s}
+.ai-send:hover{opacity:.85}.ai-send i{font-size:16px}
+.spc{margin-bottom:1.25rem}
+@media(max-width:900px){
+  .sidebar{width:60px}
+  .sidebar .brand-name,.sidebar .brand-tag,.sidebar .nav-item span,.sidebar .nav-lbl,.sidebar .nbadge,.sb-footer span{display:none}
+  .main{margin-left:60px}
+  .row2,.row3,.row4,.ec-grid,.sector-grid,.rot-grid{grid-template-columns:1fr}
+  .dg2{grid-template-columns:1fr}.ai-panel{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-icon"><i class="ti ti-telescope"></i></div><div><div class="brand-name">The Edge</div><div class="brand-tag">Investment Intelligence v3</div></div></div>
+  <nav class="nav-sec">
+    <div class="nav-lbl">Markets</div>
+    <button class="nav-item active" onclick="go('market',this)"><i class="ti ti-chart-bar"></i><span>Market overview</span><span class="nbadge nb-g">Live</span></button>
+    <button class="nav-item" onclick="go('watchlist',this)"><i class="ti ti-star"></i><span>My watchlist</span></button>
+    <button class="nav-item" onclick="go('earnings',this)"><i class="ti ti-calendar-event"></i><span>Earnings calendar</span><span class="nbadge nb-a">This week</span></button>
+    <button class="nav-item" onclick="go('macro',this)"><i class="ti ti-world"></i><span>Macro calendar</span><span class="nbadge nb-r">Fed Wed</span></button>
+    <button class="nav-item" onclick="go('rotation',this)"><i class="ti ti-radar"></i><span>Sector rotation</span><span class="nbadge nb-p">Exclusive</span></button>
+  </nav>
+  <nav class="nav-sec">
+    <div class="nav-lbl">Discover</div>
+    <button class="nav-item" onclick="go('sectors',this)"><i class="ti ti-layout-grid"></i><span>Booming sectors</span><span class="nbadge nb-g">5 hot</span></button>
+    <button class="nav-item" onclick="go('news',this)"><i class="ti ti-news"></i><span>News feed</span></button>
+    <button class="nav-item" onclick="go('ipo',this)"><i class="ti ti-rocket"></i><span>IPO watch</span><span class="nbadge nb-p">Exclusive</span></button>
+  </nav>
+  <nav class="nav-sec">
+    <div class="nav-lbl">Intelligence</div>
+    <button class="nav-item" onclick="go('gems',this)"><i class="ti ti-diamond"></i><span>Hidden gems</span><span class="nbadge nb-a">4</span></button>
+    <button class="nav-item" onclick="go('insider',this)"><i class="ti ti-eye"></i><span>Insider signals</span><span class="nbadge nb-g">New</span></button>
+    <button class="nav-item" onclick="go('options',this)"><i class="ti ti-arrows-exchange"></i><span>Options flow</span></button>
+    <button class="nav-item" onclick="go('politician',this)"><i class="ti ti-building-bank"></i><span>Congress trades</span></button>
+    <button class="nav-item" onclick="go('short',this)"><i class="ti ti-trending-down"></i><span>Short interest</span></button>
+    <button class="nav-item" onclick="go('onchain',this)"><i class="ti ti-currency-bitcoin"></i><span>Crypto on-chain</span></button>
+    <button class="nav-item" onclick="go('sentiment',this)"><i class="ti ti-mood-smile"></i><span>Fear &amp; Greed</span></button>
+  </nav>
+  <nav class="nav-sec">
+    <div class="nav-lbl">My tools</div>
+    <button class="nav-item" onclick="go('notes',this)"><i class="ti ti-notebook"></i><span>Investment thesis</span><span class="nbadge nb-p">Exclusive</span></button>
+    <button class="nav-item" onclick="go('alerts',this)"><i class="ti ti-bell"></i><span>Smart alerts</span><span class="nbadge nb-p">Exclusive</span></button>
+    <button class="nav-item" onclick="go('portfolio',this)"><i class="ti ti-briefcase"></i><span>Aschenbrenner bot</span></button>
+  </nav>
+  <div class="sb-footer"><div class="live-pill"><span class="ldot"></span><span>Live · Jul 14, 2026</span></div></div>
+</aside>
+<div class="main">
+  <div class="topbar">
+    <div class="tb-l"><div><div class="pg-title" id="pgTitle">Market overview</div><div class="pg-sub" id="pgSub">Tuesday Jul 14, 2026 · CPI cools to 3.5% · Iran blockade reinstated</div></div></div>
+    <div class="tb-r"><div class="clock" id="dataUpdated" style="font-size:11px;color:var(--t3);margin-right:4px"></div><div class="clock" id="clock">--:--:--</div><button class="ai-open-btn" onclick="toggleAI()"><i class="ti ti-robot" style="font-size:14px"></i>Ask AI analyst</button></div>
+  </div>
+  <div class="tape-wrap"><div class="tape-inner" id="tape"></div></div>
+  <div class="content">
+<!-- MARKET -->
+<div class="page active" id="page-market">
+  <div class="row3">
+    <div class="icard" data-ticker="SPY"><div class="iname">S&P 500 (SPY)</div><div class="ival">751.83</div><div class="ichg up">+0.4% today</div><div class="isub">Rebounding on cool CPI print</div></div>
+    <div class="icard" data-ticker="QQQ"><div class="iname">Nasdaq-100 (QQQ)</div><div class="ival">719.69</div><div class="ichg up">+3.07% — best since Mar 31</div><div class="isub">AI & tech leading</div></div>
+    <div class="icard" data-ticker="DIA"><div class="iname">Dow Jones (DIA)</div><div class="ival">524.69</div><div class="ichg dn">-0.1% · IBM drags -425 pts</div><div class="isub">Flat as IBM plunges 24%</div></div>
+  </div>
+  <div class="spc"><div class="slbl"><i class="ti ti-chart-line"></i>S&P 500 — YTD 2026</div><div class="card cp"><div class="chart-wrap"><canvas id="spxChart"></canvas></div></div></div>
+  <div class="callout c-green"><i class="ti ti-confetti" style="color:var(--green)"></i><div>June CPI came in at 3.5% annual — well below the 3.8% expected, easing rate-hike pressure. Offsetting that: the Iran ceasefire is over and Trump reinstated the Strait of Hormuz blockade, sending Brent above $80. IBM cratered 24% on an earnings warning. Chips rebounded (SMH +2%). Big-bank earnings mostly beat.</div></div>
+  <div class="row2 spc">
+    <div>
+      <div class="slbl"><i class="ti ti-flame" style="color:var(--amber)"></i>Key events this week</div>
+      <div class="news-stack">
+        <div class="nc" onclick="window.open('https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-15-224751171.html','_blank')"><div class="nbar" style="background:var(--red)"></div><div class="ncontent"><div class="nhead">Fed rate decision Wednesday — 98% probability hold; Powell's tone on future hikes is the key watch</div><div class="nmeta"><span class="nsrc">CME FedWatch</span><span class="stag s-neut">Neutral</span></div></div></div>
+        <div class="nc" onclick="window.open('https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-june-15-2026','_blank')"><div class="nbar" style="background:var(--red)"></div><div class="ncontent"><div class="nhead">Fox Corp plunges 15% after $22B Roku acquisition — investors question strategic rationale</div><div class="nmeta"><span class="nsrc">TheStreet</span><span class="stag s-bear">Bearish FOX</span></div></div></div>
+        <div class="nc"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Fed Chair Warsh testifies before Congress today. Market still pricing one 25bp hike in 2026 despite the cool CPI print.</div><div class="nmeta"><span class="nsrc">NYSE</span><span class="stag s-watch">Note</span></div></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="slbl"><i class="ti ti-chart-donut"></i>Sector performance today</div>
+      <div class="card" style="overflow:hidden">
+        <div class="wlrow"><span class="wltick" style="color:var(--blue)">Tech</span><span class="wlname">AI infra leading</span><span class="wlchg up">+4.1%</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--cyan)">Airlines</span><span class="wlname">Oil -5% tailwind</span><span class="wlchg up">+3.9%</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--purple)">Crypto</span><span class="wlname">BTC +2%, ETH +2.6%</span><span class="wlchg up">+2.8%</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--green)">Consumer</span><span class="wlname">Oil relief boost</span><span class="wlchg up">+1.9%</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--red)">Energy</span><span class="wlname">Hormuz deal = oil drop</span><span class="wlchg dn">-4.2%</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--red)">Pharma</span><span class="wlname">Merck -3.4% leading down</span><span class="wlchg dn">-2.1%</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- SECTOR ROTATION -->
+<div class="page" id="page-rotation">
+  <div class="callout c-purple"><i class="ti ti-radar" style="color:var(--purple)"></i><div><strong style="color:var(--t1)">Sector rotation radar — exclusive.</strong> Tracks where institutional money is flowing based on price momentum, volume trends, and macro tailwinds. Use this to identify the next move before it happens.</div></div>
+  <div class="slbl"><i class="ti ti-trending-up"></i>Where the money is flowing — Jul 14, 2026</div>
+  <div class="rot-grid">
+    <div class="rot-card" style="border-color:var(--gbrd)"><div class="rot-name">☢️ Nuclear energy</div><div class="rot-arrow" style="color:var(--green)">↑↑</div><div class="rot-status up">Accelerating</div><div class="rot-bar"><div class="rot-fill" style="width:90%;background:var(--green)"></div></div><div class="rot-note">$710B hyperscaler CapEx · AI power demand</div></div>
+    <div class="rot-card" style="border-color:var(--gbrd)"><div class="rot-name">🚀 Space & defense</div><div class="rot-arrow" style="color:var(--green)">↑↑</div><div class="rot-status up">Accelerating</div><div class="rot-bar"><div class="rot-fill" style="width:82%;background:var(--green)"></div></div><div class="rot-note">Defense bid on Hormuz escalation</div></div>
+    <div class="rot-card" style="border-color:var(--gbrd)"><div class="rot-name">🤖 AI infrastructure</div><div class="rot-arrow" style="color:var(--green)">↑</div><div class="rot-status up">Strong</div><div class="rot-bar"><div class="rot-fill" style="width:76%;background:var(--green)"></div></div><div class="rot-note">CRWV Nasdaq-100 · data center build</div></div>
+    <div class="rot-card" style="border-color:var(--gbrd)"><div class="rot-name">🏥 Senior housing REITs</div><div class="rot-arrow" style="color:var(--cyan)">↗</div><div class="rot-status" style="color:var(--cyan)">Emerging</div><div class="rot-bar"><div class="rot-fill" style="width:64%;background:var(--cyan)"></div></div><div class="rot-note">Baby boomer wave · rate cut tailwind</div></div>
+    <div class="rot-card"><div class="rot-name">₿ Bitcoin miners</div><div class="rot-arrow" style="color:var(--amber)">→↑</div><div class="rot-status" style="color:var(--amber)">Gaining</div><div class="rot-bar"><div class="rot-fill" style="width:60%;background:var(--amber)"></div></div><div class="rot-note">BTC under $63K · risk-off pressure</div></div>
+    <div class="rot-card"><div class="rot-name">🧬 Biotech</div><div class="rot-arrow" style="color:var(--amber)">→</div><div class="rot-status" style="color:var(--amber)">Watch</div><div class="rot-bar"><div class="rot-fill" style="width:45%;background:var(--amber)"></div></div><div class="rot-note">Policy uncertainty · IPO rush building</div></div>
+    <div class="rot-card"><div class="rot-name">🛒 Consumer discret.</div><div class="rot-arrow" style="color:var(--amber)">→</div><div class="rot-status" style="color:var(--amber)">Neutral</div><div class="rot-bar"><div class="rot-fill" style="width:42%;background:var(--amber)"></div></div><div class="rot-note">Oil drop helps · inflation risk caps upside</div></div>
+    <div class="rot-card" style="border-color:var(--rbrd)"><div class="rot-name">🛢️ Traditional energy</div><div class="rot-arrow" style="color:var(--red)">↓↓</div><div class="rot-status dn">Outflows</div><div class="rot-bar"><div class="rot-fill" style="width:16%;background:var(--red)"></div></div><div class="rot-note">Oil -5% today · Hormuz deal = bearish</div></div>
+  </div>
+  <div class="callout c-amber"><i class="ti ti-bulb" style="color:var(--amber)"></i><div><strong style="color:var(--t1)">Key rotation insight:</strong> Smart money is rotating OUT of traditional energy and INTO nuclear, space, and AI infrastructure. Nuclear energy benefits doubly — oil drop doesn't affect it AND AI power demand is structural regardless of geopolitics. Senior housing REITs are the emerging sleeper — most retail investors aren't watching them yet.</div></div>
+</div>
+<!-- BOOMING SECTORS -->
+<div class="page" id="page-sectors">
+  <div class="callout c-blue"><i class="ti ti-layout-grid" style="color:var(--blue)"></i><div>Five sectors with the strongest structural tailwinds heading into 2026–2027. Each contains fresh stocks not in your portfolio — discovery opportunities in booming industries. Click any sector to see key stocks. Sources: Fidelity, BlackRock, Motley Fool, MarketWise, Nasdaq.</div></div>
+  <div class="sector-grid">
+    <div class="sector-card" style="border-color:var(--abrd)" onclick="showSector('nuclear')">
+      <div class="sc-icon" style="background:rgba(245,166,35,.15)"><i class="ti ti-atom" style="color:var(--amber);font-size:20px"></i></div>
+      <div class="sc-name">☢️ Nuclear energy</div>
+      <div class="sc-desc">AI hyperscalers need 24/7 carbon-free power. 38 countries pledged to triple nuclear capacity by 2050. Uranium at $91.50/lb long-term price.</div>
+      <div class="sc-tickers"><span class="sc-tick" style="background:var(--adim);color:var(--amber)">CEG</span><span class="sc-tick" style="background:var(--adim);color:var(--amber)">CCJ</span><span class="sc-tick" style="background:var(--adim);color:var(--amber)">BWXT</span><span class="sc-tick" style="background:var(--adim);color:var(--amber)">OKLO</span></div>
+      <div class="heat-bar"><div class="heat-fill" style="width:92%;background:var(--amber)"></div></div>
+    </div>
+    <div class="sector-card" style="border-color:var(--pbrd)" onclick="showSector('space')">
+      <div class="sc-icon" style="background:var(--pdim)"><i class="ti ti-rocket" style="color:var(--purple);font-size:20px"></i></div>
+      <div class="sc-name">🚀 Space & defense</div>
+      <div class="sc-desc">SpaceX IPO halo lifting all space stocks. Ceasefire rebuild contracts. Commercial space station replacing ISS opening new market.</div>
+      <div class="sc-tickers"><span class="sc-tick" style="background:var(--pdim);color:var(--purple)">RKLB</span><span class="sc-tick" style="background:var(--pdim);color:var(--purple)">VOYG</span><span class="sc-tick" style="background:var(--pdim);color:var(--purple)">RDW</span><span class="sc-tick" style="background:var(--pdim);color:var(--purple)">PL</span></div>
+      <div class="heat-bar"><div class="heat-fill" style="width:84%;background:var(--purple)"></div></div>
+    </div>
+    <div class="sector-card" style="border-color:var(--gbrd)" onclick="showSector('healthcare')">
+      <div class="sc-icon" style="background:var(--gdim)"><i class="ti ti-heart-rate-monitor" style="color:var(--green);font-size:20px"></i></div>
+      <div class="sc-name">🏥 Senior housing REITs</div>
+      <div class="sc-desc">Baby boomers hitting 80+ — population that spends 4× healthcare average. Rate cuts would unlock REIT valuations significantly.</div>
+      <div class="sc-tickers"><span class="sc-tick" style="background:var(--gdim);color:var(--green)">WELL</span><span class="sc-tick" style="background:var(--gdim);color:var(--green)">CTRE</span><span class="sc-tick" style="background:var(--gdim);color:var(--green)">OHI</span><span class="sc-tick" style="background:var(--gdim);color:var(--green)">VTR</span></div>
+      <div class="heat-bar"><div class="heat-fill" style="width:70%;background:var(--green)"></div></div>
+    </div>
+    <div class="sector-card" onclick="showSector('defense')">
+      <div class="sc-icon" style="background:var(--bdim)"><i class="ti ti-shield" style="color:var(--blue);font-size:20px"></i></div>
+      <div class="sc-name">🛡️ Defense tech</div>
+      <div class="sc-desc">Post-Iran conflict NATO rebuild spending accelerating. Drone warfare reshaping sector. Stable government contract revenue floor.</div>
+      <div class="sc-tickers"><span class="sc-tick" style="background:var(--bdim);color:var(--blue)">LHX</span><span class="sc-tick" style="background:var(--bdim);color:var(--blue)">AVAV</span><span class="sc-tick" style="background:var(--bdim);color:var(--blue)">BWXT</span></div>
+      <div class="heat-bar"><div class="heat-fill" style="width:66%;background:var(--blue)"></div></div>
+    </div>
+    <div class="sector-card" onclick="showSector('biotech')">
+      <div class="sc-icon" style="background:var(--rdim)"><i class="ti ti-dna" style="color:var(--red);font-size:20px"></i></div>
+      <div class="sc-name">🧬 Biotech</div>
+      <div class="sc-desc">Life science sector recovering. Fidelity flagging biotech for upgrade. IPO rush building. AI drug discovery = next frontier.</div>
+      <div class="sc-tickers"><span class="sc-tick" style="background:var(--rdim);color:var(--red)">ARE</span><span class="sc-tick" style="background:var(--rdim);color:var(--red)">Various</span></div>
+      <div class="heat-bar"><div class="heat-fill" style="width:54%;background:var(--red)"></div></div>
+    </div>
+  </div>
+  <div id="sector-detail" style="display:none">
+    <div class="slbl" id="sector-detail-lbl"></div>
+    <div id="sector-detail-list"></div>
+  </div>
+</div>
+<!-- NEWS FEED -->
+<div class="page" id="page-news">
+  <div class="callout c-blue"><i class="ti ti-shield-check" style="color:var(--blue)"></i><div>Curated from credible sources only — CNBC, Yahoo Finance, Motley Fool, TheStreet, Business Wire, Nasdaq, Morningstar. Includes your portfolio companies AND fresh opportunities in booming sectors you're not yet in. Click any headline to read the full story.</div></div>
+  <div class="slbl" style="color:var(--red)"><i class="ti ti-flame" style="color:var(--red)"></i>Breaking — Jul 14, 2026</div>
+  <div class="news-stack spc">
+    <div class="nc" onclick="window.open('https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-15-224751171.html','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">June CPI cools to 3.5% vs 3.8% expected — Nasdaq +1%, S&P +0.4%, Dow flat as IBM sinks 24%</div><div class="nmeta"><span class="nsrc">Yahoo Finance · CNBC</span><span class="ndate">Jul 14</span><span class="stag s-bull">Cool inflation</span></div><a class="elink" href="https://finance.yahoo.com/markets/stocks/live/stock-market-today-monday-june-15-224751171.html" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://www.stocktitan.net/stocks/themes/space-stocks','_blank')"><div class="nbar" style="background:var(--purple)"></div><div class="ncontent"><div class="nhead">Oil surges past $80 on reinstated Iran blockade — energy and defense names bid, airlines and consumer hit</div><div class="nmeta"><span class="nsrc">StockTitan · TheStreet</span><span class="ndate">Jul 14</span><span class="stag s-new">Fresh opp: XLE · defense</span></div><a class="elink" href="https://www.stocktitan.net/stocks/themes/space-stocks" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Space stocks overview</a></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-atom" style="color:var(--amber)"></i>Nuclear energy — booming sector (fresh opportunities)</div>
+  <div class="news-stack spc">
+    <div class="nc" onclick="window.open('https://finance.yahoo.com/sectors/energy/articles/3-nuclear-energy-stocks-powering-140746969.html','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">AI hyperscalers plan $710B+ in 2026 CapEx — nuclear is the only carbon-free 24/7 power source that can meet data center demand at scale</div><div class="nmeta"><span class="nsrc">Yahoo Finance · MarketWise</span><span class="ndate">Jun 10</span><span class="stag s-new">Fresh opp: CEG · CCJ · BWXT</span></div><a class="elink" href="https://finance.yahoo.com/sectors/energy/articles/3-nuclear-energy-stocks-powering-140746969.html" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://www.fool.com/investing/2026/05/20/2-nuclear-stocks-are-quietly-becoming-the-trade/','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">BWX Technologies: exclusive US Navy reactor supplier, $3.1B in recent government contracts — quietly becoming the trade of the year</div><div class="nmeta"><span class="nsrc">Motley Fool</span><span class="ndate">May 20</span><span class="stag s-new">Fresh opp: BWXT</span></div><a class="elink" href="https://www.fool.com/investing/2026/05/20/2-nuclear-stocks-are-quietly-becoming-the-trade/" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://marketwise.com/investing/best-nuclear-energy-stocks/','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Cameco (CCJ): largest publicly traded uranium miner, pulled back 22% from highs — Motley Fool says "buy like there's no tomorrow"</div><div class="nmeta"><span class="nsrc">MarketWise · Motley Fool</span><span class="ndate">May 31</span><span class="stag s-new">Fresh opp: CCJ</span></div><a class="elink" href="https://marketwise.com/investing/best-nuclear-energy-stocks/" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-heart-rate-monitor" style="color:var(--green)"></i>Senior housing REITs — emerging opportunity (fresh sector)</div>
+  <div class="news-stack spc">
+    <div class="nc" onclick="window.open('https://www.nasdaq.com/articles/longevity-shift-healthcare-reits-benefit-global-aging','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">Baby boomer demographic wave reshaping healthcare demand — Welltower, Ventas, CareTrust, and Omega Healthcare positioned to capitalize on aging population</div><div class="nmeta"><span class="nsrc">Nasdaq.com · Fidelity</span><span class="ndate">Dec 2025</span><span class="stag s-new">Fresh opp: WELL · VTR · CTRE · OHI</span></div><a class="elink" href="https://www.nasdaq.com/articles/longevity-shift-healthcare-reits-benefit-global-aging" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://www.benzinga.com/trading-ideas/long-ideas/26/06/53080349/top-3-real-estate-stocks-which-could-rescue-your-portfolio-in-june','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">CareTrust REIT (CTRE) posts strong Q1 with $747M of new investments — CEO signals aggressive growth pace will continue</div><div class="nmeta"><span class="nsrc">Benzinga</span><span class="ndate">Jun 3</span><span class="stag s-new">Fresh opp: CTRE</span></div><a class="elink" href="https://www.benzinga.com/trading-ideas/long-ideas/26/06/53080349/top-3-real-estate-stocks-which-could-rescue-your-portfolio-in-june" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-brain" style="color:var(--purple)"></i>Your portfolio companies</div>
+  <div class="news-stack spc">
+    <div class="nc" onclick="window.open('https://finance.yahoo.com/markets/stocks/articles/coreweave-join-nasdaq-100-index-145500551.html','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">CoreWeave confirmed for Nasdaq-100 inclusion June 22 — Vanguard boosted stake 275.6%, ETF forced buying incoming</div><div class="nmeta"><span class="nsrc">Business Wire · CoinCentral</span><span class="ndate">Jun 12</span><span class="stag s-bull">Bullish CRWV</span></div><a class="elink" href="https://finance.yahoo.com/markets/stocks/articles/coreweave-join-nasdaq-100-index-145500551.html" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://www.fool.com/investing/2026/06/04/how-riot-platforms-stock-gained-57-in-may/','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">Riot Platforms +57% in May, +114% YTD — nuclear data center deal, Keefe Bruyette raises target to $37</div><div class="nmeta"><span class="nsrc">Motley Fool</span><span class="ndate">Jun 4</span><span class="stag s-bull">Bullish RIOT</span></div><a class="elink" href="https://www.fool.com/investing/2026/06/04/how-riot-platforms-stock-gained-57-in-may/" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-monday-june-15-2026-prices-rising-after-us-iran-agree-to-ceasefire-deal-114616600.html','_blank')"><div class="nbar" style="background:var(--cyan)"></div><div class="ncontent"><div class="nhead">BTC slides to ~$62,500 and crypto sentiment hits Extreme Fear (22) as Hormuz escalation drives risk-off</div><div class="nmeta"><span class="nsrc">Yahoo Finance</span><span class="ndate">Jul 14</span><span class="stag s-bear">Risk-off · Extreme Fear</span></div><a class="elink" href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-prices-today-monday-june-15-2026-prices-rising-after-us-iran-agree-to-ceasefire-deal-114616600.html" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://www.cnbc.com/quotes/BE','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Bloom Energy rises 12% on $2.6B European AI infrastructure deal — Morgan Stanley says long-term outlook intact after June dip</div><div class="nmeta"><span class="nsrc">CNBC · TipRanks</span><span class="ndate">May–Jun 2026</span><span class="stag s-bull">Bullish BE</span></div><a class="elink" href="https://www.cnbc.com/quotes/BE" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-chart-line"></i>Strategy & macro</div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://www.fidelity.com/learning-center/trading-investing/sector-outlook-2026','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">Fidelity 2026 sector outlook: senior housing REITs, biotech, and AI infrastructure picks-and-shovels are the top three underweighted opportunities</div><div class="nmeta"><span class="nsrc">Fidelity</span><span class="ndate">Nov 2025</span><span class="stag s-watch">Strategy insight</span></div><a class="elink" href="https://www.fidelity.com/learning-center/trading-investing/sector-outlook-2026" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+    <div class="nc" onclick="window.open('https://finbold.com/leopold-aschenbrenner-just-updated-his-stock-portfolio/','_blank')"><div class="nbar" style="background:var(--purple)"></div><div class="ncontent"><div class="nhead">Aschenbrenner's Situational Awareness LP: $225M to $5.5B in 12 months — latest 13F reveals BE, SNDK, CRWV, RIOT positions</div><div class="nmeta"><span class="nsrc">Finbold · BBAE</span><span class="ndate">May 2026</span><span class="stag s-watch">Your strategy</span></div><a class="elink" href="https://finbold.com/leopold-aschenbrenner-just-updated-his-stock-portfolio/" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Full story</a></div></div>
+  </div>
+</div>
+<!-- IPO WATCH -->
+<div class="page" id="page-ipo">
+  <div class="callout c-purple"><i class="ti ti-rocket" style="color:var(--purple)"></i><div><strong style="color:var(--t1)">IPO Watch — exclusive.</strong> Most retail investors miss IPO opportunities entirely. SpaceX's debut this week rallied 19% day 1, 20% day 2. Getting in early on the right name in a booming sector can produce outsized returns. Sources: StockTitan, Business Wire, InvestorPlace.</div></div>
+  <div class="slbl"><i class="ti ti-star" style="color:var(--purple)"></i>Recent listings — space & defense</div>
+  <div class="ipo-card" style="border-color:var(--pbrd)">
+    <div class="ipo-hdr"><div class="ipo-tick" style="color:var(--purple)">SPCX</div><div class="ipo-name">SpaceX — rockets, Starlink, and Starship</div><div class="ipo-date">IPO: Jun 12, 2026</div></div>
+    <div class="ipo-desc">Debuted at $185/share, now up 39% since IPO. Starlink generates billions in recurring satellite internet revenue. Starship is the only vehicle capable of lunar/Mars missions. Elon Musk became world's first trillionaire on paper. Index inclusion likely in coming quarters forces further institutional buying. Dan Niles warns valuation will eventually matter — but near-term momentum is extreme.</div>
+    <div class="ipo-meta"><span style="color:var(--green)">+39% since IPO</span><span>Market cap: $600B+</span><span style="color:var(--red)">Risk: Very high — momentum driven</span></div>
+  </div>
+  <div class="ipo-card">
+    <div class="ipo-hdr"><div class="ipo-tick" style="color:var(--blue)">VOYG</div><div class="ipo-name">Voyager Technologies — commercial space station</div><div class="ipo-date">Listed Jun 2025</div></div>
+    <div class="ipo-desc">Majority owner of Starlab — the commercial successor to ISS (joint venture with Airbus, Mitsubishi, MDA Space). Under NASA award to develop and operate it. Just acquired Astrobotic Technology, accelerating its lunar initiative. Still relatively unknown to retail investors — SpaceX halo effect is starting to lift it.</div>
+    <div class="ipo-meta"><span>NYSE: VOYG</span><span>Sector: Space infrastructure</span><span style="color:var(--amber)">Risk: High — early stage</span></div>
+  </div>
+  <div class="ipo-card">
+    <div class="ipo-hdr"><div class="ipo-tick" style="color:var(--green)">PL</div><div class="ipo-name">Planet Labs PBC — daily satellite imagery</div><div class="ipo-date">Listed 2021 · SpaceX halo lift</div></div>
+    <div class="ipo-desc">Operates 200+ satellites providing daily imagery of the entire Earth — used by governments, agriculture, insurance, and intelligence. Just shipped next-gen Pelican-11 satellite. Subscription revenue model. SpaceX rally is lifting the entire space sector — PL is one of the most accessible pure-play space stocks.</div>
+    <div class="ipo-meta"><span>NYSE: PL</span><span>Sector: Satellite data</span><span style="color:var(--amber)">Risk: Medium-high</span></div>
+  </div>
+  <div class="slbl" style="margin-top:1rem"><i class="ti ti-atom" style="color:var(--amber)"></i>Nuclear energy listings</div>
+  <div class="ipo-card">
+    <div class="ipo-hdr"><div class="ipo-tick" style="color:var(--amber)">OKLO</div><div class="ipo-name">Oklo — next-gen small modular reactors</div><div class="ipo-date">IPO: May 2024 · Still early stage</div></div>
+    <div class="ipo-desc">Building fast nuclear reactors for data centers and military bases. Defense Logistics Agency Energy filed intent for 75MW reactor at Eielson Air Force Base, Alaska. Sam Altman is a major backer. Stock went from $25 to $194 intraday then pulled back to ~$63 — a wild ride with real underlying demand. The kind of name you want to understand before it goes mainstream.</div>
+    <div class="ipo-meta"><span>NYSE: OKLO</span><span style="color:var(--red)">Risk: Very high — early stage, volatile</span><span>Backer: Sam Altman (OpenAI)</span></div>
+  </div>
+  <div class="callout c-amber" style="margin-top:1rem"><i class="ti ti-alert-triangle" style="color:var(--amber)"></i><div><strong style="color:var(--t1)">IPO risk reminder:</strong> Early-stage IPOs are highly volatile. Only allocate a small percentage of your portfolio. Consider waiting for a pullback or lock-up expiry rather than chasing the first-day pop.</div></div>
+</div>
+<!-- GEMS -->
+<div class="page" id="page-gems">
+  <div class="callout c-amber"><i class="ti ti-diamond" style="color:var(--amber)"></i><div>Undervalued companies with strong fundamentals, insider ownership, or analyst catalysts the broader market hasn't priced in. Sources: Motley Fool, Nasdaq, Simply Wall St, MarketsHost.</div></div>
+  <div class="gem-card"><div class="gem-hdr" onclick="tg('mu')"><div class="gem-tick" style="background:var(--bdim);color:var(--blue);border:.5px solid var(--bbrd)">MU</div><div class="gem-info"><div class="gem-name">Micron Technology</div><div class="gem-sect">Semiconductors · AI high-bandwidth memory</div></div><div class="gem-stat"><div class="gem-v">Fwd P/E: 12x</div><div class="gem-u up">+111% revenue growth est.</div></div><div class="rpill r-str">Strong Buy</div><i class="ti ti-chevron-down chev" id="cv-mu"></i></div><div class="gem-body" id="gb-mu"><div class="stat-row"><div class="sbox"><div class="sv">12x</div><div class="sl">Fwd P/E</div></div><div class="sbox"><div class="sv up">+111%</div><div class="sl">Rev FY26</div></div><div class="sbox"><div class="sv up">+36%</div><div class="sl">Rev FY27</div></div><div class="sbox"><div class="sv ta">-30%</div><div class="sl">vs peers</div></div></div><div class="dg2"><div class="dbox"><div class="dtitle">Why undervalued</div><div class="dbody">Nvidia's largest HBM memory supplier. Despite 111% expected revenue growth, trades at just 12x forward earnings — a 30%+ discount to semiconductor peers. Fiscal Q3 earnings expected late June — a beat could be the re-rating trigger.</div></div><div class="dbox"><div class="dtitle">Catalyst to watch</div><div class="dbody">Every new Nvidia GPU generation requires exponentially more HBM. Operating leverage means profits soar faster than revenue. AI memory supercycle is just beginning and the market hasn't priced it as structural.</div></div></div><a class="elink" href="https://www.fool.com/investing/stock-market/types-of-stocks/value-stocks/undervalued-stocks/" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Motley Fool analysis</a></div></div>
+  <div class="gem-card"><div class="gem-hdr" onclick="tg('clsk')"><div class="gem-tick" style="background:var(--gdim);color:var(--green);border:.5px solid var(--gbrd)">CLSK</div><div class="gem-info"><div class="gem-name">CleanSpark</div><div class="gem-sect">Bitcoin mining · Vertical green energy integration</div></div><div class="gem-stat"><div class="gem-v">Below peer avg.</div><div class="gem-u up">Growing margins + revenue</div></div><div class="rpill r-buy">Buy</div><i class="ti ti-chevron-down chev" id="cv-clsk"></i></div><div class="gem-body" id="gb-clsk"><div class="dg2"><div class="dbox"><div class="dtitle">Why undervalued</div><div class="dbody">Trades below major mining peers despite superior unit economics. Vertically integrates its own power infrastructure — structurally lower electricity costs vs RIOT and MARA. Less debt, improving margins.</div></div><div class="dbox"><div class="dtitle">Catalyst to watch</div><div class="dbody">BTC rallying on ceasefire. Green energy model attracts ESG institutional capital. As BTC mining competition intensifies, low-cost operators compound their advantage.</div></div></div><a class="elink" href="https://www.mexc.com/news/417069" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Analyst coverage</a></div></div>
+  <div class="gem-card"><div class="gem-hdr" onclick="tg('opfi')"><div class="gem-tick" style="background:var(--pdim);color:var(--purple);border:.5px solid var(--pbrd)">OPFI</div><div class="gem-info"><div class="gem-name">OppFi</div><div class="gem-sect">Fintech · AI-powered consumer credit</div></div><div class="gem-stat"><div class="gem-v">Deep value small cap</div><div class="gem-u up">4 straight EPS upgrades</div></div><div class="rpill r-buy">Buy</div><i class="ti ti-chevron-down chev" id="cv-opfi"></i></div><div class="gem-body" id="gb-opfi"><div class="dg2"><div class="dbox"><div class="dtitle">Why undervalued</div><div class="dbody">AI underwriting (Model 6) with 79.1% auto-approval rate. Four consecutive quarters of EPS upgrades, zero downward revisions. Ignored by Wall Street because of small market cap — that's your edge.</div></div><div class="dbox"><div class="dtitle">Catalyst to watch</div><div class="dbody">AI improvements compound: better approvals → more revenue → higher margins → lower defaults. Single institutional analyst initiating coverage could be the trigger.</div></div></div><a class="elink" href="https://www.nasdaq.com/articles/3-undervalued-stocks-investors-should-grab-right-2026" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>Nasdaq analysis</a></div></div>
+  <div class="gem-card"><div class="gem-hdr" onclick="tg('tjx')"><div class="gem-tick" style="background:var(--adim);color:var(--amber);border:.5px solid var(--abrd)">TJX</div><div class="gem-info"><div class="gem-name">TJX Companies</div><div class="gem-sect">Off-price retail · Recession-resilient consumer</div></div><div class="gem-stat"><div class="gem-v">OpportunityRadar: 65/100</div><div class="gem-u up">100% confidence BUY today</div></div><div class="rpill r-str">Strong entry</div><i class="ti ti-chevron-down chev" id="cv-tjx"></i></div><div class="gem-body" id="gb-tjx"><div class="dg2"><div class="dbox"><div class="dtitle">Why it stands out</div><div class="dbody">Ranked #1 in MarketsHost June 15 OpportunityRadar scan — 100% confidence, MACD bullish, RSI 61.6. Off-price retail thrives in downturns AND booms. One of the most durable business models.</div></div><div class="dbox"><div class="dtitle">Catalyst to watch</div><div class="dbody">Oil down 5% today boosts consumer spending. Fed likely holding rates. Strong FCF and brand moat. Lower-risk momentum play inside a defensive sector.</div></div></div><a class="elink" href="https://www.marketshost.com/news/articles/10-stocks-with-strong-buy-signals-bullish-macd-june-2026-102794" target="_blank"><i class="ti ti-external-link" style="font-size:10px"></i>MarketsHost OpportunityRadar</a></div></div>
+</div>
+<!-- INSIDER -->
+<div class="page" id="page-insider">
+  <div class="callout c-blue"><i class="ti ti-info-circle" style="color:var(--blue)"></i><div>When executives buy shares with personal money, it signals they believe the stock is undervalued. Cluster buying — multiple insiders buying simultaneously — is especially powerful. All transactions filed with the SEC via Form 4 within 2 business days.</div></div>
+  <div class="slbl"><i class="ti ti-eye"></i>Recent activity — June 2026</div>
+  <div class="card spc"><div class="tbl-wrap"><table class="ins-tbl"><thead><tr><th>Ticker</th><th>Company</th><th>Transaction</th><th>Amount</th><th>Who</th><th>Date</th><th>Signal</th></tr></thead><tbody>
+    <tr><td class="iticker">MTRN</td><td>Materion Corp</td><td class="ibuy">↑ Buy</td><td>Undisclosed</td><td>Insider</td><td>Jun 2026</td><td><span class="sigtag sg-bull">Bullish · +72% 3-mo</span></td></tr>
+    <tr><td class="iticker">LQDT</td><td>Liquidity Services</td><td class="ibuy">↑ Buy</td><td>Undisclosed</td><td>Insider</td><td>Jun 2026</td><td><span class="sigtag sg-bull">Bullish · +33% 3-mo</span></td></tr>
+    <tr><td class="iticker">AS</td><td>Amer Sports</td><td class="isell">↓ Cluster sell</td><td>$18.2M</td><td>CEO + 2 insiders</td><td>Jun 10</td><td><span class="sigtag sg-bear">Bearish — watch</span></td></tr>
+    <tr><td class="iticker">CRWV</td><td>CoreWeave</td><td class="isell">↓ Planned sell</td><td>$7.45M</td><td>CSO 10b5-1</td><td>Jun 10</td><td><span class="sigtag sg-neut">Pre-planned — neutral</span></td></tr>
+    <tr><td class="iticker">Various</td><td>71 screened small caps</td><td class="ibuy">↑ Cluster buy</td><td>Multiple</td><td>Multiple</td><td>Jun 2026</td><td><span class="sigtag sg-bull">Screened bullish list</span></td></tr>
+  </tbody></table></div></div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=4&dateb=&owner=include&count=40','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">SEC EDGAR Form 4 — official source for all insider transactions</div><div class="nmeta"><span class="nsrc">SEC.gov</span><span class="stag s-bull">Free · Official</span></div></div></div>
+    <div class="nc" onclick="window.open('https://www.barchart.com/investing-ideas/insider-trading-activity','_blank')"><div class="nbar" style="background:var(--purple)"></div><div class="ncontent"><div class="nhead">Barchart insider trading — sorted daily by buy/sell signal strength</div><div class="nmeta"><span class="nsrc">Barchart.com</span><span class="stag s-bull">Free</span></div></div></div>
+  </div>
+</div>
+<!-- OPTIONS FLOW -->
+<div class="page" id="page-options">
+  <div class="callout c-blue"><i class="ti ti-arrows-exchange" style="color:var(--blue)"></i><div>Golden sweeps (&gt;$1M) from institutional players often precede major moves by days. Sources: Unusual Whales, Barchart, Market Chameleon.</div></div>
+  <div class="slbl"><i class="ti ti-zap"></i>Notable unusual activity — Jun 11–15, 2026</div>
+  <div class="card spc" style="overflow:hidden">
+    <div class="flow-item"><div class="fl-type ft-call">CALL</div><div class="fl-info"><div class="fl-ticker">CRWV</div><div class="fl-detail">Jun 22 $120C · Sweep · Nasdaq-100 inclusion play</div></div><div><div class="fl-prem up">$847K</div><div class="fl-sent up">Bullish sweep</div></div></div>
+    <div class="flow-item"><div class="fl-type ft-call">CALL</div><div class="fl-info"><div class="fl-ticker">MU</div><div class="fl-detail">Jun 27 $130C · Sweep · Ahead of late-June earnings</div></div><div><div class="fl-prem up">$1.2M</div><div class="fl-sent" style="color:var(--purple)">🏆 Golden sweep</div></div></div>
+    <div class="flow-item"><div class="fl-type ft-call">CALL</div><div class="fl-info"><div class="fl-ticker">CEG</div><div class="fl-detail">Jul 18 $350C · Block · Nuclear AI power play</div></div><div><div class="fl-prem up">$920K</div><div class="fl-sent up">Bullish block · nuclear</div></div></div>
+    <div class="flow-item"><div class="fl-type ft-call">CALL</div><div class="fl-info"><div class="fl-ticker">SPY</div><div class="fl-detail">Jul 17 $250C · Block · Post-CPI positioning</div></div><div><div class="fl-prem up">$2.1M</div><div class="fl-sent" style="color:var(--purple)">🏆 Golden sweep</div></div></div>
+    <div class="flow-item"><div class="fl-type ft-put">PUT</div><div class="fl-info"><div class="fl-ticker">FOX</div><div class="fl-detail">Jun 20 $20P · Sweep · Post-Roku deal</div></div><div><div class="fl-prem dn">$390K</div><div class="fl-sent dn">Bearish sweep</div></div></div>
+  </div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://unusualwhales.com/live-options-flow','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">Unusual Whales — real-time options flow, dark pool, golden sweeps</div><div class="nmeta"><span class="nsrc">unusualwhales.com</span><span class="stag s-neut">Free (15-min delay) / Premium live</span></div></div></div>
+    <div class="nc" onclick="window.open('https://www.barchart.com/options/unusual-activity','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">Barchart unusual options activity — volume vs open interest screener</div><div class="nmeta"><span class="nsrc">Barchart.com</span><span class="stag s-bull">Free</span></div></div></div>
+  </div>
+</div>
+<!-- POLITICIAN -->
+<div class="page" id="page-politician">
+  <div class="callout c-blue"><i class="ti ti-building-bank" style="color:var(--blue)"></i><div>STOCK Act requires Congress to disclose trades within 45 days. Top performers returned 78.8% in 2025 vs S&P's 16.6%. Sources: Capitol Trades, Quiver Quant, Unusual Whales.</div></div>
+  <div class="slbl"><i class="ti ti-trending-up"></i>Recent congressional buys</div>
+  <div class="card spc" style="overflow:hidden">
+    <div class="pol-item"><div class="pol-av av-r">RH</div><div class="pol-info"><div class="pol-name">Rep. House (R-VA)</div><div class="pol-role">House · Republican</div></div><div class="pol-stock up">META</div><div class="pol-amt">$1K–$15K<br><span style="font-size:9px;color:var(--t3)">Jun 11 · Buy</span></div></div>
+    <div class="pol-item"><div class="pol-av av-d">DM</div><div class="pol-info"><div class="pol-name">Sen. (D-MI)</div><div class="pol-role">Senate · Democrat</div></div><div class="pol-stock up">KHC</div><div class="pol-amt">$1K–$15K<br><span style="font-size:9px;color:var(--t3)">Jun 11 · Buy</span></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-trophy"></i>Top 2025 congressional portfolios</div>
+  <div class="card" style="overflow:hidden;margin-bottom:1rem">
+    <div class="wlrow"><span class="wlname" style="color:var(--t1);font-weight:500">Rep. Warren Davidson (R-OH)</span><span class="wlchg up">+78.8%</span></div>
+    <div class="wlrow"><span class="wlname" style="color:var(--t1);font-weight:500">Rep. Donald Norcross (D-NJ)</span><span class="wlchg up">+70.8%</span></div>
+    <div class="wlrow"><span class="wlname" style="color:var(--t1);font-weight:500">Rep. Terri Sewell (D-AL)</span><span class="wlchg up">+67.9%</span></div>
+    <div class="wlrow"><span class="wlname" style="color:var(--t3)">S&P 500 benchmark</span><span class="wlchg fl">+16.6%</span></div>
+  </div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://www.capitoltrades.com/','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">Capitol Trades — leading resource for political investor intelligence, cited by WSJ & NYT</div><div class="nmeta"><span class="nsrc">capitoltrades.com</span><span class="stag s-bull">Free</span></div></div></div>
+    <div class="nc" onclick="window.open('https://unusualwhales.com/politics','_blank')"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">Unusual Whales politics — search any politician, any ticker, full history</div><div class="nmeta"><span class="nsrc">unusualwhales.com</span><span class="stag s-bull">Free</span></div></div></div>
+  </div>
+</div>
+<!-- SHORT INTEREST -->
+<div class="page" id="page-short">
+  <div class="callout c-blue"><i class="ti ti-trending-down" style="color:var(--blue)"></i><div>High short interest (&gt;20%) can signal a squeeze setup. If good news hits a heavily shorted stock, forced covering creates violent upward moves — like GameStop in 2021.</div></div>
+  <div class="slbl"><i class="ti ti-percentage"></i>Your watchlist short interest</div>
+  <div class="card spc" style="overflow:hidden;padding:.5rem 0">
+    <div class="short-bar"><span class="short-tick">CRWV</span><div class="short-track"><div class="short-fill" style="width:18%;background:var(--amber)"></div></div><span class="short-pct" style="color:var(--amber)">18%</span><span class="short-note">Elevated</span></div>
+    <div class="short-bar"><span class="short-tick">RIOT</span><div class="short-track"><div class="short-fill" style="width:22%;background:var(--red)"></div></div><span class="short-pct" style="color:var(--red)">22%</span><span class="short-note" style="color:var(--red)">Squeeze risk ⚡</span></div>
+    <div class="short-bar"><span class="short-tick">BE</span><div class="short-track"><div class="short-fill" style="width:14%;background:var(--amber)"></div></div><span class="short-pct" style="color:var(--amber)">14%</span><span class="short-note">Notable</span></div>
+    <div class="short-bar"><span class="short-tick">CLSK</span><div class="short-track"><div class="short-fill" style="width:19%;background:var(--amber)"></div></div><span class="short-pct" style="color:var(--amber)">19%</span><span class="short-note">Elevated</span></div>
+    <div class="short-bar"><span class="short-tick">MU</span><div class="short-track"><div class="short-fill" style="width:8%;background:var(--green)"></div></div><span class="short-pct" style="color:var(--green)">8%</span><span class="short-note" style="color:var(--green)">Normal</span></div>
+    <div class="short-bar"><span class="short-tick">FOX</span><div class="short-track"><div class="short-fill" style="width:31%;background:var(--red)"></div></div><span class="short-pct" style="color:var(--red)">31%</span><span class="short-note" style="color:var(--red)">High — Roku deal</span></div>
+  </div>
+  <div class="callout c-amber"><i class="ti ti-bulb" style="color:var(--amber)"></i><div><strong style="color:var(--t1)">RIOT squeeze watch:</strong> With 22% short interest and BTC now under $63K, the squeeze setup is on hold — falling BTC removes the catalyst that would force shorts to cover. Watch for a BTC reclaim above $70K to put this back in play.</div></div>
+</div>
+<!-- ON-CHAIN -->
+<div class="page" id="page-onchain">
+  <div class="callout c-blue"><i class="ti ti-currency-bitcoin" style="color:var(--amber)"></i><div>On-chain data shows what's happening inside the blockchain — signals you can't get from price charts alone. Sources: Glassnode, Look Into Bitcoin, Ultrasound Money.</div></div>
+  <div class="row2 spc">
+    <div>
+      <div class="slbl"><i class="ti ti-currency-bitcoin" style="color:var(--amber)"></i>Bitcoin on-chain</div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">Exchange outflow (7-day)</span><span class="cs-value up">+42,300 BTC</span></div><div class="cs-desc">Coins leaving exchanges = holders moving to cold storage = less sell pressure = bullish</div><div class="cs-bar"><div class="cs-fill" style="width:72%;background:var(--green)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">Whale accumulation</span><span class="cs-value up">Accumulating</span></div><div class="cs-desc">Wallets holding 1,000+ BTC have been net buyers over 14 days — historically bullish</div><div class="cs-bar"><div class="cs-fill" style="width:65%;background:var(--green)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">Hash rate</span><span class="cs-value up">~820 EH/s</span></div><div class="cs-desc">Near all-time highs — miners investing in infrastructure, long-term bullish</div><div class="cs-bar"><div class="cs-fill" style="width:88%;background:var(--blue)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">MVRV Ratio</span><span class="cs-value" style="color:var(--amber)">1.8 — Neutral</span></div><div class="cs-desc">Under 1 = undervalued. Over 3.5 = overheated. 1.8 = healthy mid-cycle.</div><div class="cs-bar"><div class="cs-fill" style="width:48%;background:var(--amber)"></div></div></div>
+    </div>
+    <div>
+      <div class="slbl"><i class="ti ti-brand-ethereum" style="color:var(--purple)"></i>Ethereum on-chain</div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">ETH staking rate</span><span class="cs-value" style="color:var(--purple)">~28% of supply staked</span></div><div class="cs-desc">28%+ of ETH locked — reduces circulating supply = structural buy pressure</div><div class="cs-bar"><div class="cs-fill" style="width:62%;background:var(--purple)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">Gas fees</span><span class="cs-value" style="color:var(--green)">Low — 5–8 gwei</span></div><div class="cs-desc">Low congestion today. Can spike rapidly when DeFi/NFT activity picks up.</div><div class="cs-bar"><div class="cs-fill" style="width:20%;background:var(--green)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">$1,718 support holding</span><span class="cs-value up">$1,776 today</span></div><div class="cs-desc">Key on-chain support. Holding above the 20-day EMA; $1,801 (50-day) is the level to reclaim.</div><div class="cs-bar"><div class="cs-fill" style="width:55%;background:var(--cyan)"></div></div></div>
+      <div class="chain-stat"><div class="cs-hdr"><span class="cs-label">Exchange supply ratio</span><span class="cs-value up">Declining</span></div><div class="cs-desc">ETH on exchanges declining — holders prefer custody over selling. Medium-term bullish.</div><div class="cs-bar"><div class="cs-fill" style="width:60%;background:var(--green)"></div></div></div>
+    </div>
+  </div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://glassnode.com','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Glassnode — most comprehensive on-chain analytics for BTC and ETH</div><div class="nmeta"><span class="nsrc">glassnode.com</span><span class="stag s-neut">Free tier / Premium</span></div></div></div>
+    <div class="nc" onclick="window.open('https://www.lookintobitcoin.com','_blank')"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Look Into Bitcoin — free MVRV, Rainbow Chart, and BTC cycle indicators</div><div class="nmeta"><span class="nsrc">lookintobitcoin.com</span><span class="stag s-bull">Free</span></div></div></div>
+    <div class="nc" onclick="window.open('https://ultrasound.money','_blank')"><div class="nbar" style="background:var(--purple)"></div><div class="ncontent"><div class="nhead">Ultrasound.money — ETH supply, burn rate, staking ratio, issuance metrics</div><div class="nmeta"><span class="nsrc">ultrasound.money</span><span class="stag s-bull">Free</span></div></div></div>
+  </div>
+</div>
+<!-- SENTIMENT -->
+<div class="page" id="page-sentiment">
+  <div class="callout c-blue"><i class="ti ti-mood-smile" style="color:var(--blue)"></i><div>"Be fearful when others are greedy and greedy when others are fearful." — Warren Buffett. Crypto sentiment is at 22 (Extreme Fear) — historically a buying zone, though the Hormuz escalation is a live macro risk, not just noise. Stock-market sentiment is running warmer at ~62 (Greed). Check CNN live for the updated stock number.</div></div>
+  <div class="row2 spc">
+    <div>
+      <div class="slbl"><i class="ti ti-gauge"></i>Current reading — Jul 14, 2026</div>
+      <div class="card cp">
+        <div class="fg-wrap">
+          <svg viewBox="0 0 140 80" width="140" height="80" style="flex-shrink:0;overflow:visible">
+            <defs><linearGradient id="ag" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#ff4560"/><stop offset="50%" stop-color="#f5c842"/><stop offset="100%" stop-color="#00d97e"/></linearGradient></defs>
+            <path d="M15,75 A55,55 0 0,1 125,75" fill="none" stroke="url(#ag)" stroke-width="10" stroke-linecap="round"/>
+            <path d="M15,75 A55,55 0 0,1 62,26" fill="none" stroke="#0d1018" stroke-width="10" stroke-linecap="round" opacity=".8"/>
+            <line x1="70" y1="75" x2="51" y2="35" stroke="#e8ecf5" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="70" cy="75" r="4" fill="#e8ecf5"/>
+          </svg>
+          <div class="fg-labels">
+            <div class="fg-main" id="fgMain" style="color:var(--red)">22</div>
+            <div id="fgClass" style="font-size:13px;font-weight:500;color:var(--red)">Extreme Fear (crypto)</div>
+            <div class="fg-sub" id="fgSub">Crypto F&G as of Jul 14, 2026. Stock F&G ~62 (Greed).</div>
+          </div>
+        </div>
+        <div class="fg-history">
+          <div class="fgh"><div class="fgh-v" id="fgWeekAgo" style="color:var(--red)">28</div><div class="fgh-l">1 wk ago</div></div>
+          <div class="fgh"><div class="fgh-v" id="fgLatest" style="color:var(--red)">22</div><div class="fgh-l">Latest</div></div>
+          <div class="fgh"><div class="fgh-v" id="fgMonthAvg" style="color:var(--t3)">—</div><div class="fgh-l">1 mo avg</div></div>
+        </div>
+        <a class="elink" href="https://edition.cnn.com/markets/fear-and-greed" target="_blank" style="margin-top:.75rem"><i class="ti ti-external-link" style="font-size:10px"></i>CNN Fear &amp; Greed — live</a>
+      </div>
+    </div>
+    <div>
+      <div class="slbl"><i class="ti ti-ruler-2"></i>What each zone means</div>
+      <div class="card" style="overflow:hidden">
+        <div class="wlrow"><span style="font-size:11px;font-weight:600;color:var(--red);min-width:115px">0–24 Extreme fear</span><span class="wlname">Historically best buying opportunity</span></div>
+        <div class="wlrow"><span style="font-size:11px;font-weight:600;color:var(--red);min-width:115px">0–24 Extreme ← now</span><span class="wlname">Max fear — historically strongest entries</span></div>
+        <div class="wlrow"><span style="font-size:11px;font-weight:600;color:var(--t2);min-width:115px">45–55 Neutral</span><span class="wlname">Follow your plan, no urgency</span></div>
+        <div class="wlrow"><span style="font-size:11px;font-weight:600;color:var(--green);min-width:115px">56–74 Greed</span><span class="wlname">Consider trimming winners</span></div>
+        <div class="wlrow"><span style="font-size:11px;font-weight:600;color:var(--green);min-width:115px">75–100 Extreme greed</span><span class="wlname">Reduce exposure, protect gains</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- WATCHLIST -->
+<div class="page" id="page-watchlist">
+  <div class="callout c-blue"><i class="ti ti-info-circle" style="color:var(--blue)"></i><div>Tracking your Aschenbrenner bot positions, hidden gems, and newly added sector watchlist stocks. Prices as of Jul 14, 2026.</div></div>
+  <div class="slbl"><i class="ti ti-star"></i>All tracked positions</div>
+  <div class="card spc" style="overflow:hidden">
+    <div class="wlrow" style="background:var(--bg3)"><span style="font-size:10px;color:var(--t3);font-weight:600;min-width:56px">Ticker</span><span style="font-size:10px;color:var(--t3);font-weight:600;flex:1">Company</span><span style="font-size:10px;color:var(--t3);font-weight:600;min-width:72px;text-align:right">Price</span><span style="font-size:10px;color:var(--t3);font-weight:600;min-width:54px;text-align:right">Change</span></div>
+    <div class="wlrow" data-ticker="CRWV"><span class="wltick">CRWV</span><span class="wlname">CoreWeave — AI compute</span><span class="wlprice">$83.31</span><span class="wlchg dn">-6.3%</span></div>
+    <div class="wlrow" data-ticker="RIOT"><span class="wltick">RIOT</span><span class="wlname">Riot Platforms — BTC mining</span><span class="wlprice">$28.90</span><span class="wlchg up">+0.02%</span></div>
+    <div class="wlrow" data-ticker="BE"><span class="wltick">BE</span><span class="wlname">Bloom Energy — AI power</span><span class="wlprice">$232.42</span><span class="wlchg dn">-15% (5d)</span></div>
+    <div class="wlrow" data-ticker="BTC"><span class="wltick">BTC</span><span class="wlname">Bitcoin</span><span class="wlprice">$62,500</span><span class="wlchg dn">-2.0%</span></div>
+    <div class="wlrow" data-ticker="ETH"><span class="wltick">ETH</span><span class="wlname">Ethereum</span><span class="wlprice">$1,776</span><span class="wlchg dn">-2.7%</span></div>
+    <div class="wlrow" data-ticker="MU"><span class="wltick">MU</span><span class="wlname">Micron Technology — hidden gem</span><span class="wlprice">Watchlist</span><span class="wlchg fl">Monitoring</span></div>
+    <div class="wlrow" data-ticker="TJX"><span class="wltick">TJX</span><span class="wlname">TJX Companies — consumer</span><span class="wlprice">Watchlist</span><span class="wlchg up">Strong entry</span></div>
+    <div class="wlrow" data-ticker="CEG"><span class="wltick">CEG</span><span class="wlname">Constellation Energy — nuclear</span><span class="wlprice">Watchlist</span><span class="wlchg fl">New sector</span></div>
+    <div class="wlrow" data-ticker="CCJ"><span class="wltick">CCJ</span><span class="wlname">Cameco — uranium miner</span><span class="wlprice">Watchlist</span><span class="wlchg fl">New sector</span></div>
+    <div class="wlrow" data-ticker="RKLB"><span class="wltick">RKLB</span><span class="wlname">Rocket Lab — space</span><span class="wlprice">Watchlist</span><span class="wlchg up">SpaceX halo</span></div>
+    <div class="wlrow" data-ticker="CTRE"><span class="wltick">CTRE</span><span class="wlname">CareTrust REIT — senior housing</span><span class="wlprice">Watchlist</span><span class="wlchg fl">New sector</span></div>
+  </div>
+  <div class="slbl"><i class="ti ti-chart-line"></i>BTC vs ETH — YTD normalized</div>
+  <div class="card cp"><div class="chart-sm"><canvas id="cryptoChart"></canvas></div></div>
+</div>
+<!-- EARNINGS -->
+<div class="page" id="page-earnings">
+  <div class="callout c-amber"><i class="ti ti-calendar-event" style="color:var(--amber)"></i><div>Stocks can move 10–30% overnight on earnings surprises. Know when companies in your watchlist report. Sources: Yahoo Finance, Kiplinger, MarketScreener.</div></div>
+  <div class="slbl"><i class="ti ti-calendar"></i>Week of July 13–17, 2026</div>
+  <div class="ec-grid">
+    <div class="ec-day ec-today"><div class="ec-hdr">Mon Jul 13 <span class="ec-date">Closed</span></div><div class="ec-item"><span class="ec-tick" style="color:var(--t3)">—</span><span style="font-size:10px;color:var(--t3)">No major names</span></div></div>
+    <div class="ec-day"><div class="ec-hdr">Tue Jul 14 <span class="ec-date">Big banks</span></div><div class="ec-item"><span class="ec-tick">JPM</span><span style="font-size:10px">JPMorgan ✓ beat</span></div><div class="ec-item"><span class="ec-tick">GS</span><span style="font-size:10px">Goldman ✓ beat</span></div></div>
+    <div class="ec-day ec-big"><div class="ec-hdr" style="color:var(--amber)">Wed Jul 15 <span class="ec-date">PPI + banks</span></div><div class="ec-item"><span class="ec-tick" style="color:var(--blue)">MS</span><span style="font-size:10px">Morgan Stanley</span></div><div class="ec-item"><span class="ec-tick" style="color:var(--amber)">JNJ</span><span style="font-size:10px">J&amp;J · BLK · UAL</span></div><div style="font-size:10px;color:var(--red);font-weight:600;padding:3px 0"><i class="ti ti-alert-triangle" style="font-size:10px"></i> FED DECISION</div></div>
+    <div class="ec-day"><div class="ec-hdr">Thu Jul 16 <span class="ec-date">TSMC ⚠️</span></div><div class="ec-item"><span class="ec-tick" style="color:var(--blue)">TSM</span><span style="font-size:10px">TSMC · AI read</span></div><div class="ec-item"><span class="ec-tick" style="color:var(--green)">NFLX</span><span style="font-size:10px">Netflix · UNH · GE</span></div></div>
+    <div class="ec-day"><div class="ec-hdr">Fri Jul 17 <span class="ec-date">2 reports</span></div><div class="ec-item"><span class="ec-tick">RF</span><span style="font-size:10px">Regions Fin.</span></div><div class="ec-item"><span class="ec-tick">FITB</span><span style="font-size:10px">Fifth Third</span></div></div>
+  </div>
+  <div class="slbl"><i class="ti ti-star"></i>Watchlist earnings — next 30 days</div>
+  <div class="card" style="overflow:hidden">
+    <div class="wlrow"><span class="wltick">MU</span><span class="wlname">Late June (fiscal Q3) — beat could trigger major re-rating</span><span style="font-size:11px;color:var(--blue);text-align:right">🎯 Potential entry</span></div>
+    <div class="wlrow"><span class="wltick">CRWV</span><span class="wlname">July (no confirmed date yet)</span><span style="font-size:11px;color:var(--amber);text-align:right">Watch closely</span></div>
+    <div class="wlrow"><span class="wltick">BE</span><span class="wlname">Late July (est.)</span><span style="font-size:11px;color:var(--green);text-align:right">Monitor</span></div>
+    <div class="wlrow"><span class="wltick">CEG</span><span class="wlname">Late July (est.) — nuclear demand thesis check</span><span style="font-size:11px;color:var(--green);text-align:right">New watchlist</span></div>
+  </div>
+</div>
+<!-- MACRO -->
+<div class="page" id="page-macro">
+  <div class="callout c-blue"><i class="ti ti-world" style="color:var(--blue)"></i><div>CPI prints, Fed decisions, and jobs reports move the entire market — often 1–3% in a single day. Know when they land to plan around volatility rather than be caught by it.</div></div>
+  <div class="row2 spc">
+    <div>
+      <div class="slbl"><i class="ti ti-calendar-event" style="color:var(--red)"></i>High-impact — July 2026</div>
+      <div class="card" style="overflow:hidden">
+        <div class="macro-item"><div class="macro-dot" style="background:var(--red)"></div><div class="macro-info"><div class="macro-event">Fed Chair Warsh testimony</div><div class="macro-sub">Semi-annual monetary policy report to Congress. Market still prices one 25bp hike in 2026.</div></div><div class="macro-date impact-h">Tue Jul 14</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--amber)"></div><div class="macro-info"><div class="macro-event">PPI inflation (June)</div><div class="macro-sub">Producer prices — the pipeline read on whether the cool CPI holds.</div></div><div class="macro-date impact-m">Wed Jul 15</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--red)"></div><div class="macro-info"><div class="macro-event">PCE inflation (Fed's preferred)</div><div class="macro-sub">Most important inflation gauge — moves Fed policy directly</div></div><div class="macro-date impact-h">Jun 27</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--red)"></div><div class="macro-info"><div class="macro-event">CPI inflation report (June data) ✓</div><div class="macro-sub">Came in at 3.5% vs 3.8% expected — cooler than forecast, eased rate-hike pressure</div></div><div class="macro-date impact-h">Mid Jul</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--red)"></div><div class="macro-info"><div class="macro-event">Q2 earnings season underway ✓</div><div class="macro-sub">Big banks mostly beat. TSMC Thu is the key AI-demand read. Tech reports late July.</div></div><div class="macro-date impact-h">Jul 14</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="slbl"><i class="ti ti-chart-line"></i>Upcoming data</div>
+      <div class="card" style="overflow:hidden">
+        <div class="macro-item"><div class="macro-dot" style="background:var(--amber)"></div><div class="macro-info"><div class="macro-event">Retail sales (June)</div><div class="macro-sub">Consumer spending health indicator</div></div><div class="macro-date impact-m">Thu Jul 16</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--amber)"></div><div class="macro-info"><div class="macro-event">Housing starts & building permits</div><div class="macro-sub">Real estate market health — rate sensitive</div></div><div class="macro-date impact-m">Thu Jul 16</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--t3)"></div><div class="macro-info"><div class="macro-event">Weekly jobless claims</div><div class="macro-sub">Leading labor market indicator</div></div><div class="macro-date impact-l">Thu Jul 16</div></div>
+        <div class="macro-item"><div class="macro-dot" style="background:var(--red)"></div><div class="macro-info"><div class="macro-event">June jobs report (NFP)</div><div class="macro-sub">May surprised at 172k vs 80k est. — FIFA World Cup effect</div></div><div class="macro-date impact-h">Jul 2</div></div>
+      </div>
+      <div style="margin-top:.75rem;display:flex;gap:10px;font-size:10px;color:var(--t3)"><span><span style="color:var(--red)">●</span> High</span><span><span style="color:var(--amber)">●</span> Medium</span><span><span style="color:var(--t3)">●</span> Low</span></div>
+    </div>
+  </div>
+</div>
+<!-- INVESTMENT THESIS NOTES -->
+<div class="page" id="page-notes">
+  <div class="callout c-purple"><i class="ti ti-notebook" style="color:var(--purple)"></i><div><strong style="color:var(--t1)">Investment thesis builder — exclusive to The Edge.</strong> Write and save your reasoning for each stock alongside the data. Your thesis is what separates you from someone who buys on a tweet. Saved in your browser locally.</div></div>
+  <div class="slbl"><i class="ti ti-plus"></i>Add new thesis note</div>
+  <div class="card cp spc">
+    <div class="note-row" style="margin-top:0;margin-bottom:.625rem">
+      <input class="ntick-input" id="noteTicker" placeholder="Ticker">
+      <input class="cname-input" id="noteName" placeholder="Company name" style="margin-left:6px">
+    </div>
+    <textarea class="note-input" id="noteText" placeholder="Write your investment thesis here...&#10;&#10;Why are you buying? What's your price target? What would make you sell? What are the key risks?"></textarea>
+    <div class="note-row">
+      <button class="save-btn" onclick="saveNote()"><i class="ti ti-device-floppy" style="font-size:13px;margin-right:4px"></i>Save thesis</button>
+      <span style="font-size:11px;color:var(--t3);margin-left:8px">Saved locally — available every time you open The Edge</span>
+    </div>
+  </div>
+  <div class="slbl"><i class="ti ti-notebook"></i>Your saved theses</div>
+  <div id="notes-list">
+    <div class="note-card"><div class="note-hdr"><span class="note-tick">CRWV</span><span style="font-size:12px;color:var(--t2)">CoreWeave</span><span class="note-date">Jun 15, 2026</span></div><div class="note-body">Buying because: Nasdaq-100 inclusion June 22 forces ETF buying. Pure-play AI compute with 69% gross margins. Aschenbrenner's core thesis — own the compute layer, not the chatbots on top.
+
+Target: $140+ by Aug (post-index + earnings)
+Exit signal: If AI capex from hyperscalers is cut significantly
+Risk: High debt load ($35B). If financing costs spike, thesis weakens.</div></div>
+    <div class="note-card"><div class="note-hdr"><span class="note-tick">RIOT</span><span style="font-size:12px;color:var(--t2)">Riot Platforms</span><span class="note-date">Jun 15, 2026</span></div><div class="note-body">Buying because: dual play on BTC (mining) + AI (data centers). 22% short interest = squeeze potential. Nuclear partnership with Terrestrial Energy is a 2030 story in the price today.
+
+Target: $35 by Q3 2026
+Exit signal: BTC drops below $55K
+Risk: BTC volatility is the dominant risk factor here.</div></div>
+  </div>
+</div>
+<!-- SMART ALERTS -->
+<div class="page" id="page-alerts">
+  <div class="callout c-purple"><i class="ti ti-bell" style="color:var(--purple)"></i><div><strong style="color:var(--t1)">Smart alerts — exclusive to The Edge.</strong> Your personal trigger list — conditions to watch that would signal a major move is coming or your thesis is changing. Most retail investors wait to be surprised. You won't be. Check weekly and update as conditions change.</div></div>
+  <div class="slbl"><i class="ti ti-list-check"></i>Your trigger list — check off as conditions are met</div>
+  <div class="card spc" style="overflow:hidden">
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">CRWV joins Nasdaq-100 on June 22 — ETF buying begins</div><div class="alert-cond">Action: Expect a short-term pop. Consider trimming if up &gt;20% at open. Watch if institutions become net sellers into the pop.</div></div><span class="alert-pri ap-h">High</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">RIOT short interest drops below 15%</div><div class="alert-cond">Action: Squeeze completed — shorts have covered. Momentum may slow. Re-evaluate whether to hold or take profits.</div></div><span class="alert-pri ap-m">Medium</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">Fear &amp; Greed hits Extreme Fear (below 20)</div><div class="alert-cond">Action: Market in panic — historically a strong buying opportunity. Add to highest-conviction positions.</div></div><span class="alert-pri ap-h">High</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">MU earnings beat — late June</div><div class="alert-cond">Action: Micron posting an earnings surprise may be the catalyst for AI memory sector re-rating. Watch pre-market reaction.</div></div><span class="alert-pri ap-h">High</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">BTC breaks above $70,000</div><div class="alert-cond">Action: RIOT squeeze likely accelerates. Consider adding to RIOT position. Also bullish for CLSK and other BTC miners.</div></div><span class="alert-pri ap-m">Medium</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">CEG or CCJ pulls back 15%+ from recent highs</div><div class="alert-cond">Action: Potential entry point into nuclear energy sector. The structural thesis (AI power demand) hasn't changed.</div></div><span class="alert-pri ap-l">Watch</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">Fed signals rate CUT in 2026</div><div class="alert-cond">Action: Senior housing REITs (WELL, CTRE, OHI, VTR) would surge — initiate positions immediately. Rate-sensitive REITs re-rate fast.</div></div><span class="alert-pri ap-h">High</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">BE drops below $240 again</div><div class="alert-cond">Action: Morgan Stanley and RBC both said long-term outlook intact after June dip. Treat dip as a buying opportunity if thesis unchanged.</div></div><span class="alert-pri ap-m">Medium</span></div>
+    <div class="alert-item"><div class="alert-chk" onclick="toggleAlert(this)"><i class="ti ti-check" style="display:none;font-size:11px;color:#000"></i></div><div class="alert-info"><div class="alert-text">SpaceX (SPCX) drops 20%+ from highs</div><div class="alert-cond">Action: Consider initiating a small position in space sector — SPCX halo lifts RKLB, VOYG, PL. A pullback is a better entry than chasing the IPO pop.</div></div><span class="alert-pri ap-l">Watch</span></div>
+  </div>
+  <div class="callout c-green"><i class="ti ti-bulb" style="color:var(--green)"></i><div>The investors who consistently beat the market aren't smarter — they're more prepared. Check off alerts as conditions are met and add new ones as your thesis evolves.</div></div>
+</div>
+<!-- PORTFOLIO -->
+<div class="page" id="page-portfolio">
+  <div class="callout c-amber"><i class="ti ti-clock" style="color:var(--amber)"></i><div><strong style="color:var(--t1)">Deposit pending:</strong> Your $100 is clearing on Robinhood account ••••1573. All positions confirmed tradable. Once funds settle (1–2 business days), return here to execute all three trades.</div></div>
+  <div class="row4">
+    <div class="mcard"><div class="mlbl">Portfolio value</div><div class="mval">$100.00</div><div class="msub">Pending deposit</div></div>
+    <div class="mcard"><div class="mlbl">Buying power</div><div class="mval up">$100.00</div><div class="msub">Ready to deploy</div></div>
+    <div class="mcard"><div class="mlbl">Planned trades</div><div class="mval" style="color:var(--amber)">3</div><div class="msub">Awaiting funds</div></div>
+    <div class="mcard"><div class="mlbl">Strategy</div><div class="mval" style="font-size:16px;padding-top:3px">AI Infra</div><div class="msub">Aschenbrenner thesis</div></div>
+  </div>
+  <div class="row2">
+    <div>
+      <div class="slbl"><i class="ti ti-list-check"></i>Planned positions</div>
+      <div class="card spc" style="overflow:hidden">
+        <div class="wlrow"><span class="wltick" style="color:var(--blue)">CRWV</span><span class="wlname">CoreWeave — AI compute</span><span class="wlprice">$25</span><span class="wlchg" style="color:var(--amber)">Pending</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--green)">RIOT</span><span class="wlname">Riot Platforms — BTC mining</span><span class="wlprice">$20</span><span class="wlchg" style="color:var(--amber)">Pending</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--amber)">BE</span><span class="wlname">Bloom Energy — AI power</span><span class="wlprice">$20</span><span class="wlchg" style="color:var(--amber)">Pending</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--cyan)">BTC</span><span class="wlname">Bitcoin — digital asset core</span><span class="wlprice">$25</span><span class="wlchg" style="color:var(--amber)">Pending</span></div>
+        <div class="wlrow"><span class="wltick" style="color:var(--t3)">CASH</span><span class="wlname">Reserve</span><span class="wlprice">$10</span><span class="wlchg up">Available</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="slbl"><i class="ti ti-chart-donut"></i>Target allocation</div>
+      <div class="card cp spc"><div class="chart-sm"><canvas id="allocChart"></canvas></div></div>
+    </div>
+  </div>
+</div>
+  </div><!-- /content -->
+</div><!-- /main -->
+
+<!-- AI ANALYST PANEL -->
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-hdr">
+    <div class="ai-hdr-left">
+      <div class="ai-avatar"><i class="ti ti-robot"></i></div>
+      <div><div class="ai-title">AI Analyst</div><div class="ai-sub">Powered by Claude · Ask anything about stocks, earnings, sectors</div></div>
+    </div>
+    <button class="ai-close" onclick="toggleAI()"><i class="ti ti-x"></i></button>
+  </div>
+  <div class="ai-messages" id="aiMessages">
+    <div class="ai-msg assistant"><div class="ai-bubble">Hi! I'm your personal AI investment analyst. Ask me anything — company fundamentals, earnings breakdowns, sector analysis, bull/bear cases, or what a financial term means. I'll give you a direct answer with real reasoning, not just a link to an article.</div></div>
+    <div class="ai-msg assistant"><div class="ai-bubble">💡 <strong>Try asking:</strong><br>• "What's the bull case for Cameco (CCJ)?"<br>• "Why is nuclear energy booming right now?"<br>• "Explain what a short squeeze is and why RIOT could squeeze"<br>• "Compare CoreWeave vs AWS for AI workloads"<br>• "What are senior housing REITs and why invest now?"<br>• "What is the Aschenbrenner thesis?"</div></div>
+  </div>
+  <div class="ai-input-wrap">
+    <div class="ai-quick-btns">
+      <button class="ai-quick" onclick="askAI('What is the bull case for Cameco CCJ uranium stock?')">Bull case CCJ</button>
+      <button class="ai-quick" onclick="askAI('Why is nuclear energy booming in 2026?')">Nuclear boom</button>
+      <button class="ai-quick" onclick="askAI('Explain what a short squeeze is and why RIOT Platforms could squeeze right now')">RIOT squeeze?</button>
+      <button class="ai-quick" onclick="askAI('Compare CoreWeave CRWV vs traditional cloud providers AWS Azure for AI workloads')">CRWV vs AWS</button>
+      <button class="ai-quick" onclick="askAI('What are senior housing REITs and why are they a good investment opportunity in 2026?')">Senior REITs</button>
+      <button class="ai-quick" onclick="askAI('What is the Aschenbrenner AI infrastructure thesis and why has Situational Awareness LP returned so much?')">Aschenbrenner thesis</button>
+      <button class="ai-quick" onclick="askAI('What is the Fear and Greed Index and how should I use it as a contrarian investor?')">Fear &amp; Greed</button>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" id="aiInput" placeholder="Ask about any stock, sector, or investment concept..." onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendAI()}">
+      <button class="ai-send" onclick="sendAI()"><i class="ti ti-send"></i></button>
+    </div>
+  </div>
+</div>
+
+</div><!-- /shell -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+// Clock
+setInterval(()=>{document.getElementById('clock').textContent=new Date().toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});},1000);
+
+// Ticker tape
+const tickers=[
+  {s:'SPY',p:'$751.83',c:'+0.4%',u:true},{s:'QQQ',p:'$719.69',c:'+1.0%',u:true},
+  {s:'DIA',p:'$524.69',c:'-0.1%',u:false},{s:'BTC',p:'$62,500',c:'-2.0%',u:false},
+  {s:'ETH',p:'$1,776',c:'-2.7%',u:false},{s:'CRWV',p:'$83.31',c:'-6.3%',u:false},
+  {s:'RIOT',p:'$28.90',c:'+0.0%',u:true},{s:'BE',p:'$232.42',c:'-15% 5d',u:false},
+  {s:'OIL',p:'~$65',c:'-5.0%',u:false},{s:'CEG',p:'Nuclear',c:'Watchlist',u:true},
+  {s:'CCJ',p:'Uranium',c:'Watchlist',u:true},{s:'SPCX',p:'IPO',c:'+39%',u:true},
+  {s:'OIL',p:'$80.05',c:'+2.4%',u:true},{s:'F&G',p:'22',c:'Extreme Fear',u:false},
+];
+function renderTape(){
+  const t=document.getElementById('tape');
+  t.innerHTML=[...tickers,...tickers].map(x=>`<div class="tick"><span class="t-sym">${x.s}</span><span class="t-p">${x.p}</span><span class="${x.u?'up':'dn'}">${x.c}</span></div>`).join('');
+}
+renderTape();
+window.tickers=tickers;
+window.renderTape=renderTape;
+
+// Page switching
+const meta={
+  market:['Market overview','Tuesday Jul 14, 2026 · CPI cools to 3.5% · Iran blockade reinstated'],
+  watchlist:['My watchlist','All tracked positions including new sector additions'],
+  earnings:['Earnings calendar','Week of July 13–17 · Big-bank earnings · TSMC, NFLX ahead'],
+  macro:['Macro calendar','Economic events & Fed schedule — plan ahead'],
+  rotation:['Sector rotation radar','Where institutional money is flowing — exclusive'],
+  sectors:['Booming sectors','5 sectors with strongest structural tailwinds 2026–2027'],
+  news:['News feed','Your portfolio + fresh sector opportunities · Credible sources only'],
+  ipo:['IPO watch','Space, defense & nuclear energy recent listings — exclusive'],
+  gems:['Hidden gems','Undervalued companies with high upside potential'],
+  insider:['Insider signals','Follow the smart money — Form 4 filings'],
+  options:['Options flow','Unusual activity & golden sweeps from institutional players'],
+  politician:['Congress trades','STOCK Act disclosures — follow elected officials'],
+  short:['Short interest','Squeeze candidates & high short float stocks'],
+  onchain:['Crypto on-chain','BTC & ETH blockchain health metrics'],
+  sentiment:['Fear & Greed Index','Market emotion gauge · Jul 14: 22 (Extreme Fear, crypto)'],
+  notes:['Investment thesis builder','Write & save your investment reasoning — exclusive'],
+  alerts:['Smart alerts panel','Your personal trigger watchlist — exclusive'],
+  portfolio:['Aschenbrenner bot','Robinhood Agentic account ••••1573'],
+};
+function go(id,el){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  el.classList.add('active');
+  const[pt,ps]=meta[id]||['',''];
+  document.getElementById('pgTitle').textContent=pt;
+  document.getElementById('pgSub').textContent=ps;
+  if(id==='watchlist'&&!window._cc)buildCryptoChart();
+  if(id==='portfolio'&&!window._ac)buildAllocChart();
+}
+
+// Gem toggles
+function tg(id){
+  const b=document.getElementById('gb-'+id),c=document.getElementById('cv-'+id);
+  const o=b.classList.toggle('open');
+  c.classList.toggle('open',o);
+}
+
+// Sector stock data
+const sectorData={
+  nuclear:{label:'☢️ Nuclear energy — key stocks to research',stocks:[
+    {tick:'CEG',name:'Constellation Energy',thesis:'Largest nuclear operator in US. After Jan 2026 Calpine acquisition = largest private power producer in world (~55 GW). Meta signed agreements for up to 6.6 GWe of nuclear capacity from CEG. Morgan Stanley recently raised price target.',tags:['Largest US nuclear','AI power deals','Meta partnership']},
+    {tick:'CCJ',name:'Cameco Corporation',thesis:'Largest publicly traded uranium miner. Pulled back 22% from 52-week high = potential dip entry. Uranium long-term price climbed to $91.50/lb. Motley Fool analysts say buy "like there\'s no tomorrow." 38 countries pledged to triple nuclear capacity by 2050.',tags:['Uranium miner','22% pullback','Motley Fool buy']},
+    {tick:'BWXT',name:'BWX Technologies',thesis:'Exclusive supplier of reactors to US Navy. Recently awarded $1.6B contract from DOE for uranium enrichment, $1.5B NNSA contract, $174M naval fuel contract. Dual defense + AI nuclear exposure. Motley Fool calls it one of the quietly becoming trades of the year.',tags:['US Navy exclusive','$3.1B contracts','Defense + nuclear']},
+    {tick:'OKLO',name:'Oklo Inc.',thesis:'Next-gen small modular fast reactors for data centers and military bases. US military filed intent for 75MW reactor at Eielson Air Force Base. Sam Altman (OpenAI) is a major backer. Went from $25 to $194 then pulled back to ~$63. Early-stage, very volatile, very high risk/reward.',tags:['Sam Altman backed','Military contracts','High risk/reward']},
+  ]},
+  space:{label:'🚀 Space & defense — key stocks to research',stocks:[
+    {tick:'RKLB',name:'Rocket Lab USA',thesis:'Most active launch company after SpaceX. Builds both rockets AND spacecraft components and subsystems. SpaceX IPO halo is lifting all space names. Nasdaq-100 inclusion alongside CRWV in June 2026. One of the most accessible pure-play space stocks.',tags:['SpaceX halo','Nasdaq-100','Launches + components']},
+    {tick:'VOYG',name:'Voyager Technologies',thesis:'Majority owner of Starlab — the commercial successor to ISS (joint venture with Airbus, Mitsubishi, MDA Space). Under NASA award to develop and operate it. Just acquired Astrobotic for lunar missions. Listed June 2025 — retail investors largely unaware.',tags:['ISS successor (Starlab)','NASA contract','Lunar + space station']},
+    {tick:'PL',name:'Planet Labs PBC',thesis:'Operates 200+ satellites providing daily imagery of the entire Earth. Government, agriculture, insurance, and intelligence clients. Subscription revenue model. Next-gen Pelican-11 satellite launching soon. SpaceX rally lifting the whole space sector.',tags:['200+ satellites','Daily Earth imagery','Subscription revenue']},
+    {tick:'AVAV',name:'AeroVironment',thesis:'Drone specialist. Drone warfare proven critical in modern conflict (Ukraine, Iran). Expected sector growth as militaries worldwide modernize. More volatile than LHX but higher upside. Motley Fool includes it in their top defense picks.',tags:['Drone warfare','Post-conflict rebuild','Defense growth']},
+  ]},
+  healthcare:{label:'🏥 Senior housing REITs — key stocks to research',stocks:[
+    {tick:'WELL',name:'Welltower Inc.',thesis:'Largest senior housing REIT in the US. Baby boomers hitting 80+ creates structural demand — 80+ population spends 4x healthcare average and will nearly double in next 10 years. Rate cuts would be a massive catalyst. Fidelity flagging as underweighted opportunity for 2026.',tags:['Largest senior REIT','Baby boomer demand','Rate cut catalyst']},
+    {tick:'CTRE',name:'CareTrust REIT',thesis:'Strong Q1 2026 with $747M of new investments announced. CEO committed to aggressive acquisition pace with no signs of slowing. Specializes in skilled nursing and senior housing. Smaller and faster-growing than WELL — more upside per dollar invested.',tags:['$747M invested Q1','High growth pace','Skilled nursing focus']},
+    {tick:'OHI',name:'Omega Healthcare Investors',thesis:'Focused on skilled nursing facilities and senior housing. Offers dividend yield up to 6.5%. Aging demographics = structural demand driver. Motley Fool recommends for income-seeking investors. Monthly dividend is rare and valuable.',tags:['6.5% dividend yield','Monthly dividend','Income + growth']},
+    {tick:'VTR',name:'Ventas Inc.',thesis:'Affirmed FY2026 FFO guidance of $3.82–$3.89. Pulled back about 9% over past month = potential entry point. Life sciences + senior housing dual portfolio. Morningstar rates as undervalued.',tags:['FY26 guidance affirmed','Recent pullback','Life science + seniors']},
+  ]},
+  defense:{label:'🛡️ Defense tech — key stocks to research',stocks:[
+    {tick:'LHX',name:'L3Harris Technologies',thesis:'Hybrid prime/subcontractor focused on high-margin electronics, sensors, and communication systems. Stable government contracts. Steady dividend growth. Less volatile than pure-play space names — better for the income-oriented portion of an aggressive portfolio.',tags:['Electronics & sensors','Stable government revenue','Dividend growth']},
+    {tick:'BWXT',name:'BWX Technologies',thesis:'Appears in both nuclear AND defense — exclusive manufacturer of US Navy nuclear reactors. Dual exposure thesis is unique. $3.1B in recent contracts from DOE and NNSA. Motley Fool says the nuclear build-out thesis makes BWX compelling for the long haul.',tags:['Navy nuclear exclusive','$3.1B contracts','Nuclear + defense dual']},
+    {tick:'AVAV',name:'AeroVironment',thesis:'Drone specialist. Modern warfare proved drones are decisive. As NATO allies rebuild after US-Iran conflict and Ukraine conflict, drone procurement is accelerating globally. Higher risk than LHX but higher upside tied to drone warfare modernization wave.',tags:['Drone modernization','Post-conflict rebuild','High growth defense']},
+  ]},
+  biotech:{label:'🧬 Biotech — key stocks and themes to watch',stocks:[
+    {tick:'ARE',name:'Alexandria Real Estate Equities',thesis:'The highest-quality life science REIT. Owns laboratory space in top biotech hubs (Boston, San Diego, SF). When biotech sector rebounds — which Fidelity and Morningstar both expect — ARE leads the charge. Currently cold due to biotech slowdown = potential contrarian entry.',tags:['Life science REIT','Contrarian play','Morningstar undervalued']},
+    {tick:'Various',name:'2026 Biotech IPO Class',thesis:'Biotech and healthcare stocks are "flocking to go public" in 2026 per Morningstar. The sector is recovering. AI drug discovery is the next frontier — companies using AI to identify drug candidates are compressing timelines from 10 years to 2–3. Watch for new IPOs at the AI-biotech intersection.',tags:['AI drug discovery','2026 IPO class','Emerging frontier']},
+  ]},
+};
+function showSector(id){
+  const d=sectorData[id];
+  if(!d)return;
+  document.getElementById('sector-detail-lbl').textContent=d.label;
+  document.getElementById('sector-detail-list').innerHTML=d.stocks.map(s=>`
+    <div class="disc-card">
+      <div class="disc-hdr">
+        <div class="disc-tick">${s.tick}</div>
+        <div><div class="disc-name">${s.name}</div></div>
+      </div>
+      <div class="disc-thesis">${s.thesis}</div>
+      <div class="disc-tags">${s.tags.map(t=>`<span class="tag ta">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+  const panel=document.getElementById('sector-detail');
+  panel.style.display='block';
+  panel.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Alert toggle
+function toggleAlert(el){
+  const done=el.classList.toggle('done');
+  el.querySelector('i').style.display=done?'inline':'none';
+}
+
+// Notes
+function saveNote(){
+  const ticker=document.getElementById('noteTicker').value.trim().toUpperCase();
+  const name=document.getElementById('noteName').value.trim();
+  const text=document.getElementById('noteText').value.trim();
+  if(!ticker||!text)return;
+  const list=document.getElementById('notes-list');
+  const today=new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  const div=document.createElement('div');
+  div.className='note-card';
+  div.innerHTML=`<div class="note-hdr"><span class="note-tick">${ticker}</span><span style="font-size:12px;color:var(--t2)">${name}</span><span class="note-date">${today}</span></div><div class="note-body">${text}</div>`;
+  list.insertBefore(div,list.firstChild);
+  document.getElementById('noteTicker').value='';
+  document.getElementById('noteName').value='';
+  document.getElementById('noteText').value='';
+}
+
+// AI Panel
+function toggleAI(){document.getElementById('aiPanel').classList.toggle('open');}
+function askAI(q){document.getElementById('aiInput').value=q;sendAI();}
+async function sendAI(){
+  const input=document.getElementById('aiInput');
+  const q=input.value.trim();
+  if(!q)return;
+  input.value='';
+  const msgs=document.getElementById('aiMessages');
+  // User message
+  const ud=document.createElement('div');ud.className='ai-msg user';ud.innerHTML=`<div class="ai-bubble">${q}</div>`;msgs.appendChild(ud);
+  // Thinking
+  const td=document.createElement('div');td.className='ai-msg assistant';td.innerHTML=`<div class="ai-bubble"><div class="ai-thinking"><div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div></div></div>`;msgs.appendChild(td);msgs.scrollTop=msgs.scrollHeight;
+  try{
+    const resp=await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-6',max_tokens:1000,
+        system:`You are a sharp, knowledgeable investment analyst embedded in "The Edge" — a personal investment intelligence hub. The user is an aggressive momentum investor focused on AI infrastructure, bitcoin mining, nuclear energy, space stocks, and senior housing REITs. Their portfolio (pending execution): CRWV $25, RIOT $20, BE $20, BTC $25, $10 cash — modeled on Leopold Aschenbrenner's Situational Awareness LP thesis ($225M to $5.5B in 12 months).
+
+Answer investment questions directly, clearly, and with genuine insight. Give bull cases, bear cases, key metrics, and your honest assessment. Don't hedge everything — be direct and confident while noting real risks. Keep answers concise (4-7 sentences typically). Use plain text, no markdown headers. Today is July 14, 2026. Context: June CPI came in at 3.5% annual vs 3.8% expected — cooler than forecast, easing rate-hike pressure. The US-Iran ceasefire has collapsed and Trump reinstated the Strait of Hormuz blockade; Brent crude is above $80. IBM fell ~24% on an earnings warning. Semis rebounded. S&P ~7,548, Nasdaq ~26,150, Dow ~52,470. BTC ~$62,500, ETH ~$1,640. Crypto Fear & Greed at 22 (Extreme Fear); stock-market Fear & Greed ~62 (Greed). CRWV ~$83 (down sharply from June on neocloud selloff and Meta Compute competition fears), RIOT ~$29, BE ~$232 (hit by Hunterbrook short report). CEG ~$256, CCJ ~$91.`,
+        messages:[{role:'user',content:q}]
+      })
+    });
+    const data=await resp.json();
+    const answer=data.content?.filter(b=>b.type==='text').map(b=>b.text).join('')||'Unable to get a response — please try again.';
+    td.querySelector('.ai-bubble').innerHTML=answer.replace(/\n\n/g,'<br><br>').replace(/\n/g,'<br>');
+  }catch(e){
+    td.querySelector('.ai-bubble').textContent='Connection error. Please try again in a moment.';
+  }
+  msgs.scrollTop=msgs.scrollHeight;
+}
+
+// Charts
+window.addEventListener('load',()=>{
+  new Chart(document.getElementById('spxChart'),{
+    type:'line',
+    data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'S&P 500',data:[5900,6150,6600,5800,7050,7554],borderColor:'#4f9cf9',backgroundColor:'rgba(79,156,249,.07)',borderWidth:2,pointRadius:4,pointBackgroundColor:'#4f9cf9',fill:true,tension:.4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:'#0d1018',borderColor:'#1e2435',borderWidth:1,titleColor:'#e8ecf5',bodyColor:'#8b94b0'}},scales:{x:{grid:{color:'rgba(30,36,53,.8)'},ticks:{color:'#4a5270',font:{size:11}}},y:{grid:{color:'rgba(30,36,53,.8)'},ticks:{color:'#4a5270',font:{size:11},callback:v=>v.toLocaleString()}}}}
+  });
+});
+function buildCryptoChart(){
+  window._cc=new Chart(document.getElementById('cryptoChart'),{
+    type:'line',
+    data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],datasets:[{label:'BTC (normalized)',data:[100,91,96,80,94,103],borderColor:'#f5a623',backgroundColor:'transparent',borderWidth:2,pointRadius:3,tension:.4},{label:'ETH (normalized)',data:[100,88,92,72,88,98],borderColor:'#a78bfa',backgroundColor:'transparent',borderWidth:2,pointRadius:3,borderDash:[4,3],tension:.4}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{color:'#8b94b0',font:{size:11},boxWidth:10}}},scales:{x:{grid:{color:'rgba(30,36,53,.8)'},ticks:{color:'#4a5270',font:{size:11}}},y:{grid:{color:'rgba(30,36,53,.8)'},ticks:{color:'#4a5270',font:{size:11},callback:v=>v+'%'}}}}
+  });
+}
+function buildAllocChart(){
+  window._ac=new Chart(document.getElementById('allocChart'),{
+    type:'doughnut',
+    data:{labels:['CRWV','BTC','RIOT','BE','Cash'],datasets:[{data:[25,25,20,20,10],backgroundColor:['#4f9cf9','#f5a623','#00d97e','#a78bfa','#4a5270'],borderWidth:0}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:true,position:'right',labels:{color:'#8b94b0',font:{size:11},boxWidth:10,padding:12}}}}
+  });
+}
+</script>
+<script>
+// Live data loader — fetches data/market_data.json and overlays it onto the
+// hardcoded fallback markup. Any field missing from the JSON (e.g. no
+// FINNHUB_API_KEY configured yet) simply leaves the existing hardcoded value
+// in place, so the page always renders something reasonable.
+(function(){
+  fetch('data/market_data.json',{cache:'no-store'})
+    .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(data=>{ try{ applyLiveData(data); }catch(e){ console.warn('[live-data] render failed, keeping fallback values',e); } })
+    .catch(e=>{ console.warn('[live-data] fetch failed, keeping fallback values',e); });
+
+  function fmtPrice(sym,price){
+    if(price==null) return null;
+    const decimals=(sym==='BTC')?0:2;
+    return '$'+price.toLocaleString('en-US',{minimumFractionDigits:decimals,maximumFractionDigits:decimals});
+  }
+  function fmtPct(pct){
+    if(pct==null) return null;
+    return (pct>=0?'+':'')+pct.toFixed(2)+'%';
+  }
+  function fgColor(v){
+    if(v<25) return 'var(--red)';
+    if(v<45) return 'var(--amber)';
+    if(v<55) return 'var(--t2)';
+    return 'var(--green)';
+  }
+
+  function applyLiveData(data){
+    updateLastUpdated(data);
+    updateIndexCards(data);
+    updateWatchlistRows(data);
+    updateFearGreed(data);
+    updateTickerTape(data);
+  }
+
+  function updateLastUpdated(data){
+    if(!data.last_updated) return;
+    const el=document.getElementById('dataUpdated');
+    if(!el) return;
+    const d=new Date(data.last_updated);
+    if(isNaN(d.getTime())) return;
+    el.textContent='Data as of '+d.toLocaleString('en-US',{month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+  }
+
+  function updateIndexCards(data){
+    Object.entries(data.market||{}).forEach(([sym,q])=>{
+      if(!q || q.price==null) return;
+      const card=document.querySelector(`.icard[data-ticker="${sym}"]`);
+      if(!card) return;
+      const ival=card.querySelector('.ival');
+      const ichg=card.querySelector('.ichg');
+      if(ival) ival.textContent=q.price.toLocaleString('en-US',{maximumFractionDigits:2});
+      if(ichg && q.pct!=null){
+        ichg.textContent=fmtPct(q.pct)+' today';
+        ichg.className='ichg '+(q.pct>=0?'up':'dn');
+      }
+    });
+  }
+
+  function updateWatchlistRows(data){
+    const quotes=Object.assign({},data.market||{},data.watchlist||{});
+    document.querySelectorAll('.wlrow[data-ticker]').forEach(row=>{
+      const sym=row.getAttribute('data-ticker');
+      let price=null, pct=null;
+      if(sym==='BTC'||sym==='ETH'){
+        const c=(data.crypto||{})[sym];
+        if(c && c.price!=null){ price=c.price; pct=c.change_24h; }
+      } else if(quotes[sym] && quotes[sym].price!=null){
+        price=quotes[sym].price; pct=quotes[sym].pct;
+      }
+      if(price==null) return;
+      const priceEl=row.querySelector('.wlprice');
+      const chgEl=row.querySelector('.wlchg');
+      if(priceEl) priceEl.textContent=fmtPrice(sym,price);
+      if(chgEl && pct!=null){
+        chgEl.textContent=fmtPct(pct);
+        chgEl.className='wlchg '+(pct>=0?'up':'dn');
+      }
+    });
+  }
+
+  function updateFearGreed(data){
+    const fg=data.fear_greed;
+    if(!fg || fg.value==null) return;
+    const color=fgColor(fg.value);
+    const main=document.getElementById('fgMain');
+    const cls=document.getElementById('fgClass');
+    const sub=document.getElementById('fgSub');
+    const latest=document.getElementById('fgLatest');
+    if(main){ main.textContent=fg.value; main.style.color=color; }
+    if(cls){ cls.textContent=fg.classification+' (crypto)'; cls.style.color=color; }
+    if(latest){ latest.textContent=fg.value; latest.style.color=color; }
+    const history=fg.history||[];
+    if(sub){
+      const d=history[0]?history[0].date:'';
+      sub.textContent='Crypto F&G as of '+d+'.';
+    }
+    if(history.length>1){
+      const weekAgo=history[Math.min(6,history.length-1)];
+      const wEl=document.getElementById('fgWeekAgo');
+      if(wEl && weekAgo) wEl.textContent=weekAgo.value;
+      const avg=Math.round(history.reduce((s,h)=>s+h.value,0)/history.length);
+      const avgEl=document.getElementById('fgMonthAvg');
+      if(avgEl) avgEl.textContent=avg;
+    }
+  }
+
+  function updateTickerTape(data){
+    if(!window.tickers || !window.renderTape) return;
+    const bySym={
+      'SPY': data.market && data.market.SPY,
+      'QQQ': data.market && data.market.QQQ,
+      'DIA': data.market && data.market.DIA,
+      'BTC': data.crypto && data.crypto.BTC,
+      'ETH': data.crypto && data.crypto.ETH,
+      'CRWV': data.watchlist && data.watchlist.CRWV,
+      'RIOT': data.watchlist && data.watchlist.RIOT,
+      'BE': data.watchlist && data.watchlist.BE,
+      'CEG': data.watchlist && data.watchlist.CEG,
+      'CCJ': data.watchlist && data.watchlist.CCJ,
+    };
+    let changed=false;
+    window.tickers.forEach(item=>{
+      const q=bySym[item.s];
+      if(!q || q.price==null) return;
+      const pct=(item.s==='BTC'||item.s==='ETH')?q.change_24h:q.pct;
+      item.p=fmtPrice(item.s,q.price);
+      if(pct!=null){ item.c=fmtPct(pct); item.u=pct>=0; }
+      changed=true;
+    });
+    if(data.fear_greed && data.fear_greed.value!=null){
+      const fgItem=window.tickers.find(x=>x.s==='F&G');
+      if(fgItem){ fgItem.p=String(data.fear_greed.value); fgItem.c=data.fear_greed.classification; fgItem.u=data.fear_greed.value>=45; changed=true; }
+    }
+    if(changed) window.renderTape();
+  }
+})();
+</script>
+</body>
+</html>

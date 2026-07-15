@@ -1,0 +1,465 @@
+{
+  "last_updated": "2026-07-15T04:21:49Z",
+  "market": {
+    "SPY": {
+      "price": 751.83,
+      "change": 2.66,
+      "pct": 0.3551,
+      "high": 753.34,
+      "low": 748.66,
+      "open": 750.91,
+      "prev_close": 749.17,
+      "name": "S&P 500"
+    },
+    "QQQ": {
+      "price": 719.69,
+      "change": 7.95,
+      "pct": 1.117,
+      "high": 722.29,
+      "low": 714.34,
+      "open": 720.22,
+      "prev_close": 711.74,
+      "name": "Nasdaq-100"
+    },
+    "DIA": {
+      "price": 524.69,
+      "change": 0.22,
+      "pct": 0.0419,
+      "high": 526.72,
+      "low": 522.56,
+      "open": 523.32,
+      "prev_close": 524.47,
+      "name": "Dow Jones"
+    }
+  },
+  "watchlist": {
+    "CRWV": {
+      "price": 79.94,
+      "change": -3.37,
+      "pct": -4.0451,
+      "high": 85.91,
+      "low": 78.4,
+      "open": 84.66,
+      "prev_close": 83.31,
+      "name": "CoreWeave"
+    },
+    "RIOT": {
+      "price": 20.19,
+      "change": 0,
+      "pct": 0,
+      "high": 21.57,
+      "low": 19.565,
+      "open": 21.2,
+      "prev_close": 20.19,
+      "name": "Riot Platforms"
+    },
+    "BE": {
+      "price": 243.4,
+      "change": 9.91,
+      "pct": 4.2443,
+      "high": 252,
+      "low": 234.53,
+      "open": 246.59,
+      "prev_close": 233.49,
+      "name": "Bloom Energy"
+    },
+    "CEG": {
+      "price": 256.43,
+      "change": -1.14,
+      "pct": -0.4426,
+      "high": 266,
+      "low": 255.18,
+      "open": 261.998,
+      "prev_close": 257.57,
+      "name": "Constellation Energy"
+    },
+    "CCJ": {
+      "price": 91.57,
+      "change": 1.37,
+      "pct": 1.5188,
+      "high": 93,
+      "low": 91.165,
+      "open": 91.8,
+      "prev_close": 90.2,
+      "name": "Cameco"
+    },
+    "RKLB": {
+      "price": 78.81,
+      "change": 2.08,
+      "pct": 2.7108,
+      "high": 82.54,
+      "low": 78.51,
+      "open": 78.76,
+      "prev_close": 76.73,
+      "name": "Rocket Lab"
+    },
+    "MU": {
+      "price": 983.12,
+      "change": 46.12,
+      "pct": 4.9221,
+      "high": 994.8,
+      "low": 950.07,
+      "open": 988.38,
+      "prev_close": 937,
+      "name": "Micron Technology"
+    },
+    "CLSK": {
+      "price": 13.45,
+      "change": 1.09,
+      "pct": 8.8188,
+      "high": 15.1,
+      "low": 12.8,
+      "open": 14.685,
+      "prev_close": 12.36,
+      "name": "CleanSpark"
+    },
+    "OPFI": {
+      "price": 9.2,
+      "change": -0.01,
+      "pct": -0.1086,
+      "high": 9.254,
+      "low": 9.06,
+      "open": 9.21,
+      "prev_close": 9.21,
+      "name": "OppFi"
+    },
+    "TJX": {
+      "price": 150.34,
+      "change": -0.19,
+      "pct": -0.1262,
+      "high": 151.1697,
+      "low": 148.88,
+      "open": 150.25,
+      "prev_close": 150.53,
+      "name": "TJX Companies"
+    },
+    "CTRE": {
+      "price": 40.49,
+      "change": 0.16,
+      "pct": 0.3967,
+      "high": 40.725,
+      "low": 40.12,
+      "open": 40.5,
+      "prev_close": 40.33,
+      "name": "CareTrust REIT"
+    }
+  },
+  "crypto": {
+    "BTC": {
+      "price": 64748,
+      "change_24h": 3.61,
+      "market_cap": 1298795274470.4656
+    },
+    "ETH": {
+      "price": 1874.97,
+      "change_24h": 5.26,
+      "market_cap": 226287709813.45172
+    },
+    "total_market_cap": 2306363236569.3516
+  },
+  "fear_greed": {
+    "value": 25,
+    "classification": "Extreme Fear",
+    "history": [
+      {
+        "value": 25,
+        "classification": "Extreme Fear",
+        "date": "2026-07-15"
+      },
+      {
+        "value": 22,
+        "classification": "Extreme Fear",
+        "date": "2026-07-14"
+      },
+      {
+        "value": 28,
+        "classification": "Fear",
+        "date": "2026-07-13"
+      },
+      {
+        "value": 26,
+        "classification": "Fear",
+        "date": "2026-07-12"
+      },
+      {
+        "value": 26,
+        "classification": "Fear",
+        "date": "2026-07-11"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-07-10"
+      },
+      {
+        "value": 22,
+        "classification": "Extreme Fear",
+        "date": "2026-07-09"
+      },
+      {
+        "value": 20,
+        "classification": "Extreme Fear",
+        "date": "2026-07-08"
+      },
+      {
+        "value": 27,
+        "classification": "Fear",
+        "date": "2026-07-07"
+      },
+      {
+        "value": 24,
+        "classification": "Extreme Fear",
+        "date": "2026-07-06"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-07-05"
+      },
+      {
+        "value": 22,
+        "classification": "Extreme Fear",
+        "date": "2026-07-04"
+      },
+      {
+        "value": 21,
+        "classification": "Extreme Fear",
+        "date": "2026-07-03"
+      },
+      {
+        "value": 19,
+        "classification": "Extreme Fear",
+        "date": "2026-07-02"
+      },
+      {
+        "value": 11,
+        "classification": "Extreme Fear",
+        "date": "2026-07-01"
+      },
+      {
+        "value": 15,
+        "classification": "Extreme Fear",
+        "date": "2026-06-30"
+      },
+      {
+        "value": 12,
+        "classification": "Extreme Fear",
+        "date": "2026-06-29"
+      },
+      {
+        "value": 18,
+        "classification": "Extreme Fear",
+        "date": "2026-06-28"
+      },
+      {
+        "value": 15,
+        "classification": "Extreme Fear",
+        "date": "2026-06-27"
+      },
+      {
+        "value": 13,
+        "classification": "Extreme Fear",
+        "date": "2026-06-26"
+      },
+      {
+        "value": 12,
+        "classification": "Extreme Fear",
+        "date": "2026-06-25"
+      },
+      {
+        "value": 17,
+        "classification": "Extreme Fear",
+        "date": "2026-06-24"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-06-23"
+      },
+      {
+        "value": 20,
+        "classification": "Extreme Fear",
+        "date": "2026-06-22"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-06-21"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-06-20"
+      },
+      {
+        "value": 14,
+        "classification": "Extreme Fear",
+        "date": "2026-06-19"
+      },
+      {
+        "value": 15,
+        "classification": "Extreme Fear",
+        "date": "2026-06-18"
+      },
+      {
+        "value": 22,
+        "classification": "Extreme Fear",
+        "date": "2026-06-17"
+      },
+      {
+        "value": 23,
+        "classification": "Extreme Fear",
+        "date": "2026-06-16"
+      }
+    ]
+  },
+  "insiders": [
+    {
+      "ticker": "CRWV",
+      "insider": "Michael N Intrator",
+      "position": "CEO and President",
+      "activity": "Sale",
+      "filing_date": "2026-07-09"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Nitin Agrawal",
+      "position": "Chief Financial Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-09"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Kristen J Mcveety",
+      "position": "GC and Secretary",
+      "activity": "Sale",
+      "filing_date": "2026-07-08"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Brannin Mcbee",
+      "position": "Chief Development Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-08"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Brannin Mcbee",
+      "position": "Chief Development Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-08"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Ryan D. Werner",
+      "position": "SVP, CAO",
+      "activity": "Sale",
+      "filing_date": "2026-07-09"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Jaime Leverton",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Douglas Mouton",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Lance Varro D'Ambrosio",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Michael John Turner",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Cynthia J Warner",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Jeffrey R Immelt",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Aman Joshi",
+      "position": "Chief Commercial Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Aman Joshi",
+      "position": "Chief Commercial Officer",
+      "activity": "Sale",
+      "filing_date": "2026-06-17"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Maciej Kurzymski",
+      "position": "Chief Accounting Officer",
+      "activity": "Sale",
+      "filing_date": "2026-06-17"
+    },
+    {
+      "ticker": "MU",
+      "insider": "April S Arnzen",
+      "position": "EVP and Chief People Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Lynn A Dugle",
+      "position": "Director",
+      "activity": "Sale",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Robert Holmes Swan",
+      "position": "Director",
+      "activity": "DERIVATIVE ACQUISITION",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Teyin M Liu",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Sanjay Mehrotra",
+      "position": "President and CEO",
+      "activity": "Sale",
+      "filing_date": "2026-06-30"
+    },
+    {
+      "ticker": "CEG",
+      "insider": "Charles L. Harrington",
+      "position": "Director",
+      "activity": "DERIVATIVE ACQUISITION",
+      "filing_date": "2026-07-01"
+    }
+  ]
+}

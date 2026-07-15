@@ -1,0 +1,27 @@
+name: Update Market Data
+on:
+  schedule:
+    - cron: '0 14 * * 1-5'  # 2pm UTC = ~9am ET, weekdays only
+    - cron: '0 22 * * 1-5'  # 10pm UTC = ~5pm ET, after market close
+  workflow_dispatch: {}       # manual trigger button
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r requirements.txt
+      - run: python scripts/fetch_all.py
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          EDGAR_IDENTITY: ${{ secrets.EDGAR_IDENTITY }}
+      - name: Commit updated data
+        run: |
+          git config user.name "The Edge Bot"
+          git config user.email "bot@theedge.com"
+          git add data/market_data.json
+          git diff --staged --quiet || git commit -m "Update market data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
