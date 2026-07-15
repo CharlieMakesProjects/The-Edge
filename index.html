@@ -7,8 +7,7 @@
 <meta property="og:title" content="The Edge — Investment Intelligence for Serious Investors">
 <meta property="og:description" content="The data Bloomberg charges thousands for. Free. Insider signals, congressional trades, sector rotation radar, AI analyst, and more.">
 <title>The Edge — Investment Intelligence Hub</title>
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234b96ff'/%3E%3Cstop offset='100%25' stop-color='%239d7dff'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Ccircle cx='50' cy='42' r='16' fill='none' stroke='white' stroke-width='7'/%3E%3Cline x1='62' y1='54' x2='78' y2='70' stroke='white' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
 <!-- Google Analytics — replace G-XXXXXXXXXX with your real Measurement ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
@@ -326,10 +325,11 @@ a{color:inherit;text-decoration:none}
     <button class="nl" id="nl-revenue" onclick="goPage('revenue')">Revenue model</button>
     <button class="nl" id="nl-advertise" onclick="goPage('advertise')">Advertise</button>
     <button class="nl" id="nl-agent" onclick="goPage('agent')">The agent</button>
+    <button class="nl" id="nl-about" onclick="goPage('about')">About</button>
   </div>
   <div class="nav-right">
     <button class="btn-ghost" onclick="goToNewsletter()">Subscribe free</button>
-    <button class="btn-glow" onclick="window.open('hub.html','_blank')"><i class="ti ti-telescope" style="font-size:14px"></i> Launch The Hub</button>
+    <button class="btn-glow" onclick="window.open('the_edge_v3.html','_blank')"><i class="ti ti-telescope" style="font-size:14px"></i> Launch The Hub</button>
   </div>
   <button class="hamburger" onclick="toggleMob()" id="ham" aria-label="Open menu" aria-expanded="false" aria-controls="mobMenu"><span></span><span></span><span></span></button>
 </nav>
@@ -339,8 +339,9 @@ a{color:inherit;text-decoration:none}
   <button class="nl" onclick="goPage('revenue');toggleMob()">Revenue model</button>
   <button class="nl" onclick="goPage('advertise');toggleMob()">Advertise</button>
   <button class="nl" onclick="goPage('agent');toggleMob()">The agent</button>
+  <button class="nl" onclick="goPage('about');toggleMob()">About</button>
   <button class="btn-ghost" onclick="goToNewsletter();toggleMob()">Subscribe free</button>
-  <button class="btn-glow" onclick="window.open('hub.html','_blank')" style="text-align:center">Launch The Hub →</button>
+  <button class="btn-glow" onclick="window.open('the_edge_v3.html','_blank')" style="text-align:center">Launch The Hub →</button>
 </div>
 <div style="height:62px"></div>
 
@@ -356,7 +357,7 @@ a{color:inherit;text-decoration:none}
       <p class="hero-sub">Insider Form 4 signals. Congressional STOCK Act trades. Sector rotation radar. Golden sweep options flow. Crypto on-chain data. AI analyst available 24/7. Daily market briefings. All in one hub — built for serious retail investors who are tired of being the last to know.</p>
       <div class="hero-ctas">
         <button class="btn-hero" onclick="goToNewsletter()"><i class="ti ti-mail" style="font-size:16px"></i>Get the weekly briefing — free</button>
-        <button class="btn-outline" onclick="window.open('hub.html','_blank')"><i class="ti ti-telescope" style="font-size:16px"></i>Launch The Hub</button>
+        <button class="btn-outline" onclick="window.open('the_edge_v3.html','_blank')"><i class="ti ti-telescope" style="font-size:16px"></i>Launch The Hub</button>
       </div>
       <div class="hero-stats">
         <div class="hs"><div class="hs-n" style="color:var(--green)">100%</div><div class="hs-l">Free forever</div></div>
@@ -467,7 +468,7 @@ a{color:inherit;text-decoration:none}
           <div class="pf"><i class="ti ti-check"></i>AI analyst — 10 questions/day</div>
           <div class="pf"><i class="ti ti-check"></i>Weekly newsletter briefing</div>
         </div>
-        <button class="price-cta pcta-free" onclick="window.open('hub.html','_blank')">Launch The Hub — free</button>
+        <button class="price-cta pcta-free" onclick="window.open('the_edge_v3.html','_blank')">Launch The Hub, free</button>
       </div>
 
       <!-- Pro -->
@@ -761,6 +762,102 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<!-- ═══════════ ABOUT ═══════════ -->
+<div class="pg" id="pg-about">
+  <div class="section">
+    <div style="text-align:center;margin-bottom:3rem">
+      <div class="hero-eyebrow" style="display:inline-flex"><span class="hero-dot"></span>The story behind The Edge</div>
+      <h2 class="sh2" style="max-width:700px;margin:0 auto">Built by a retail investor<br>who was tired of being<br><span class="grad-text">the last to know.</span></h2>
+    </div>
+
+    <!-- Founder intro -->
+    <div style="display:flex;gap:2.5rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:3rem">
+      <div style="flex:1;min-width:320px">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+          <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#4b96ff,#9d7dff);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;flex-shrink:0">CS</div>
+          <div>
+            <div style="font-size:1.25rem;font-weight:700;letter-spacing:-.02em">Charlie Scholl</div>
+            <div style="font-size:13px;color:var(--t2)">Founder & creator of The Edge</div>
+            <div style="font-size:12px;color:var(--t3)">Senior, Applied Finance · Texas Tech University</div>
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">I'm a 22 year old from a small country town in North Texas. My mom was a teacher and my dad was a firefighter. Neither of them came from finance or investing, but they both gave everything they had to our family in their own way.</p>
+        <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">My dad was an entrepreneur his whole life, running side businesses on top of firefighting, pulling 80 to 90 hour work weeks to provide for a family of five. My mom gave me the structure to excel in academics and sports throughout my entire childhood. They were both at almost every single sporting event I ever had, and that kind of presence and support is what made everything else possible. They both did their parts remarkably well, and I would not be where I am today without both of them.</p>
+        <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">The entrepreneurial drive started early. Around ten years old, I launched my first business selling homemade slime during the height of the trend, delivering orders around my small town on a bicycle and eventually shipping them out through the mail. Something clicked during that experience. The idea of building something from nothing, of creating value on my own terms, lit a fire that never went out. From that point on, I knew I wanted to build things and work for myself. I've been detailing vehicles ever since, which I still do on the side today, along with mowing yards and landscaping work. Every venture reinforced the same lesson: if you want something done right, and you want to provide for others the way you'd want to be provided for, you build it yourself.</p>
+        <p style="font-size:15px;color:var(--t2);line-height:1.8">But watching my dad, I realized something: <span style="color:var(--t1);font-weight:500">working hard is essential, but your money should be working hard too.</span> That realization changed everything for me.</p>
+      </div>
+    </div>
+
+    <div class="glow-rule" style="margin-bottom:2.5rem"></div>
+
+    <!-- The origin story -->
+    <div style="max-width:740px;margin:0 auto 3rem">
+      <div class="eyebrow" style="color:var(--green)">Where it started</div>
+      <h3 style="font-size:1.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:1.25rem">One stock at fifteen. A platform at twenty two.</h3>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">I bought my first stock when I was fifteen years old. Apple, through a custodial account under my dad's name. I watched it grow. Not dramatically, not overnight, but steadily. And through that experience, I fell in love with something most people my age never get exposed to: the power of compounding.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">That one stock taught me that time in the market matters more than anything else. Start early, stay consistent, and the math does the rest. It opened my eyes to what investing could mean for people like me, people who didn't grow up with a financial advisor at the dinner table or a trust fund waiting for them after college.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8">Seven years later, I'm a senior at Texas Tech studying Applied Finance, and that same curiosity has turned into something much bigger.</p>
+    </div>
+
+    <!-- The frustration -->
+    <div class="callout cl-a" style="max-width:740px;margin:0 auto 2.5rem"><i class="ti ti-alert-triangle"></i><div style="font-size:14px;line-height:1.75">
+      <strong style="color:var(--t1)">The problem I kept running into:</strong> every time I tried to get serious about research, whether it was insider trades, congressional stock activity, options flow, or sector analysis, the answer was always the same. <strong style="color:var(--amber)">Pay $29/month. Pay $99/month. Pay $2,000/month.</strong> And the few free tools that existed? Terrible formatting, scattered across ten different sites, and half of them looked like they were built in 2008. I couldn't afford hundreds of dollars a month for information. Most retail investors can't. That's not a personal problem. It's an industry problem.
+    </div></div>
+
+    <div style="max-width:740px;margin:0 auto 3rem">
+      <div class="eyebrow" style="color:var(--purple)">The honest truth</div>
+      <h3 style="font-size:1.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:1.25rem">I didn't know how to code. I taught myself anyway.</h3>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">I had zero coding knowledge when I started building The Edge six months ago. None. I didn't know what an API was. I didn't know how to deploy a website. I didn't know the difference between JavaScript and Python.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">But I believe everyone should have the knowledge and ability to invest. It just isn't taught unless you take the initiative, which I did. And I love having obstacles in my way because they create even better, truer vision and a stronger final product.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">I knew what I wanted to build: a single place where a retail investor could see everything, from insider signals and congressional trades to sector rotation, crypto on chain data, an AI analyst, and a Fear and Greed reading, without paying hundreds of dollars or bouncing between fifteen different tabs.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8">So I spent hours. Every day. Teaching myself, building, breaking things, rebuilding them. Six months of grinding, plus countless hours studying markets and finance in my free time on top of my coursework at Texas Tech. Not because someone told me to, but because I believe this should exist and nobody else was building it for people like us.</p>
+    </div>
+
+    <div class="glow-rule" style="margin-bottom:2.5rem"></div>
+
+    <!-- Mission statement -->
+    <div style="max-width:740px;margin:0 auto 3rem;text-align:center">
+      <div class="eyebrow" style="color:var(--blue)">Our mission</div>
+      <h3 style="font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.04em;margin-bottom:1.5rem;line-height:1.2">Close the information gap between<br><span class="grad-text">Wall Street and everyone else.</span></h3>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">Institutional investors have had an unfair advantage for decades. They have the data, the tools, and the speed. Retail investors get the leftovers: delayed information, expensive paywalls, and platforms designed to extract fees rather than deliver value.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8">The Edge exists to change that. Not by charging you a premium to see what Congress is trading. Not by locking insider signals behind a $99 paywall. By putting every piece of intelligence a serious investor needs in one free hub, because access to information shouldn't depend on the size of your bank account.</p>
+    </div>
+
+    <!-- Values -->
+    <div style="max-width:740px;margin:0 auto 3rem">
+      <div class="eyebrow">What I believe</div>
+      <h3 style="font-size:1.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:1.5rem">The principles behind every decision I make for this platform.</h3>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="callout cl-g"><i class="ti ti-clock"></i><div><strong style="color:var(--t1)">Start early, stay consistent.</strong><span style="color:var(--t2)"> The best time to start investing was ten years ago. The second best time is today. Compounding is the most powerful force in finance, but only if you give it time. That's why The Edge is free at the base level: I don't want cost to be the reason someone doesn't start.</span></div></div>
+        <div class="callout cl-b"><i class="ti ti-lock-open"></i><div><strong style="color:var(--t1)">Information should be accessible.</strong><span style="color:var(--t2)"> Congressional trades are public record. Insider filings are public record. Yet people charge $29 to $99 per month to show you what's already publicly available in an ugly format on the SEC's website. That's not adding value. That's gatekeeping. The Edge formats that data for free.</span></div></div>
+        <div class="callout cl-p"><i class="ti ti-brain"></i><div><strong style="color:var(--t1)">Think for yourself.</strong><span style="color:var(--t2)"> The Edge gives you data, context, and tools, not "hot picks" or "guaranteed plays." I built the thesis builder and the AI analyst specifically so you develop your own reasoning, not so you blindly follow someone else's. The best investors think independently.</span></div></div>
+        <div class="callout cl-a"><i class="ti ti-heart"></i><div><strong style="color:var(--t1)">Build something you'd actually use.</strong><span style="color:var(--t2)"> Every feature on The Edge exists because I wanted it for myself. The sector rotation radar, the smart alerts, the embedded AI analyst. I built those because I couldn't find them anywhere else. If I wouldn't use it, it doesn't go on the platform.</span></div></div>
+      </div>
+    </div>
+
+    <div class="glow-rule" style="margin-bottom:2.5rem"></div>
+
+    <!-- Personal side -->
+    <div style="max-width:740px;margin:0 auto 3rem">
+      <div class="eyebrow" style="color:var(--cyan)">Beyond the screen</div>
+      <h3 style="font-size:1.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:1.25rem">When I'm not building The Edge.</h3>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8;margin-bottom:1.25rem">I don't like being cooped up inside. Never have. If I'm not working on The Edge, you'll probably find me outside, whether it's fishing at a stock tank in the country, playing pickleball or tennis with friends, shooting hoops, or just being with my family. I'm deeply family oriented, and a lot of why I care so much about financial independence comes from wanting to give my family the same security my dad worked so hard to build, but without the 90 hour weeks.</p>
+      <p style="font-size:15px;color:var(--t2);line-height:1.8">I believe you can work hard and have your money work hard for you at the same time. That's not a contradiction. It's just a better strategy. And it's what I'm building The Edge to help people do.</p>
+    </div>
+
+    <!-- CTA -->
+    <div style="max-width:740px;margin:0 auto;text-align:center;background:linear-gradient(160deg,rgba(75,150,255,.05),rgba(157,125,255,.04));border:.5px solid var(--bbrd);border-radius:16px;padding:2.5rem">
+      <h3 style="font-size:1.4rem;font-weight:700;letter-spacing:-.03em;margin-bottom:.75rem">Ready to get the edge?</h3>
+      <p style="font-size:14px;color:var(--t2);line-height:1.7;margin-bottom:1.5rem;max-width:480px;margin-left:auto;margin-right:auto">Join a community of retail investors who refuse to settle for overpriced, underpowered tools. The Hub is free. The newsletter is free. And I'm building something I genuinely believe will change how regular people invest.</p>
+      <div style="display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
+        <button class="btn-hero" onclick="window.open('the_edge_v3.html','_blank')"><i class="ti ti-telescope" style="font-size:16px"></i>Launch The Hub, free</button>
+        <button class="btn-outline" onclick="goToNewsletter()"><i class="ti ti-mail" style="font-size:16px"></i>Get the weekly briefing</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <div class="glow-rule"></div>
 <footer class="footer">
@@ -783,22 +880,23 @@ a{color:inherit;text-decoration:none}
       <div class="ft-col-title">Platform</div>
       <button class="ft-link" onclick="goPage('home')">Home</button>
       <button class="ft-link" onclick="goPage('features')">All 15 modules</button>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">Launch The Hub</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">Launch The Hub</button>
       <button class="ft-link" onclick="goToNewsletter()">Newsletter</button>
     </div>
     <div>
       <div class="ft-col-title">Intelligence</div>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">Insider signals</button>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">Congress trades</button>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">Sector rotation</button>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">AI analyst</button>
-      <button class="ft-link" onclick="window.open('hub.html','_blank')">IPO watch</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">Insider signals</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">Congress trades</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">Sector rotation</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">AI analyst</button>
+      <button class="ft-link" onclick="window.open('the_edge_v3.html','_blank')">IPO watch</button>
     </div>
     <div>
       <div class="ft-col-title">Business</div>
       <button class="ft-link" onclick="goPage('advertise')">Advertise with us</button>
       <button class="ft-link" onclick="goPage('revenue')">Revenue model</button>
       <button class="ft-link" onclick="goPage('agent')">The autonomous agent</button>
+      <button class="ft-link" onclick="goPage('about')">About / Our story</button>
       <button class="ft-link" onclick="goPage('advertise')">Media kit</button>
     </div>
   </div>
@@ -819,7 +917,7 @@ window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
 });
 // Page nav
-const pages=['home','features','revenue','advertise','agent'];
+const pages=['home','features','revenue','advertise','agent','about'];
 function goPage(id){
   pages.forEach(p=>{
     document.getElementById('pg-'+p).classList.toggle('active',p===id);
