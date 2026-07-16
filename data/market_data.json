@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-07-15T18:00:09Z",
+  "last_updated": "2026-07-16T06:35:44Z",
   "market": {
     "SPY": {
-      "price": 754.31,
-      "change": 2.48,
-      "pct": 0.3299,
+      "price": 754.81,
+      "change": 2.98,
+      "pct": 0.3964,
       "high": 755.58,
       "low": 750.2,
       "open": 754.24,
@@ -12,19 +12,19 @@
       "name": "S&P 500"
     },
     "QQQ": {
-      "price": 717.59,
-      "change": -2.1,
-      "pct": -0.2918,
+      "price": 717.74,
+      "change": -1.95,
+      "pct": -0.2709,
       "high": 724.36,
       "low": 710.23,
-      "open": 724.295,
+      "open": 723.85,
       "prev_close": 719.69,
       "name": "Nasdaq-100"
     },
     "DIA": {
-      "price": 525.97,
-      "change": 1.28,
-      "pct": 0.244,
+      "price": 525.95,
+      "change": 1.26,
+      "pct": 0.2401,
       "high": 527.73,
       "low": 523.7,
       "open": 525.895,
@@ -34,29 +34,29 @@
   },
   "watchlist": {
     "CRWV": {
-      "price": 77.8,
-      "change": -2.14,
-      "pct": -2.677,
+      "price": 77.12,
+      "change": -2.82,
+      "pct": -3.5276,
       "high": 80.64,
       "low": 74.8101,
-      "open": 79.7675,
+      "open": 78.735,
       "prev_close": 79.94,
       "name": "CoreWeave"
     },
     "RIOT": {
-      "price": 20.32,
-      "change": 0.13,
-      "pct": 0.6439,
-      "high": 20.663800000000002,
+      "price": 20.1,
+      "change": -0.09,
+      "pct": -0.4458,
+      "high": 20.6538,
       "low": 19.365,
-      "open": 20.21,
+      "open": 20.17,
       "prev_close": 20.19,
       "name": "Riot Platforms"
     },
     "BE": {
-      "price": 230.79,
-      "change": -12.61,
-      "pct": -5.1808,
+      "price": 239.38,
+      "change": -4.02,
+      "pct": -1.6516,
       "high": 244.4924,
       "low": 216.28,
       "open": 243.1,
@@ -64,19 +64,19 @@
       "name": "Bloom Energy"
     },
     "CEG": {
-      "price": 257.8,
-      "change": 1.37,
-      "pct": 0.5343,
+      "price": 258.115,
+      "change": 1.685,
+      "pct": 0.6571,
       "high": 264.12,
       "low": 255.4956,
-      "open": 258.215,
+      "open": 258.7,
       "prev_close": 256.43,
       "name": "Constellation Energy"
     },
     "CCJ": {
-      "price": 91.25,
-      "change": -0.32,
-      "pct": -0.3495,
+      "price": 90.98,
+      "change": -0.59,
+      "pct": -0.6443,
       "high": 93.19,
       "low": 89.32,
       "open": 92.57,
@@ -84,39 +84,39 @@
       "name": "Cameco"
     },
     "RKLB": {
-      "price": 77.1,
-      "change": -1.71,
-      "pct": -2.1698,
+      "price": 76.2,
+      "change": -2.61,
+      "pct": -3.3118,
       "high": 81.05,
       "low": 74.84,
-      "open": 79.78,
+      "open": 78.94,
       "prev_close": 78.81,
       "name": "Rocket Lab"
     },
     "MU": {
-      "price": 911.04,
-      "change": -72.08,
-      "pct": -7.3318,
-      "high": 983.5575,
+      "price": 904.28,
+      "change": -78.84,
+      "pct": -8.0194,
+      "high": 978.4,
       "low": 873.6301,
-      "open": 983.5575,
+      "open": 975.805,
       "prev_close": 983.12,
       "name": "Micron Technology"
     },
     "CLSK": {
-      "price": 14,
-      "change": 0.55,
-      "pct": 4.0892,
-      "high": 14.87,
+      "price": 14.13,
+      "change": 0.68,
+      "pct": 5.0558,
+      "high": 14.86,
       "low": 13.12,
-      "open": 13.67,
+      "open": 13.82,
       "prev_close": 13.45,
       "name": "CleanSpark"
     },
     "OPFI": {
-      "price": 9.32,
-      "change": 0.12,
-      "pct": 1.3043,
+      "price": 9.24,
+      "change": 0.04,
+      "pct": 0.4348,
       "high": 9.37,
       "low": 9.1403,
       "open": 9.26,
@@ -124,21 +124,21 @@
       "name": "OppFi"
     },
     "TJX": {
-      "price": 151.45,
-      "change": 1.11,
-      "pct": 0.7383,
-      "high": 151.55,
+      "price": 150.97,
+      "change": 0.63,
+      "pct": 0.4191,
+      "high": 151.8275,
       "low": 148.27,
       "open": 148.8,
       "prev_close": 150.34,
       "name": "TJX Companies"
     },
     "CTRE": {
-      "price": 40.59,
-      "change": 0.1,
-      "pct": 0.247,
+      "price": 40.1,
+      "change": -0.39,
+      "pct": -0.9632,
       "high": 40.9983,
-      "low": 40.2,
+      "low": 39.99,
       "open": 40.49,
       "prev_close": 40.49,
       "name": "CareTrust REIT"
@@ -146,21 +146,26 @@
   },
   "crypto": {
     "BTC": {
-      "price": 65018,
-      "change_24h": 0.64,
-      "market_cap": 1304035645270.4521
+      "price": 64753,
+      "change_24h": -0.42,
+      "market_cap": 1298633912147.5642
     },
     "ETH": {
-      "price": 1926.22,
-      "change_24h": 3.01,
-      "market_cap": 232453509464.87863
+      "price": 1920.26,
+      "change_24h": 1.87,
+      "market_cap": 231729313371.03775
     },
-    "total_market_cap": 2316336549030.6143
+    "total_market_cap": 2311237840291.1826
   },
   "fear_greed": {
     "value": 25,
     "classification": "Extreme Fear",
     "history": [
+      {
+        "value": 25,
+        "classification": "Extreme Fear",
+        "date": "2026-07-16"
+      },
       {
         "value": 25,
         "classification": "Extreme Fear",
@@ -305,11 +310,6 @@
         "value": 22,
         "classification": "Extreme Fear",
         "date": "2026-06-17"
-      },
-      {
-        "value": 23,
-        "classification": "Extreme Fear",
-        "date": "2026-06-16"
       }
     ]
   },
