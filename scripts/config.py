@@ -13,6 +13,7 @@ load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 
 FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "")
 EDGAR_IDENTITY = os.environ.get("EDGAR_IDENTITY", "")
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
 
 # Symbols fetched from Finnhub
 MARKET_SYMBOLS = {

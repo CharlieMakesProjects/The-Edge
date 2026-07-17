@@ -312,6 +312,7 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
   <div class="row2 spc">
     <div>
       <div class="slbl"><i class="ti ti-flame" style="color:var(--amber)"></i>Key events this week</div>
+      <div class="callout c-blue" id="weeklySummary" style="margin-bottom:.75rem"><i class="ti ti-sparkles" style="color:var(--blue)"></i><div id="weeklySummaryText">Fed Chair Warsh testifies before Congress this week after June CPI cooled to 3.5% vs the 3.8% forecast; JPMorgan and Goldman Sachs both beat Q2 earnings as TSMC reports Thursday, while oil trades above $80 on the reinstated Iran blockade.</div></div>
       <div class="news-stack">
         <div class="nc"><div class="nbar" style="background:var(--amber)"></div><div class="ncontent"><div class="nhead">Fed Chair Warsh testifies before Congress this week — market watching his tone on the rate path after June CPI cooled to 3.5% vs the 3.8% forecast</div><div class="nmeta"><span class="nsrc">U.S. Congress</span><span class="stag s-watch">Note</span></div></div></div>
         <div class="nc"><div class="nbar" style="background:var(--green)"></div><div class="ncontent"><div class="nhead">JPMorgan and Goldman Sachs both beat Q2 earnings estimates as bank earnings season opens strong; TSMC reports Thursday — next big test for the AI capex narrative</div><div class="nmeta"><span class="nsrc">Earnings Calendar</span><span class="stag s-bull">Bullish</span></div></div></div>
@@ -990,6 +991,13 @@ function buildAllocChart(){
     updateWatchlistRows(data);
     updateFearGreed(data);
     updateTickerTape(data);
+    updateWeeklySummary(data);
+  }
+
+  function updateWeeklySummary(data){
+    if(!data.weekly_summary) return;
+    const el=document.getElementById('weeklySummaryText');
+    if(el) el.textContent=data.weekly_summary;
   }
 
   function updateLastUpdated(data){

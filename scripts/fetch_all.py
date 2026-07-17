@@ -12,6 +12,7 @@ from fetch_crypto import fetch_crypto
 from fetch_fear_greed import fetch_fear_greed
 from fetch_insiders import fetch_insiders
 from fetch_market import fetch_market
+from fetch_weekly_summary import fetch_weekly_summary
 
 
 def _safe_call(label, fn, fallback):
@@ -43,6 +44,10 @@ def main():
         "insiders": insiders_data,
     }
 
+    combined["weekly_summary"] = _safe_call(
+        "fetch_weekly_summary", lambda: fetch_weekly_summary(combined), ""
+    )
+
     DATA_OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(DATA_OUTPUT_PATH, "w") as f:
         json.dump(combined, f, indent=2)
@@ -54,6 +59,7 @@ def main():
           f"ETH={'ok' if combined['crypto']['ETH'].get('price') else 'missing'}")
     print(f"Fear & Greed:     {combined['fear_greed'].get('value')} ({combined['fear_greed'].get('classification')})")
     print(f"Insider filings:  {len(combined['insiders'])} found")
+    print(f"Weekly summary:   {'ok' if combined['weekly_summary'] else 'missing'}")
     print(f"Written to:       {DATA_OUTPUT_PATH}")
 
 
