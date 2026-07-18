@@ -116,8 +116,8 @@ a{color:inherit;text-decoration:none}
 .tape-track{display:flex;animation:tape 45s linear infinite;white-space:nowrap}
 .tape-track:hover{animation-play-state:paused}
 @keyframes tape{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ti{display:inline-flex;align-items:center;gap:8px;padding:0 1.5rem;border-right:.5px solid var(--border);font-size:12.5px}
-.ti-s{font-family:var(--mono);font-weight:600;color:var(--t2)}.ti-p{color:var(--t1);font-weight:500}
+.tick-item{display:inline-flex;align-items:center;gap:8px;padding:0 1.5rem;border-right:.5px solid var(--border);font-size:12.5px}
+.tick-sym{font-family:var(--mono);font-weight:600;color:var(--t2)}.tick-price{color:var(--t1);font-weight:500}
 .up{color:var(--green)}.dn{color:var(--red)}.fl{color:var(--t3)}
 
 /* ── GLOW RULE ── */
@@ -1035,7 +1035,7 @@ const ticks=[
 ];
 function renderTape(){
   const tp=document.getElementById('tape');
-  tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="ti"><span class="ti-s">${x.s}</span><span class="ti-p">${x.p}</span><span class="${x.u?'up':'dn'}">${x.c}</span></div>`).join('');
+  tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="tick-item"><span class="tick-sym">${x.s}</span><span class="tick-price">${x.p}</span><span class="${x.u?'up':'dn'}">${x.c}</span></div>`).join('');
 }
 renderTape();
 window.ticks=ticks;
