@@ -51,4 +51,10 @@ WATCHLIST_SYMBOLS = {
 # Tickers checked for SEC Form 4 insider activity
 INSIDER_TICKERS = ["CRWV", "RIOT", "BE", "MU", "CLSK", "CEG", "CCJ"]
 
+# Tickers checked for earnings history + upcoming earnings date
+EARNINGS_TICKERS = [
+    "CRWV", "RIOT", "BE", "MU", "CLSK", "CEG", "CCJ",
+    "AAPL", "NVDA", "MSFT", "AMZN", "GOOGL", "META", "AVGO", "TSLA",
+]
+
 DATA_OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "market_data.json"
