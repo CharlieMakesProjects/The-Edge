@@ -22,6 +22,18 @@ MARKET_SYMBOLS = {
     "DIA": "Dow Jones",
 }
 
+# Mega-cap stocks fetched from Finnhub, used by the ticker tape
+MEGACAP_SYMBOLS = {
+    "AAPL": "Apple",
+    "NVDA": "NVIDIA",
+    "MSFT": "Microsoft",
+    "AMZN": "Amazon",
+    "GOOGL": "Alphabet",
+    "META": "Meta Platforms",
+    "AVGO": "Broadcom",
+    "TSLA": "Tesla",
+}
+
 WATCHLIST_SYMBOLS = {
     "CRWV": "CoreWeave",
     "RIOT": "Riot Platforms",

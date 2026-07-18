@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-07-17T17:45:13Z",
+  "last_updated": "2026-07-18T04:36:54Z",
   "market": {
     "SPY": {
-      "price": 745.7,
-      "change": -5.02,
-      "pct": -0.6687,
+      "price": 743.29,
+      "change": -7.43,
+      "pct": -0.9897,
       "high": 747.29,
       "low": 740.8,
       "open": 742.08,
@@ -12,19 +12,19 @@
       "name": "S&P 500"
     },
     "QQQ": {
-      "price": 700.05,
-      "change": -5.89,
-      "pct": -0.8343,
+      "price": 695.33,
+      "change": -10.61,
+      "pct": -1.503,
       "high": 702.3,
       "low": 686.76,
-      "open": 692.58,
+      "open": 691.65,
       "prev_close": 705.94,
       "name": "Nasdaq-100"
     },
     "DIA": {
-      "price": 522.42,
-      "change": -2.41,
-      "pct": -0.4592,
+      "price": 520.81,
+      "change": -4.02,
+      "pct": -0.766,
       "high": 525.36,
       "low": 518.9,
       "open": 519.64,
@@ -32,31 +32,113 @@
       "name": "Dow Jones"
     }
   },
+  "megacap": {
+    "AAPL": {
+      "price": 333.74,
+      "change": 0.48,
+      "pct": 0.144,
+      "high": 334.99,
+      "low": 329.0006,
+      "open": 331.98,
+      "prev_close": 333.26,
+      "name": "Apple"
+    },
+    "NVDA": {
+      "price": 202.81,
+      "change": -4.59,
+      "pct": -2.2131,
+      "high": 206.645,
+      "low": 197.97,
+      "open": 202.64,
+      "prev_close": 207.4,
+      "name": "NVIDIA"
+    },
+    "MSFT": {
+      "price": 393.82,
+      "change": -7.28,
+      "pct": -1.815,
+      "high": 398.39,
+      "low": 389.39,
+      "open": 394.855,
+      "prev_close": 401.1,
+      "name": "Microsoft"
+    },
+    "AMZN": {
+      "price": 247.23,
+      "change": -2.66,
+      "pct": -1.0645,
+      "high": 250.24,
+      "low": 243.59,
+      "open": 244.46,
+      "prev_close": 249.89,
+      "name": "Amazon"
+    },
+    "GOOGL": {
+      "price": 346.77,
+      "change": -7.69,
+      "pct": -2.1695,
+      "high": 348.52,
+      "low": 341.36,
+      "open": 346,
+      "prev_close": 354.46,
+      "name": "Alphabet"
+    },
+    "META": {
+      "price": 646.01,
+      "change": -18.53,
+      "pct": -2.7884,
+      "high": 652.2,
+      "low": 626,
+      "open": 647.7,
+      "prev_close": 664.54,
+      "name": "Meta Platforms"
+    },
+    "AVGO": {
+      "price": 370.825,
+      "change": -3.625,
+      "pct": -0.9681,
+      "high": 377.35,
+      "low": 357.8,
+      "open": 366.045,
+      "prev_close": 374.45,
+      "name": "Broadcom"
+    },
+    "TSLA": {
+      "price": 380.84,
+      "change": -10.22,
+      "pct": -2.6134,
+      "high": 385.6899,
+      "low": 377.22,
+      "open": 381.78,
+      "prev_close": 391.06,
+      "name": "Tesla"
+    }
+  },
   "watchlist": {
     "CRWV": {
-      "price": 74.03,
-      "change": 1.12,
-      "pct": 1.5361,
-      "high": 74.51,
+      "price": 73.21,
+      "change": 0.3,
+      "pct": 0.4115,
+      "high": 74.5,
       "low": 68.51,
-      "open": 70.46,
+      "open": 70.71,
       "prev_close": 72.91,
       "name": "CoreWeave"
     },
     "RIOT": {
-      "price": 18.93,
-      "change": 0.11,
-      "pct": 0.5845,
-      "high": 19.080000000000002,
+      "price": 18.26,
+      "change": -0.56,
+      "pct": -2.9756,
+      "high": 19.07,
       "low": 17.44,
-      "open": 18.1075,
+      "open": 18.025,
       "prev_close": 18.82,
       "name": "Riot Platforms"
     },
     "BE": {
-      "price": 219.91,
-      "change": 13.18,
-      "pct": 6.3755,
+      "price": 214.96,
+      "change": 8.23,
+      "pct": 3.981,
       "high": 223.75,
       "low": 194.6,
       "open": 200.98,
@@ -64,19 +146,19 @@
       "name": "Bloom Energy"
     },
     "CEG": {
-      "price": 253.42,
-      "change": 1.65,
-      "pct": 0.6554,
+      "price": 252.39,
+      "change": 0.62,
+      "pct": 0.2463,
       "high": 254.29,
       "low": 244.95,
-      "open": 247.685,
+      "open": 247.37,
       "prev_close": 251.77,
       "name": "Constellation Energy"
     },
     "CCJ": {
-      "price": 86.02,
-      "change": -1.34,
-      "pct": -1.5339,
+      "price": 85.62,
+      "change": -1.74,
+      "pct": -1.9918,
       "high": 86.73,
       "low": 83.15,
       "open": 85.95,
@@ -84,39 +166,39 @@
       "name": "Cameco"
     },
     "RKLB": {
-      "price": 69.75,
-      "change": 2.4,
-      "pct": 3.5635,
-      "high": 70.64,
+      "price": 67.62,
+      "change": 0.27,
+      "pct": 0.4009,
+      "high": 70.63,
       "low": 64.51,
-      "open": 65.64,
+      "open": 65.93,
       "prev_close": 67.35,
       "name": "Rocket Lab"
     },
     "MU": {
-      "price": 889.1,
-      "change": 35.9,
-      "pct": 4.2077,
+      "price": 848.95,
+      "change": -4.25,
+      "pct": -0.4981,
       "high": 903.96,
       "low": 804,
-      "open": 816.5275,
+      "open": 822.525,
       "prev_close": 853.2,
       "name": "Micron Technology"
     },
     "CLSK": {
-      "price": 13.09,
-      "change": 0.19,
-      "pct": 1.4729,
-      "high": 13.209999999999999,
+      "price": 13.03,
+      "change": 0.13,
+      "pct": 1.0078,
+      "high": 13.2,
       "low": 12.15,
-      "open": 12.41,
+      "open": 12.35,
       "prev_close": 12.9,
       "name": "CleanSpark"
     },
     "OPFI": {
-      "price": 9.51,
-      "change": 0.12,
-      "pct": 1.278,
+      "price": 9.38,
+      "change": -0.01,
+      "pct": -0.1065,
       "high": 9.54,
       "low": 9.25,
       "open": 9.25,
@@ -124,19 +206,19 @@
       "name": "OppFi"
     },
     "TJX": {
-      "price": 154.27,
-      "change": -0.52,
-      "pct": -0.3359,
+      "price": 154.46,
+      "change": -0.33,
+      "pct": -0.2132,
       "high": 158.145,
-      "low": 153.96,
+      "low": 153.87,
       "open": 155,
       "prev_close": 154.79,
       "name": "TJX Companies"
     },
     "CTRE": {
-      "price": 42.66,
-      "change": 0.69,
-      "pct": 1.644,
+      "price": 42.88,
+      "change": 0.91,
+      "pct": 2.1682,
       "high": 43.1,
       "low": 42.08,
       "open": 42.2,
@@ -146,21 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 63984,
-      "change_24h": -0.18,
-      "market_cap": 1283637802752.0203
+      "price": 63912,
+      "change_24h": 0.92,
+      "market_cap": 1282025031472.1155
     },
     "ETH": {
-      "price": 1842.67,
-      "change_24h": -1.41,
-      "market_cap": 222402274357.95648
+      "price": 1841.85,
+      "change_24h": -0.13,
+      "market_cap": 222302064735.93713
     },
-    "total_market_cap": 2274712897717.743
+    "XRP": {
+      "price": 1.089,
+      "change_24h": 0.06,
+      "market_cap": 68009705079.29416
+    },
+    "total_market_cap": 2273500259903.841
   },
   "fear_greed": {
-    "value": 27,
-    "classification": "Fear",
+    "value": 25,
+    "classification": "Extreme Fear",
     "history": [
+      {
+        "value": 25,
+        "classification": "Extreme Fear",
+        "date": "2026-07-18"
+      },
       {
         "value": 27,
         "classification": "Fear",
@@ -305,14 +397,143 @@
         "value": 14,
         "classification": "Extreme Fear",
         "date": "2026-06-19"
-      },
-      {
-        "value": 15,
-        "classification": "Extreme Fear",
-        "date": "2026-06-18"
       }
     ]
   },
-  "insiders": [],
+  "insiders": [
+    {
+      "ticker": "CRWV",
+      "insider": "Michael N Intrator",
+      "position": "CEO and President",
+      "activity": "Sale",
+      "filing_date": "2026-07-16"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Brannin Mcbee",
+      "position": "Chief Development Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-15"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Brannin Mcbee",
+      "position": "Chief Development Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-15"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Nitin Agrawal",
+      "position": "Chief Financial Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-15"
+    },
+    {
+      "ticker": "CRWV",
+      "insider": "Michael N Intrator",
+      "position": "CEO and President",
+      "activity": "Sale",
+      "filing_date": "2026-07-09"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Ryan D. Werner",
+      "position": "SVP, CAO",
+      "activity": "Sale",
+      "filing_date": "2026-07-09"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Jaime Leverton",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Douglas Mouton",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Lance Varro D'Ambrosio",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "RIOT",
+      "insider": "Michael John Turner",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Cynthia J Warner",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Jeffrey R Immelt",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "BE",
+      "insider": "Aman Joshi",
+      "position": "Chief Commercial Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Scott R. Allen",
+      "position": "CVP, Chief Accounting Officer",
+      "activity": "Tax Withholding",
+      "filing_date": "2026-07-17"
+    },
+    {
+      "ticker": "MU",
+      "insider": "April S Arnzen",
+      "position": "EVP and Chief People Officer",
+      "activity": "Sale",
+      "filing_date": "2026-07-06"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Lynn A Dugle",
+      "position": "Director",
+      "activity": "Sale",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Robert Holmes Swan",
+      "position": "Director",
+      "activity": "DERIVATIVE ACQUISITION",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "MU",
+      "insider": "Teyin M Liu",
+      "position": "Director",
+      "activity": "Grant/Award",
+      "filing_date": "2026-07-02"
+    },
+    {
+      "ticker": "CEG",
+      "insider": "Charles L. Harrington",
+      "position": "Director",
+      "activity": "DERIVATIVE ACQUISITION",
+      "filing_date": "2026-07-01"
+    }
+  ],
   "weekly_summary": ""
 }

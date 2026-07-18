@@ -26,18 +26,20 @@ def _safe_call(label, fn, fallback):
 def main():
     print("=== The Edge — data pipeline ===")
 
-    market_data = _safe_call("fetch_market", fetch_market, {"market": {}, "watchlist": {}})
-    crypto_data = _safe_call("fetch_crypto", fetch_crypto, {"BTC": {}, "ETH": {}, "total_market_cap": None})
+    market_data = _safe_call("fetch_market", fetch_market, {"market": {}, "megacap": {}, "watchlist": {}})
+    crypto_data = _safe_call("fetch_crypto", fetch_crypto, {"BTC": {}, "ETH": {}, "XRP": {}, "total_market_cap": None})
     fear_greed_data = _safe_call("fetch_fear_greed", fetch_fear_greed, {"value": None, "classification": None, "history": []})
     insiders_data = _safe_call("fetch_insiders", fetch_insiders, [])
 
     combined = {
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "market": market_data.get("market", {}),
+        "megacap": market_data.get("megacap", {}),
         "watchlist": market_data.get("watchlist", {}),
         "crypto": {
             "BTC": crypto_data.get("BTC", {}),
             "ETH": crypto_data.get("ETH", {}),
+            "XRP": crypto_data.get("XRP", {}),
             "total_market_cap": crypto_data.get("total_market_cap"),
         },
         "fear_greed": fear_greed_data,
@@ -54,9 +56,11 @@ def main():
 
     print("\n=== Summary ===")
     print(f"Market indices:   {len(combined['market'])} fetched")
+    print(f"Mega-cap stocks:  {len(combined['megacap'])} fetched")
     print(f"Watchlist stocks: {len(combined['watchlist'])} fetched")
     print(f"Crypto:           BTC={'ok' if combined['crypto']['BTC'].get('price') else 'missing'}, "
-          f"ETH={'ok' if combined['crypto']['ETH'].get('price') else 'missing'}")
+          f"ETH={'ok' if combined['crypto']['ETH'].get('price') else 'missing'}, "
+          f"XRP={'ok' if combined['crypto']['XRP'].get('price') else 'missing'}")
     print(f"Fear & Greed:     {combined['fear_greed'].get('value')} ({combined['fear_greed'].get('classification')})")
     print(f"Insider filings:  {len(combined['insiders'])} found")
     print(f"Weekly summary:   {'ok' if combined['weekly_summary'] else 'missing'}")

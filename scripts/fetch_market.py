@@ -4,7 +4,7 @@ from typing import Optional
 
 import requests
 
-from config import FINNHUB_API_KEY, MARKET_SYMBOLS, WATCHLIST_SYMBOLS
+from config import FINNHUB_API_KEY, MARKET_SYMBOLS, MEGACAP_SYMBOLS, WATCHLIST_SYMBOLS
 
 QUOTE_URL = "https://finnhub.io/api/v1/quote"
 DELAY_SECONDS = 0.5
@@ -38,13 +38,20 @@ def _fetch_quote(symbol: str, name: str) -> Optional[dict]:
 def fetch_market() -> dict:
     if not FINNHUB_API_KEY:
         print("Fetching market data... skipped (no FINNHUB_API_KEY set)")
-        return {"market": {}, "watchlist": {}}
+        return {"market": {}, "megacap": {}, "watchlist": {}}
 
     market = {}
     for symbol, name in MARKET_SYMBOLS.items():
         quote = _fetch_quote(symbol, name)
         if quote:
             market[symbol] = quote
+        time.sleep(DELAY_SECONDS)
+
+    megacap = {}
+    for symbol, name in MEGACAP_SYMBOLS.items():
+        quote = _fetch_quote(symbol, name)
+        if quote:
+            megacap[symbol] = quote
         time.sleep(DELAY_SECONDS)
 
     watchlist = {}
@@ -54,7 +61,7 @@ def fetch_market() -> dict:
             watchlist[symbol] = quote
         time.sleep(DELAY_SECONDS)
 
-    return {"market": market, "watchlist": watchlist}
+    return {"market": market, "megacap": megacap, "watchlist": watchlist}
 
 
 if __name__ == "__main__":

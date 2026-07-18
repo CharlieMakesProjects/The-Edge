@@ -1020,18 +1020,26 @@ function submitAd(){
   document.getElementById('adOk').style.display='block';
   if(typeof gtag!=='undefined')gtag('event','ad_inquiry',{method:'contact_form'});
 }
-// Ticker tape
+// Ticker tape — fallback values shown until data/market_data.json loads (see
+// updateTickerTape below), same pattern as hub.html.
 const ticks=[
-  {s:'S&P 500',p:'7,554',c:'+1.65%',u:true},{s:'NASDAQ',p:'26,684',c:'+3.07%',u:true},
-  {s:'DOW',p:'51,671',c:'+0.92%',u:true},{s:'BTC',p:'$66,589',c:'+4.1%',u:true},
-  {s:'ETH',p:'$1,815',c:'+9.2%',u:true},{s:'CRWV',p:'$106.75',c:'+0.04%',u:true},
-  {s:'RIOT',p:'$27.37',c:'-0.04%',u:false},{s:'BE',p:'$274.45',c:'-0.02%',u:false},
-  {s:'CEG',p:'Nuclear',c:'↑ Hot',u:true},{s:'CCJ',p:'Uranium',c:'↑ Hot',u:true},
-  {s:'SPCX',p:'SpaceX',c:'+39% IPO',u:true},{s:'OIL',p:'~$65',c:'-5.0%',u:false},
-  {s:'F&G',p:'34',c:'Fear→Buy',u:true},{s:'RKLB',p:'Space',c:'↑ Halo',u:true},
+  {s:'SPY',p:'$743.29',c:'-0.99%',u:false},{s:'QQQ',p:'$695.33',c:'-1.50%',u:false},
+  {s:'DIA',p:'$520.81',c:'-0.77%',u:false},
+  {s:'AAPL',p:'$333.74',c:'+0.14%',u:true},{s:'NVDA',p:'$202.81',c:'-2.21%',u:false},
+  {s:'MSFT',p:'$393.82',c:'-1.82%',u:false},{s:'AMZN',p:'$247.23',c:'-1.06%',u:false},
+  {s:'GOOGL',p:'$346.77',c:'-2.17%',u:false},{s:'META',p:'$646.01',c:'-2.79%',u:false},
+  {s:'AVGO',p:'$370.83',c:'-0.97%',u:false},{s:'TSLA',p:'$380.84',c:'-2.61%',u:false},
+  {s:'BTC',p:'$63,912',c:'+0.92%',u:true},{s:'ETH',p:'$1,841.85',c:'-0.13%',u:false},
+  {s:'XRP',p:'$1.09',c:'+0.06%',u:true},
+  {s:'F&G',p:'25',c:'Extreme Fear',u:false},
 ];
-const tp=document.getElementById('tape');
-tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="ti"><span class="ti-s">${x.s}</span><span class="ti-p">${x.p}</span><span class="${x.u?'up':'dn'}">${x.c}</span></div>`).join('');
+function renderTape(){
+  const tp=document.getElementById('tape');
+  tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="ti"><span class="ti-s">${x.s}</span><span class="ti-p">${x.p}</span><span class="${x.u?'up':'dn'}">${x.c}</span></div>`).join('');
+}
+renderTape();
+window.ticks=ticks;
+window.renderTape=renderTape;
 </script>
 <script>
 // Hero preview card — live data + tab toggle. Fetches data/market_data.json
@@ -1115,6 +1123,33 @@ tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="ti"><span class="ti-s">${x.
     if(cls){ cls.textContent=fg.classification; cls.style.color=color; }
   }
 
+  function updateTickerTape(data){
+    if(!window.ticks || !window.renderTape) return;
+    const market=data.market||{},megacap=data.megacap||{},crypto=data.crypto||{};
+    const bySym=Object.assign({},market,megacap);
+    let changed=false;
+    window.ticks.forEach(item=>{
+      if(item.s==='F&G') return;
+      let q,pct;
+      if(item.s==='BTC'||item.s==='ETH'||item.s==='XRP'){
+        q=crypto[item.s];
+        pct=q&&q.change_24h;
+      }else{
+        q=bySym[item.s];
+        pct=q&&q.pct;
+      }
+      if(!q||q.price==null) return;
+      item.p=fmtPrice(item.s,q.price);
+      if(pct!=null){ item.c=fmtPct(pct); item.u=pct>=0; }
+      changed=true;
+    });
+    if(data.fear_greed && data.fear_greed.value!=null){
+      const fgItem=window.ticks.find(x=>x.s==='F&G');
+      if(fgItem){ fgItem.p=String(data.fear_greed.value); fgItem.c=data.fear_greed.classification; fgItem.u=data.fear_greed.value>=45; changed=true; }
+    }
+    if(changed) window.renderTape();
+  }
+
   fetch('data/market_data.json',{cache:'no-store'})
     .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data=>{
@@ -1124,6 +1159,7 @@ tp.innerHTML=[...ticks,...ticks].map(x=>`<div class="ti"><span class="ti-s">${x.
       heroData.fear_greed=data.fear_greed||null;
       renderGauge();
       renderPanel();
+      updateTickerTape(data);
     })
     .catch(e=>{ console.warn('[hero-preview] fetch failed, keeping fallback values',e); });
 })();

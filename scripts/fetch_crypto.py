@@ -5,15 +5,15 @@ import requests
 
 PRICE_URL = (
     "https://api.coingecko.com/api/v3/simple/price"
-    "?ids=bitcoin,ethereum&vs_currencies=usd&include_24hr_change=true&include_market_cap=true"
+    "?ids=bitcoin,ethereum,ripple&vs_currencies=usd&include_24hr_change=true&include_market_cap=true"
 )
 GLOBAL_URL = "https://api.coingecko.com/api/v3/global"
 
-COINS = {"bitcoin": "BTC", "ethereum": "ETH"}
+COINS = {"bitcoin": "BTC", "ethereum": "ETH", "ripple": "XRP"}
 
 
 def fetch_crypto() -> dict:
-    result = {"BTC": {}, "ETH": {}, "total_market_cap": None}
+    result = {"BTC": {}, "ETH": {}, "XRP": {}, "total_market_cap": None}
 
     try:
         resp = requests.get(PRICE_URL, timeout=10)
