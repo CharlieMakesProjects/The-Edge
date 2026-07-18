@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-18T04:36:54Z",
+  "last_updated": "2026-07-18T05:54:22Z",
   "market": {
     "SPY": {
       "price": 743.29,
@@ -229,20 +229,20 @@
   "crypto": {
     "BTC": {
       "price": 63912,
-      "change_24h": 0.92,
-      "market_cap": 1282025031472.1155
+      "change_24h": 1.81,
+      "market_cap": 1281926294819.1067
     },
     "ETH": {
-      "price": 1841.85,
-      "change_24h": -0.13,
-      "market_cap": 222302064735.93713
+      "price": 1845.12,
+      "change_24h": 1.19,
+      "market_cap": 222674517918.90753
     },
     "XRP": {
-      "price": 1.089,
-      "change_24h": 0.06,
-      "market_cap": 68009705079.29416
+      "price": 1.088,
+      "change_24h": 0.7,
+      "market_cap": 67943401969.91533
     },
-    "total_market_cap": 2273500259903.841
+    "total_market_cap": 2273635040658.805
   },
   "fear_greed": {
     "value": 25,
@@ -400,140 +400,6 @@
       }
     ]
   },
-  "insiders": [
-    {
-      "ticker": "CRWV",
-      "insider": "Michael N Intrator",
-      "position": "CEO and President",
-      "activity": "Sale",
-      "filing_date": "2026-07-16"
-    },
-    {
-      "ticker": "CRWV",
-      "insider": "Brannin Mcbee",
-      "position": "Chief Development Officer",
-      "activity": "Sale",
-      "filing_date": "2026-07-15"
-    },
-    {
-      "ticker": "CRWV",
-      "insider": "Brannin Mcbee",
-      "position": "Chief Development Officer",
-      "activity": "Sale",
-      "filing_date": "2026-07-15"
-    },
-    {
-      "ticker": "CRWV",
-      "insider": "Nitin Agrawal",
-      "position": "Chief Financial Officer",
-      "activity": "Sale",
-      "filing_date": "2026-07-15"
-    },
-    {
-      "ticker": "CRWV",
-      "insider": "Michael N Intrator",
-      "position": "CEO and President",
-      "activity": "Sale",
-      "filing_date": "2026-07-09"
-    },
-    {
-      "ticker": "RIOT",
-      "insider": "Ryan D. Werner",
-      "position": "SVP, CAO",
-      "activity": "Sale",
-      "filing_date": "2026-07-09"
-    },
-    {
-      "ticker": "RIOT",
-      "insider": "Jaime Leverton",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-06"
-    },
-    {
-      "ticker": "RIOT",
-      "insider": "Douglas Mouton",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-06"
-    },
-    {
-      "ticker": "RIOT",
-      "insider": "Lance Varro D'Ambrosio",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-06"
-    },
-    {
-      "ticker": "RIOT",
-      "insider": "Michael John Turner",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-06"
-    },
-    {
-      "ticker": "BE",
-      "insider": "Cynthia J Warner",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "BE",
-      "insider": "Jeffrey R Immelt",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "BE",
-      "insider": "Aman Joshi",
-      "position": "Chief Commercial Officer",
-      "activity": "Sale",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "MU",
-      "insider": "Scott R. Allen",
-      "position": "CVP, Chief Accounting Officer",
-      "activity": "Tax Withholding",
-      "filing_date": "2026-07-17"
-    },
-    {
-      "ticker": "MU",
-      "insider": "April S Arnzen",
-      "position": "EVP and Chief People Officer",
-      "activity": "Sale",
-      "filing_date": "2026-07-06"
-    },
-    {
-      "ticker": "MU",
-      "insider": "Lynn A Dugle",
-      "position": "Director",
-      "activity": "Sale",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "MU",
-      "insider": "Robert Holmes Swan",
-      "position": "Director",
-      "activity": "DERIVATIVE ACQUISITION",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "MU",
-      "insider": "Teyin M Liu",
-      "position": "Director",
-      "activity": "Grant/Award",
-      "filing_date": "2026-07-02"
-    },
-    {
-      "ticker": "CEG",
-      "insider": "Charles L. Harrington",
-      "position": "Director",
-      "activity": "DERIVATIVE ACQUISITION",
-      "filing_date": "2026-07-01"
-    }
-  ],
+  "insiders": [],
   "weekly_summary": ""
 }
