@@ -56,7 +56,7 @@ Then open `hub.html` directly in a browser (or serve the folder, e.g. `python -m
 1. Push this repo to GitHub.
 2. In the repo's **Settings → Secrets and variables → Actions**, add two repository secrets: `FINNHUB_API_KEY` and `EDGAR_IDENTITY`.
 3. The `Update Market Data` workflow (`.github/workflows/update_data.yml`) runs automatically at 9am and 5pm ET on weekdays, or on demand from the Actions tab (`workflow_dispatch`). Each run re-fetches all sources and commits `data/market_data.json` back to the repo if it changed.
-4. Connect the repo to Netlify or Vercel with no build command and the repo root as the publish directory — both `index.html` and `hub.html` are static files that read `data/market_data.json` at runtime, so there's nothing to build.
+4. Enable **GitHub Pages**: in **Settings → Pages**, set **Source** to "Deploy from a branch", pick the `main` branch and `/ (root)` folder, then save. Both `index.html` and `hub.html` are static files that read `data/market_data.json` at runtime via relative paths, so there's nothing to build — GitHub rebuilds the Pages site automatically on every push to `main`, including the bot commits from `update_data.yml`. The site is served at `https://<username>.github.io/<repo>/`, so all internal links (`hub.html`, `data/market_data.json`, etc.) must stay relative (no leading `/`) to resolve under that subpath.
 
 ## Notes
 

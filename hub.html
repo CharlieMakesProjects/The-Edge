@@ -263,9 +263,9 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
 .ai-send:hover{opacity:.85}.ai-send i{font-size:16px}
 .spc{margin-bottom:1.25rem}
 /* Reusable info tooltip — usage: <span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">Explanation text</span></span> */
-.info-tip{position:relative;display:inline-flex;vertical-align:middle;margin-left:4px;color:var(--t3);cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
+.info-tip{position:relative;display:inline-flex;vertical-align:middle;margin-left:4px;color:var(--t2);cursor:pointer;-webkit-tap-highlight-color:transparent;outline:none}
 .info-tip i{font-size:12px;line-height:1;display:block;transition:color .15s}
-.info-tip:hover i,.info-tip.tip-open i,.info-tip:focus-visible i{color:var(--t2)}
+.info-tip:hover i,.info-tip.tip-open i,.info-tip:focus-visible i{color:var(--t1)}
 .tip-bubble{position:absolute;left:50%;bottom:calc(100% + 8px);transform:translateX(calc(-50% + var(--tip-shift,0px)));width:212px;max-width:60vw;background:var(--bg4);border:.5px solid var(--border2);border-radius:9px;padding:.625rem .75rem;font-size:11px;font-weight:400;line-height:1.6;color:var(--t1);text-transform:none;letter-spacing:normal;text-align:left;white-space:normal;box-shadow:0 10px 30px rgba(0,0,0,.45);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s ease,transform .15s ease;z-index:60}
 .tip-bubble::after{content:'';position:absolute;top:100%;left:calc(50% - var(--tip-shift,0px));transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--bg4)}
 .tip-bubble.below{bottom:auto;top:calc(100% + 8px)}
