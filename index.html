@@ -1044,7 +1044,7 @@ window.renderTape=renderTape;
 // Hero preview card — live data + tab toggle. Fetches data/market_data.json
 // and overlays it onto the hardcoded fallback markup, same pattern as hub.html.
 (function(){
-  const heroData={market:{},watchlist:{},crypto:{},fear_greed:null};
+  const heroData={market:{},megacap:{},watchlist:{},crypto:{},fear_greed:null};
 
   function fmtPrice(sym,price){
     if(price==null) return '—';
@@ -1066,15 +1066,28 @@ window.renderTape=renderTape;
     return `<div class="hp-row"><div class="hp-row-l"><span class="hp-sym">${sym}</span><span class="hp-name">${name}</span></div><div class="hp-row-r"><span class="hp-price">${fmtPrice(sym,price)}</span>${pct!=null?`<span class="hp-chg ${pct>=0?'up':'dn'}">${fmtPct(pct)}</span>`:''}</div></div>`;
   }
 
+  // "Movers" shows the biggest movers (by absolute % change) among tickers we
+  // already track and are licensed to display (megacap + watchlist via
+  // Finnhub, crypto via CoinGecko) — no market-wide screener, see
+  // fetch_movers.py for why that's parked for now.
   function moversPanel(){
-    const {market,watchlist,crypto}=heroData;
-    const items=[
-      {sym:'SPY',name:'S&amp;P 500',price:market.SPY&&market.SPY.price,pct:market.SPY&&market.SPY.pct},
-      {sym:'BTC',name:'Bitcoin',price:crypto.BTC&&crypto.BTC.price,pct:crypto.BTC&&crypto.BTC.change_24h},
-      {sym:'ETH',name:'Ethereum',price:crypto.ETH&&crypto.ETH.price,pct:crypto.ETH&&crypto.ETH.change_24h},
-      {sym:'CRWV',name:'CoreWeave',price:watchlist.CRWV&&watchlist.CRWV.price,pct:watchlist.CRWV&&watchlist.CRWV.pct},
-    ];
-    return items.map(x=>row(x.sym,x.name,x.price,x.pct)).join('');
+    const {megacap,watchlist,crypto}=heroData;
+    const items=[];
+    Object.entries(megacap||{}).forEach(([sym,q])=>{
+      if(q&&q.price!=null&&q.pct!=null) items.push({sym,name:q.name||sym,price:q.price,pct:q.pct});
+    });
+    Object.entries(watchlist||{}).forEach(([sym,q])=>{
+      if(q&&q.price!=null&&q.pct!=null) items.push({sym,name:q.name||sym,price:q.price,pct:q.pct});
+    });
+    [['BTC','Bitcoin'],['ETH','Ethereum'],['XRP','XRP']].forEach(([sym,name])=>{
+      const q=(crypto||{})[sym];
+      if(q&&q.price!=null&&q.change_24h!=null) items.push({sym,name,price:q.price,pct:q.change_24h});
+    });
+    if(!items.length){
+      return '<div class="hp-row" style="justify-content:center;color:var(--t3);font-size:12.5px;padding:2.5rem 0">Movers data temporarily unavailable</div>';
+    }
+    const top4=items.slice().sort((a,b)=>Math.abs(b.pct)-Math.abs(a.pct)).slice(0,4);
+    return top4.map(x=>row(x.sym,x.name,x.price,x.pct)).join('');
   }
   function cryptoPanel(){
     const {crypto}=heroData;
@@ -1153,6 +1166,7 @@ window.renderTape=renderTape;
     .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data=>{
       heroData.market=data.market||{};
+      heroData.megacap=data.megacap||{};
       heroData.watchlist=data.watchlist||{};
       heroData.crypto=data.crypto||{};
       heroData.fear_greed=data.fear_greed||null;

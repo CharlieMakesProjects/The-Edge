@@ -14,6 +14,7 @@ load_dotenv(Path(__file__).resolve().parent.parent / ".env")
 FINNHUB_API_KEY = os.environ.get("FINNHUB_API_KEY", "")
 EDGAR_IDENTITY = os.environ.get("EDGAR_IDENTITY", "")
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+ALPHA_VANTAGE_API_KEY = os.environ.get("ALPHA_VANTAGE_API_KEY", "")  # unused for now; fetch_movers.py is not wired into fetch_all.py — see its docstring
 
 # Symbols fetched from Finnhub
 MARKET_SYMBOLS = {
