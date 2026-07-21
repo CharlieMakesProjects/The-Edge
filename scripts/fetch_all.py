@@ -8,6 +8,7 @@ import json
 from datetime import datetime, timezone
 
 from config import DATA_OUTPUT_PATH
+from fetch_analysts import fetch_analysts
 from fetch_crypto import fetch_crypto
 from fetch_earnings import fetch_earnings
 from fetch_fear_greed import fetch_fear_greed
@@ -32,6 +33,7 @@ def main():
     fear_greed_data = _safe_call("fetch_fear_greed", fetch_fear_greed, {"value": None, "classification": None, "history": []})
     insiders_data = _safe_call("fetch_insiders", fetch_insiders, [])
     earnings_data = _safe_call("fetch_earnings", fetch_earnings, {})
+    analysts_data = _safe_call("fetch_analysts", fetch_analysts, {})
 
     combined = {
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -47,6 +49,7 @@ def main():
         "fear_greed": fear_greed_data,
         "insiders": insiders_data,
         "earnings": earnings_data,
+        "analysts": analysts_data,
     }
 
     combined["weekly_summary"] = _safe_call(
@@ -67,6 +70,7 @@ def main():
     print(f"Fear & Greed:     {combined['fear_greed'].get('value')} ({combined['fear_greed'].get('classification')})")
     print(f"Insider filings:  {len(combined['insiders'])} found")
     print(f"Earnings:         {len(combined['earnings'])} ticker(s) fetched")
+    print(f"Analyst ratings:  {len(combined['analysts'])} ticker(s) fetched")
     print(f"Weekly summary:   {'ok' if combined['weekly_summary'] else 'missing'}")
     print(f"Written to:       {DATA_OUTPUT_PATH}")
 

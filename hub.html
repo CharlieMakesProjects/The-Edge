@@ -165,6 +165,23 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
 .eq-badge.miss{background:var(--rdim);color:var(--red);border:.5px solid var(--rbrd)}
 .eq-badge.met{background:var(--bg3);color:var(--t3);border:.5px solid var(--border)}
 .eq-avg{font-size:11px;color:var(--t2)}
+.an-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:1rem}
+.an-card{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:.75rem .875rem}
+.an-hdr{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:10px}
+.an-tick{font-family:var(--mono);font-weight:600;font-size:13px;color:var(--t1);display:block}
+.an-name{font-size:10px;color:var(--t3)}
+.an-consensus{font-size:10px;font-weight:700;text-align:right;white-space:nowrap;text-transform:uppercase;letter-spacing:.03em;padding:3px 7px;border-radius:5px}
+.an-consensus.buy{background:var(--gdim);color:var(--green);border:.5px solid var(--gbrd)}
+.an-consensus.hold{background:var(--bg3);color:var(--t2);border:.5px solid var(--border)}
+.an-consensus.sell{background:var(--rdim);color:var(--red);border:.5px solid var(--rbrd)}
+.an-bar-lbl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;margin-bottom:5px}
+.an-bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--bg3);margin-bottom:6px}
+.an-bar-seg.buy{background:var(--green)}
+.an-bar-seg.hold{background:var(--t3)}
+.an-bar-seg.sell{background:var(--red)}
+.an-counts{display:flex;justify-content:space-between;font-size:9px;color:var(--t3)}
+.an-counts span b{color:var(--t2);font-weight:600}
+.an-limited{font-size:11px;color:var(--t3);font-style:italic;padding:.5rem 0}
 .macro-item{display:flex;align-items:flex-start;gap:10px;padding:.625rem .875rem;border-bottom:.5px solid var(--border)}
 .macro-item:last-child{border-bottom:none}.macro-item:hover{background:var(--bg3)}
 .macro-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
@@ -278,7 +295,7 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
   .sidebar{width:60px}
   .sidebar .brand-name,.sidebar .brand-tag,.sidebar .nav-item span,.sidebar .nav-lbl,.sidebar .nbadge,.sb-footer span{display:none}
   .main{margin-left:60px}
-  .row2,.row3,.row4,.ec-grid,.eq-grid,.sector-grid,.rot-grid{grid-template-columns:1fr}
+  .row2,.row3,.row4,.ec-grid,.eq-grid,.an-grid,.sector-grid,.rot-grid{grid-template-columns:1fr}
   .dg2{grid-template-columns:1fr}.ai-panel{width:100%}
 }
 </style>
@@ -305,6 +322,7 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
     <div class="nav-lbl">Intelligence</div>
     <button class="nav-item" onclick="go('gems',this)"><i class="ti ti-diamond"></i><span>Hidden gems</span><span class="nbadge nb-a">6</span></button>
     <button class="nav-item" onclick="go('insider',this)"><i class="ti ti-eye"></i><span>Insider signals</span><span class="nbadge nb-g">New</span></button>
+    <button class="nav-item" onclick="go('analysts',this)"><i class="ti ti-target-arrow"></i><span>Analyst ratings</span><span class="nbadge nb-g">New</span></button>
     <button class="nav-item" onclick="go('options',this)"><i class="ti ti-arrows-exchange"></i><span>Options flow</span></button>
     <button class="nav-item" onclick="go('politician',this)"><i class="ti ti-building-bank"></i><span>Congress trades</span></button>
     <button class="nav-item" onclick="go('short',this)"><i class="ti ti-trending-down"></i><span>Short interest</span></button>
@@ -503,6 +521,31 @@ body{background:var(--bg0);color:var(--t1);font-family:var(--font);font-size:14p
   <div class="news-stack">
     <div class="nc" onclick="window.open('https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&type=4&dateb=&owner=include&count=40','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">SEC EDGAR Form 4 — official source for all insider transactions</div><div class="nmeta"><span class="nsrc">SEC.gov</span><span class="stag s-bull">Free · Official</span></div></div></div>
     <div class="nc" onclick="window.open('https://www.barchart.com/investing-ideas/insider-trading-activity','_blank')"><div class="nbar" style="background:var(--purple)"></div><div class="ncontent"><div class="nhead">Barchart insider trading — sorted daily by buy/sell signal strength</div><div class="nmeta"><span class="nsrc">Barchart.com</span><span class="stag s-bull">Free</span></div></div></div>
+  </div>
+</div>
+<!-- ANALYST RATINGS -->
+<div class="page" id="page-analysts">
+  <div class="callout c-blue"><i class="ti ti-info-circle" style="color:var(--blue)"></i><div>Consensus ratings aggregate every Wall Street analyst covering a stock into one Strong Buy through Strong Sell breakdown. Source: Finnhub. Price targets aren't shown here — that data now requires a paid Finnhub plan and isn't included on this free-tier build.</div></div>
+  <div class="slbl"><i class="ti ti-target-arrow"></i>Analyst consensus — Strong Buy to Strong Sell breakdown</div>
+  <div class="an-grid">
+    <div class="an-card" data-ticker="CRWV"><div class="an-hdr"><div><span class="an-tick">CRWV</span><span class="an-name">CoreWeave</span></div><span class="an-consensus buy">Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (44 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:65.9%"></div><div class="an-bar-seg hold" style="width:29.5%"></div><div class="an-bar-seg sell" style="width:4.6%"></div></div><div class="an-counts"><span><b>29</b> buy</span><span><b>13</b> hold</span><span><b>2</b> sell</span></div></div>
+    <div class="an-card" data-ticker="RIOT"><div class="an-hdr"><div><span class="an-tick">RIOT</span><span class="an-name">Riot Platforms</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (27 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:92.6%"></div><div class="an-bar-seg hold" style="width:7.4%"></div><div class="an-bar-seg sell" style="width:0.0%"></div></div><div class="an-counts"><span><b>25</b> buy</span><span><b>2</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="BE"><div class="an-hdr"><div><span class="an-tick">BE</span><span class="an-name">Bloom Energy</span></div><span class="an-consensus buy">Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (37 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:56.8%"></div><div class="an-bar-seg hold" style="width:40.5%"></div><div class="an-bar-seg sell" style="width:2.7%"></div></div><div class="an-counts"><span><b>21</b> buy</span><span><b>15</b> hold</span><span><b>1</b> sell</span></div></div>
+    <div class="an-card" data-ticker="MU"><div class="an-hdr"><div><span class="an-tick">MU</span><span class="an-name">Micron Technology</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (56 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:91.1%"></div><div class="an-bar-seg hold" style="width:7.1%"></div><div class="an-bar-seg sell" style="width:1.8%"></div></div><div class="an-counts"><span><b>51</b> buy</span><span><b>4</b> hold</span><span><b>1</b> sell</span></div></div>
+    <div class="an-card" data-ticker="CLSK"><div class="an-hdr"><div><span class="an-tick">CLSK</span><span class="an-name">CleanSpark</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (21 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:90.5%"></div><div class="an-bar-seg hold" style="width:9.5%"></div><div class="an-bar-seg sell" style="width:0%"></div></div><div class="an-counts"><span><b>19</b> buy</span><span><b>2</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="CEG"><div class="an-hdr"><div><span class="an-tick">CEG</span><span class="an-name">Constellation Energy</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (29 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:82.8%"></div><div class="an-bar-seg hold" style="width:17.2%"></div><div class="an-bar-seg sell" style="width:0.0%"></div></div><div class="an-counts"><span><b>24</b> buy</span><span><b>5</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="CCJ"><div class="an-hdr"><div><span class="an-tick">CCJ</span><span class="an-name">Cameco</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (22 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:81.8%"></div><div class="an-bar-seg hold" style="width:18.2%"></div><div class="an-bar-seg sell" style="width:0.0%"></div></div><div class="an-counts"><span><b>18</b> buy</span><span><b>4</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="AAPL"><div class="an-hdr"><div><span class="an-tick">AAPL</span><span class="an-name">Apple</span></div><span class="an-consensus buy">Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (54 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:66.7%"></div><div class="an-bar-seg hold" style="width:29.6%"></div><div class="an-bar-seg sell" style="width:3.7%"></div></div><div class="an-counts"><span><b>36</b> buy</span><span><b>16</b> hold</span><span><b>2</b> sell</span></div></div>
+    <div class="an-card" data-ticker="NVDA"><div class="an-hdr"><div><span class="an-tick">NVDA</span><span class="an-name">NVIDIA</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (69 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:92.8%"></div><div class="an-bar-seg hold" style="width:5.8%"></div><div class="an-bar-seg sell" style="width:1.4%"></div></div><div class="an-counts"><span><b>64</b> buy</span><span><b>4</b> hold</span><span><b>1</b> sell</span></div></div>
+    <div class="an-card" data-ticker="MSFT"><div class="an-hdr"><div><span class="an-tick">MSFT</span><span class="an-name">Microsoft</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (68 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:92.6%"></div><div class="an-bar-seg hold" style="width:7.4%"></div><div class="an-bar-seg sell" style="width:0.0%"></div></div><div class="an-counts"><span><b>63</b> buy</span><span><b>5</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="AMZN"><div class="an-hdr"><div><span class="an-tick">AMZN</span><span class="an-name">Amazon</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (75 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:93.3%"></div><div class="an-bar-seg hold" style="width:6.7%"></div><div class="an-bar-seg sell" style="width:0.0%"></div></div><div class="an-counts"><span><b>70</b> buy</span><span><b>5</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="GOOGL"><div class="an-hdr"><div><span class="an-tick">GOOGL</span><span class="an-name">Alphabet</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (69 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:87.0%"></div><div class="an-bar-seg hold" style="width:13.0%"></div><div class="an-bar-seg sell" style="width:0%"></div></div><div class="an-counts"><span><b>60</b> buy</span><span><b>9</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="META"><div class="an-hdr"><div><span class="an-tick">META</span><span class="an-name">Meta Platforms</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (71 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:88.7%"></div><div class="an-bar-seg hold" style="width:11.3%"></div><div class="an-bar-seg sell" style="width:0%"></div></div><div class="an-counts"><span><b>63</b> buy</span><span><b>8</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="AVGO"><div class="an-hdr"><div><span class="an-tick">AVGO</span><span class="an-name">Broadcom</span></div><span class="an-consensus buy">Strong Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (57 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:91.2%"></div><div class="an-bar-seg hold" style="width:8.8%"></div><div class="an-bar-seg sell" style="width:0%"></div></div><div class="an-counts"><span><b>52</b> buy</span><span><b>5</b> hold</span><span><b>0</b> sell</span></div></div>
+    <div class="an-card" data-ticker="TSLA"><div class="an-hdr"><div><span class="an-tick">TSLA</span><span class="an-name">Tesla</span></div><span class="an-consensus buy">Buy</span></div><div class="an-bar-lbl"><span class="an-count-n">Consensus (60 analysts)</span><span class="info-tip" tabindex="0"><i class="ti ti-info-circle"></i><span class="tip-bubble">The consensus rating rolls up every covering analyst's individual call (Strong Buy through Strong Sell) into one snapshot. It reflects what Wall Street collectively thinks right now, not a guarantee of future performance, and analysts can be wrong or slow to update.</span></span></div><div class="an-bar"><div class="an-bar-seg buy" style="width:48.3%"></div><div class="an-bar-seg hold" style="width:40.0%"></div><div class="an-bar-seg sell" style="width:11.7%"></div></div><div class="an-counts"><span><b>29</b> buy</span><span><b>24</b> hold</span><span><b>7</b> sell</span></div></div>
+  </div>
+  <div class="news-stack">
+    <div class="nc" onclick="window.open('https://finnhub.io/docs/api/recommendation-trends','_blank')"><div class="nbar" style="background:var(--blue)"></div><div class="ncontent"><div class="nhead">Finnhub recommendation trends — free-tier API used for this data</div><div class="nmeta"><span class="nsrc">finnhub.io</span><span class="stag s-bull">Free</span></div></div></div>
   </div>
 </div>
 <!-- OPTIONS FLOW -->
@@ -839,6 +882,7 @@ const meta={
   ipo:['IPO watch','Space, defense & nuclear energy recent listings — exclusive'],
   gems:['Hidden gems','Undervalued companies with high upside potential'],
   insider:['Insider signals','Follow the smart money — Form 4 filings'],
+  analysts:['Analyst ratings','Wall Street consensus — Strong Buy to Strong Sell breakdown'],
   options:['Options flow','Unusual activity & golden sweeps from institutional players'],
   politician:['Congress trades','STOCK Act disclosures — follow elected officials'],
   short:['Short interest','Squeeze candidates & high short float stocks'],
@@ -1072,6 +1116,45 @@ function buildAllocChart(){
     updateTickerTape(data);
     updateWeeklySummary(data);
     updateEarnings(data);
+    updateAnalysts(data);
+  }
+
+  function updateAnalysts(data){
+    const analysts=data.analysts||{};
+    document.querySelectorAll('.an-card[data-ticker]').forEach(card=>{
+      const sym=card.getAttribute('data-ticker');
+      const a=analysts[sym];
+      const r=a && a.ratings;
+      if(!r || !r.total) return; // no live coverage — keep hardcoded fallback
+
+      const buy=r.strong_buy+r.buy;
+      const hold=r.hold;
+      const sell=r.sell+r.strong_sell;
+      const total=r.total;
+      const buyPct=buy/total*100, holdPct=hold/total*100, sellPct=Math.max(0,100-buyPct-holdPct);
+
+      const ratio=buy/total;
+      let label='Hold', cls='hold';
+      if(ratio>=0.75){ label='Strong Buy'; cls='buy'; }
+      else if(buy>hold && buy>sell){ label='Buy'; cls='buy'; }
+      else if(sell>buy && sell>hold){ label='Sell'; cls='sell'; }
+
+      const consEl=card.querySelector('.an-consensus');
+      if(consEl){ consEl.textContent=label; consEl.className='an-consensus '+cls; }
+
+      const countLbl=card.querySelector('.an-count-n');
+      if(countLbl) countLbl.textContent='Consensus ('+total+' analysts)';
+
+      const segs=card.querySelectorAll('.an-bar-seg');
+      if(segs[0]) segs[0].style.width=buyPct.toFixed(1)+'%';
+      if(segs[1]) segs[1].style.width=holdPct.toFixed(1)+'%';
+      if(segs[2]) segs[2].style.width=sellPct.toFixed(1)+'%';
+
+      const counts=card.querySelectorAll('.an-counts b');
+      if(counts[0]) counts[0].textContent=buy;
+      if(counts[1]) counts[1].textContent=hold;
+      if(counts[2]) counts[2].textContent=sell;
+    });
   }
 
   function updateEarnings(data){
