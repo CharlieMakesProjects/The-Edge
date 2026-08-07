@@ -1,248 +1,248 @@
 {
-  "last_updated": "2026-08-07T01:28:46Z",
+  "last_updated": "2026-08-07T14:48:27Z",
   "market": {
     "SPY": {
-      "price": 768.56,
-      "change": -1.23,
-      "pct": -0.1598,
-      "high": 771.82,
-      "low": 767.46,
-      "open": 770.21,
-      "prev_close": 769.79,
+      "price": 772.48,
+      "change": 3.92,
+      "pct": 0.51,
+      "high": 773.35,
+      "low": 769.61,
+      "open": 770.31,
+      "prev_close": 768.56,
       "name": "S&P 500"
     },
     "QQQ": {
-      "price": 714.65,
-      "change": -2.65,
-      "pct": -0.3694,
-      "high": 719.32,
-      "low": 708.5,
-      "open": 710.82,
-      "prev_close": 717.3,
+      "price": 719.64,
+      "change": 4.99,
+      "pct": 0.6982,
+      "high": 722.71,
+      "low": 716.51,
+      "open": 718.625,
+      "prev_close": 714.65,
       "name": "Nasdaq-100"
     },
     "DIA": {
-      "price": 538.19,
-      "change": -4.62,
-      "pct": -0.8511,
-      "high": 544.57,
-      "low": 537.69,
-      "open": 543.8,
-      "prev_close": 542.81,
+      "price": 539.74,
+      "change": 1.55,
+      "pct": 0.288,
+      "high": 540.22,
+      "low": 537.43,
+      "open": 538.3625,
+      "prev_close": 538.19,
       "name": "Dow Jones"
     }
   },
   "megacap": {
     "AAPL": {
-      "price": 312.41,
-      "change": 1.41,
-      "pct": 0.4534,
-      "high": 316.2894,
-      "low": 309.23,
-      "open": 314.34,
-      "prev_close": 311,
+      "price": 314.24,
+      "change": 1.83,
+      "pct": 0.5858,
+      "high": 314.81,
+      "low": 310.74,
+      "open": 311.835,
+      "prev_close": 312.41,
       "name": "Apple"
     },
     "NVDA": {
-      "price": 218.99,
-      "change": -0.23,
-      "pct": -0.1049,
-      "high": 223.63,
-      "low": 217,
-      "open": 221.53,
-      "prev_close": 219.22,
+      "price": 223.11,
+      "change": 4.12,
+      "pct": 1.8814,
+      "high": 223.64,
+      "low": 220.66,
+      "open": 220.67,
+      "prev_close": 218.99,
       "name": "NVIDIA"
     },
     "MSFT": {
-      "price": 499.86,
-      "change": 12.4,
-      "pct": 2.5438,
-      "high": 501.555,
-      "low": 488.52,
-      "open": 488.55,
-      "prev_close": 487.46,
+      "price": 503.13,
+      "change": 3.27,
+      "pct": 0.6542,
+      "high": 505.18,
+      "low": 499.12,
+      "open": 499.215,
+      "prev_close": 499.86,
       "name": "Microsoft"
     },
     "AMZN": {
-      "price": 272.26,
-      "change": -0.39,
-      "pct": -0.143,
-      "high": 275.48,
-      "low": 271.061,
-      "open": 272.765,
-      "prev_close": 272.65,
+      "price": 276.86,
+      "change": 4.6,
+      "pct": 1.6896,
+      "high": 277.86,
+      "low": 272.72,
+      "open": 272.72,
+      "prev_close": 272.26,
       "name": "Amazon"
     },
     "GOOGL": {
-      "price": 357.75,
-      "change": -4.68,
-      "pct": -1.2913,
-      "high": 364.1259,
-      "low": 356.88,
-      "open": 360.77,
-      "prev_close": 362.43,
+      "price": 354.79,
+      "change": -2.96,
+      "pct": -0.8274,
+      "high": 358.9,
+      "low": 354.17,
+      "open": 357.895,
+      "prev_close": 357.75,
       "name": "Alphabet"
     },
     "META": {
-      "price": 589.9,
-      "change": 1.13,
-      "pct": 0.1919,
-      "high": 595.31,
-      "low": 585.995,
-      "open": 586.95,
-      "prev_close": 588.77,
+      "price": 597.02,
+      "change": 7.12,
+      "pct": 1.207,
+      "high": 597.89,
+      "low": 585.62,
+      "open": 587.465,
+      "prev_close": 589.9,
       "name": "Meta Platforms"
     },
     "AVGO": {
-      "price": 420.565,
-      "change": 2.285,
-      "pct": 0.5463,
-      "high": 428.03,
-      "low": 410.76,
-      "open": 420.545,
-      "prev_close": 418.28,
+      "price": 425.16,
+      "change": 4.595,
+      "pct": 1.0926,
+      "high": 430.84,
+      "low": 421.61,
+      "open": 426.005,
+      "prev_close": 420.565,
       "name": "Broadcom"
     },
     "TSLA": {
-      "price": 319.53,
-      "change": -2.02,
-      "pct": -0.6282,
-      "high": 323,
-      "low": 315.5205,
-      "open": 317.05,
-      "prev_close": 321.55,
+      "price": 329.83,
+      "change": 10.3,
+      "pct": 3.2235,
+      "high": 329.9,
+      "low": 321.2508,
+      "open": 321.86,
+      "prev_close": 319.53,
       "name": "Tesla"
     }
   },
   "watchlist": {
     "CRWV": {
-      "price": 85.33,
-      "change": -4.56,
-      "pct": -5.0729,
-      "high": 89.23,
-      "low": 85,
-      "open": 86.35,
-      "prev_close": 89.89,
+      "price": 88.35,
+      "change": 3.02,
+      "pct": 3.5392,
+      "high": 90.81,
+      "low": 85.5835,
+      "open": 88.115,
+      "prev_close": 85.33,
       "name": "CoreWeave"
     },
     "RIOT": {
-      "price": 21.21,
-      "change": -0.29,
-      "pct": -1.3488,
-      "high": 22.55,
-      "low": 20.5725,
-      "open": 21.03,
-      "prev_close": 21.5,
+      "price": 20.63,
+      "change": -0.58,
+      "pct": -2.7346,
+      "high": 22.180000000000003,
+      "low": 20.32,
+      "open": 21.665,
+      "prev_close": 21.21,
       "name": "Riot Platforms"
     },
     "BE": {
-      "price": 228.96,
-      "change": -5.37,
-      "pct": -2.2916,
-      "high": 249.45,
-      "low": 221.21,
-      "open": 223,
-      "prev_close": 234.33,
+      "price": 214.79,
+      "change": -14.17,
+      "pct": -6.1889,
+      "high": 240.175,
+      "low": 213.02,
+      "open": 237.3375,
+      "prev_close": 228.96,
       "name": "Bloom Energy"
     },
     "CEG": {
-      "price": 261.1,
-      "change": -4.02,
-      "pct": -1.5163,
-      "high": 280,
-      "low": 260.675,
-      "open": 277.92,
-      "prev_close": 265.12,
+      "price": 269.67,
+      "change": 8.57,
+      "pct": 3.2823,
+      "high": 270.16,
+      "low": 261.37,
+      "open": 264.0525,
+      "prev_close": 261.1,
       "name": "Constellation Energy"
     },
     "CCJ": {
-      "price": 93.62,
-      "change": -0.65,
-      "pct": -0.6895,
-      "high": 96.4,
-      "low": 92.7,
-      "open": 93.61,
-      "prev_close": 94.27,
+      "price": 95.74,
+      "change": 2.12,
+      "pct": 2.2645,
+      "high": 97.89,
+      "low": 94.8,
+      "open": 95.61,
+      "prev_close": 93.62,
       "name": "Cameco"
     },
     "RKLB": {
-      "price": 75.67,
-      "change": 0.85,
-      "pct": 1.1361,
-      "high": 80.1924,
-      "low": 72.3,
-      "open": 72.31,
-      "prev_close": 74.82,
+      "price": 79.71,
+      "change": 4.04,
+      "pct": 5.339,
+      "high": 81.56,
+      "low": 77.38,
+      "open": 78,
+      "prev_close": 75.67,
       "name": "Rocket Lab"
     },
     "MU": {
-      "price": 881.47,
-      "change": -11.72,
-      "pct": -1.3122,
-      "high": 913.33,
-      "low": 827,
-      "open": 843.11,
-      "prev_close": 893.19,
+      "price": 855.44,
+      "change": -26.03,
+      "pct": -2.953,
+      "high": 904.8,
+      "low": 847.02,
+      "open": 896.855,
+      "prev_close": 881.47,
       "name": "Micron Technology"
     },
     "CLSK": {
-      "price": 12.75,
-      "change": -0.75,
-      "pct": -5.5556,
-      "high": 13.495,
-      "low": 12.51,
-      "open": 13.09,
-      "prev_close": 13.5,
+      "price": 12.37,
+      "change": -0.38,
+      "pct": -2.9804,
+      "high": 14.02,
+      "low": 12.08,
+      "open": 13.575,
+      "prev_close": 12.75,
       "name": "CleanSpark"
     },
     "OPFI": {
-      "price": 9.76,
-      "change": -0.03,
-      "pct": -0.3064,
-      "high": 9.86,
-      "low": 9.7,
-      "open": 9.81,
-      "prev_close": 9.79,
+      "price": 9.6,
+      "change": -0.16,
+      "pct": -1.6393,
+      "high": 9.9509,
+      "low": 9.57,
+      "open": 9.8,
+      "prev_close": 9.76,
       "name": "OppFi"
     },
     "TJX": {
-      "price": 162.06,
-      "change": 2.14,
-      "pct": 1.3382,
-      "high": 162.115,
-      "low": 159.69,
-      "open": 161.85,
-      "prev_close": 159.92,
+      "price": 161.79,
+      "change": -0.27,
+      "pct": -0.1666,
+      "high": 161.88,
+      "low": 159.23,
+      "open": 160.93,
+      "prev_close": 162.06,
       "name": "TJX Companies"
     },
     "CTRE": {
-      "price": 41.13,
-      "change": -0.01,
-      "pct": -0.0243,
-      "high": 41.59,
-      "low": 40.92,
-      "open": 41.57,
-      "prev_close": 41.14,
+      "price": 41.03,
+      "change": -0.1,
+      "pct": -0.2431,
+      "high": 41.31,
+      "low": 40.61,
+      "open": 41.01,
+      "prev_close": 41.13,
       "name": "CareTrust REIT"
     }
   },
   "crypto": {
     "BTC": {
-      "price": 64292,
-      "change_24h": -0.3,
-      "market_cap": 1290094062151.942
+      "price": 65071,
+      "change_24h": 0.56,
+      "market_cap": 1305786210350.6238
     },
     "ETH": {
-      "price": 1902.34,
-      "change_24h": -0.11,
-      "market_cap": 229559842120.09116
+      "price": 1918.37,
+      "change_24h": 0.33,
+      "market_cap": 231514249684.44226
     },
     "XRP": {
-      "price": 1.037,
-      "change_24h": -2.13,
-      "market_cap": 64823302553.70487
+      "price": 1.03,
+      "change_24h": -1.45,
+      "market_cap": 64442141205.61029
     },
-    "total_market_cap": 2279768975944.8687
+    "total_market_cap": 2301567221508.136
   },
   "fear_greed": {
     "value": 29,
@@ -1051,7 +1051,7 @@
   "analysts": {
     "CRWV": {
       "name": "CoreWeave",
-      "current_price": 85.33,
+      "current_price": 88.32,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 10,
@@ -1066,7 +1066,7 @@
     },
     "RIOT": {
       "name": "Riot Platforms",
-      "current_price": 21.21,
+      "current_price": 20.7,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 6,
@@ -1081,7 +1081,7 @@
     },
     "BE": {
       "name": "Bloom Energy",
-      "current_price": 228.96,
+      "current_price": 215.4,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 6,
@@ -1096,7 +1096,7 @@
     },
     "MU": {
       "name": "Micron Technology",
-      "current_price": 881.47,
+      "current_price": 857.21,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 18,
@@ -1111,7 +1111,7 @@
     },
     "CLSK": {
       "name": "CleanSpark",
-      "current_price": 12.75,
+      "current_price": 12.4,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 5,
@@ -1126,7 +1126,7 @@
     },
     "CEG": {
       "name": "Constellation Energy",
-      "current_price": 261.1,
+      "current_price": 269.93,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 5,
@@ -1141,7 +1141,7 @@
     },
     "CCJ": {
       "name": "Cameco",
-      "current_price": 93.62,
+      "current_price": 95.7,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 5,
@@ -1156,7 +1156,7 @@
     },
     "AAPL": {
       "name": "Apple",
-      "current_price": 312.41,
+      "current_price": 314.26,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 13,
@@ -1171,7 +1171,7 @@
     },
     "NVDA": {
       "name": "NVIDIA",
-      "current_price": 218.99,
+      "current_price": 223.29,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 23,
@@ -1186,7 +1186,7 @@
     },
     "MSFT": {
       "name": "Microsoft",
-      "current_price": 499.86,
+      "current_price": 504.28,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 23,
@@ -1201,7 +1201,7 @@
     },
     "AMZN": {
       "name": "Amazon",
-      "current_price": 272.26,
+      "current_price": 276.8,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 21,
@@ -1216,7 +1216,7 @@
     },
     "GOOGL": {
       "name": "Alphabet",
-      "current_price": 357.75,
+      "current_price": 354.34,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 20,
@@ -1231,7 +1231,7 @@
     },
     "META": {
       "name": "Meta Platforms",
-      "current_price": 589.9,
+      "current_price": 597.39,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 21,
@@ -1246,7 +1246,7 @@
     },
     "AVGO": {
       "name": "Broadcom",
-      "current_price": 420.565,
+      "current_price": 426.04,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 17,
@@ -1261,7 +1261,7 @@
     },
     "TSLA": {
       "name": "Tesla",
-      "current_price": 319.53,
+      "current_price": 330.56,
       "ratings": {
         "period": "2026-08-01",
         "strong_buy": 10,
