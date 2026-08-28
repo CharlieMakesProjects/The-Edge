@@ -58,4 +58,22 @@ EARNINGS_TICKERS = [
     "AAPL", "NVDA", "MSFT", "AMZN", "GOOGL", "META", "AVGO", "TSLA",
 ]
 
+# Fixed candidate universe for the "Hidden gems" screener (fetch_gems.py) —
+# union of the tracked watchlist, the sector-thesis tickers listed in
+# hub.html's sector research sections (nuclear/space/REIT/defense/biotech),
+# and the two tickers (TKR, RBC) already shown as static gems picks but not
+# listed anywhere else. Everything here is a ticker already curated somewhere
+# in the app; nothing new is being introduced.
+GEMS_CANDIDATES = sorted(set(WATCHLIST_SYMBOLS) | {
+    "CEG", "CCJ", "BWXT", "OKLO",  # nuclear
+    "RKLB", "VOYG", "PL", "AVAV",  # space & defense
+    "WELL", "CTRE", "OHI", "VTR",  # senior housing REITs
+    "LHX",                         # defense tech
+    "ARE",                         # biotech
+    "TKR", "RBC",                  # existing static gems picks (industrial)
+})
+GEMS_TOP_N = 6
+
 DATA_OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "market_data.json"
+GEMS_THESIS_PATH = Path(__file__).resolve().parent.parent / "data" / "gems_thesis.json"
+PRICE_HISTORY_PATH = Path(__file__).resolve().parent.parent / "data" / "price_history.json"

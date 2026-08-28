@@ -12,6 +12,7 @@ from fetch_analysts import fetch_analysts
 from fetch_crypto import fetch_crypto
 from fetch_earnings import fetch_earnings
 from fetch_fear_greed import fetch_fear_greed
+from fetch_gems import update_price_history
 from fetch_insiders import fetch_insiders
 from fetch_market import fetch_market
 from fetch_weekly_summary import fetch_weekly_summary
@@ -34,6 +35,14 @@ def main():
     insiders_data = _safe_call("fetch_insiders", fetch_insiders, [])
     earnings_data = _safe_call("fetch_earnings", fetch_earnings, {})
     analysts_data = _safe_call("fetch_analysts", fetch_analysts, {})
+    _safe_call("update_price_history", update_price_history, None)
+
+    # hidden_gems is owned by the separate Mon/Fri update_gems.py workflow —
+    # carry forward whatever it last wrote so this run doesn't wipe it out.
+    existing_hidden_gems = []
+    if DATA_OUTPUT_PATH.exists():
+        with open(DATA_OUTPUT_PATH) as f:
+            existing_hidden_gems = json.load(f).get("hidden_gems", [])
 
     combined = {
         "last_updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -50,6 +59,7 @@ def main():
         "insiders": insiders_data,
         "earnings": earnings_data,
         "analysts": analysts_data,
+        "hidden_gems": existing_hidden_gems,
     }
 
     combined["weekly_summary"] = _safe_call(

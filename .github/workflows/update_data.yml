@@ -23,6 +23,7 @@ jobs:
         run: |
           git config user.name "The Edge Bot"
           git config user.email "bot@theedge.com"
-          git add data/market_data.json
+          git add data/market_data.json data/price_history.json
           git diff --staged --quiet || git commit -m "Update market data $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git pull --rebase
           git push

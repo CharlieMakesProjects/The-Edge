@@ -1,0 +1,34 @@
+{
+  "MU": {
+    "why": "Nvidia's largest HBM memory supplier. Despite triple-digit expected revenue growth, trades at a discount to semiconductor peers on a forward-earnings basis. Fiscal earnings beats have repeatedly acted as re-rating triggers.",
+    "catalyst": "Every new Nvidia GPU generation requires exponentially more HBM. Operating leverage means profits soar faster than revenue. AI memory supercycle is just beginning and the market hasn't priced it as structural.",
+    "source_url": "https://www.fool.com/investing/stock-market/types-of-stocks/value-stocks/undervalued-stocks/",
+    "source_label": "Motley Fool analysis"
+  },
+  "CLSK": {
+    "why": "Trades below major bitcoin-mining peers despite strong unit economics. Vertically integrates its own power infrastructure — structurally lower electricity costs vs peers. Less debt, improving margins.",
+    "catalyst": "Green energy model attracts ESG institutional capital. As BTC mining competition intensifies, low-cost operators compound their advantage.",
+    "source_url": "https://www.mexc.com/news/417069",
+    "source_label": "Analyst coverage"
+  },
+  "OPFI": {
+    "why": "AI underwriting model with a high auto-approval rate and a multi-quarter streak of EPS upgrades with zero downward revisions. Largely ignored by Wall Street because of its small market cap.",
+    "catalyst": "AI improvements compound: better approvals leads to more revenue, higher margins, and lower defaults. New institutional analyst coverage could be the re-rating trigger.",
+    "source_url": "https://www.nasdaq.com/articles/3-undervalued-stocks-investors-should-grab-right-2026",
+    "source_label": "Nasdaq analysis"
+  },
+  "TJX": {
+    "why": "Off-price retail thrives in both downturns and booms, making it one of the most durable business models in consumer retail. Has repeatedly screened well on momentum/technical scans.",
+    "catalyst": "A resilient consumer plus a defensive sector positioning make this a lower-risk momentum play when broader risk appetite wavers.",
+    "source_url": "https://www.marketshost.com/news/articles/10-stocks-with-strong-buy-signals-bullish-macd-june-2026-102794",
+    "source_label": "MarketsHost OpportunityRadar"
+  },
+  "TKR": {
+    "why": "125-year-old precision bearings manufacturer trading at an industrial-average multiple despite exposure to three converging secular trends: AI-powered robots, drones, and autonomous vehicles all depend on Timken's tapered and precision roller bearings for motion control. Market still treats it as a legacy industrial name.",
+    "catalyst": "JP Morgan has flagged a significant step-up in bearing demand as humanoid robotics and industrial automation scale. Every new robotics or AV platform needs precision motion components — Timken's engineered-bearings segment sits directly in that supply chain."
+  },
+  "RBC": {
+    "why": "Aerospace and defense-focused precision bearings maker with a highly engineered, hard-to-replicate product line. High-margin specialty manufacturer that's pulled back from highs even as the underlying demand backdrop strengthens.",
+    "catalyst": "Rising defense budgets plus a recovering commercial aerospace build cycle both flow directly through RBC's bearings and precision components business. Long qualification cycles on defense and aero platforms mean once RBC is designed in, revenue is sticky for years."
+  }
+}
