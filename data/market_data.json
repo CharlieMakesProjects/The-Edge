@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-27T23:26:38Z",
+  "last_updated": "2026-08-28T05:52:38Z",
   "market": {
     "SPY": {
       "price": 771.1,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 80358,
-      "change_24h": 2.08,
-      "market_cap": 1613273571136.6792
+      "price": 79848,
+      "change_24h": 1.31,
+      "market_cap": 1603037612014.0652
     },
     "ETH": {
-      "price": 2514.61,
-      "change_24h": 0.73,
-      "market_cap": 303398894287.7277
+      "price": 2496.06,
+      "change_24h": 0.1,
+      "market_cap": 301227555727.8011
     },
     "XRP": {
-      "price": 1.46,
-      "change_24h": 3.0,
-      "market_cap": 91310430977.27309
+      "price": 1.43,
+      "change_24h": 1.28,
+      "market_cap": 89472420519.08484
     },
-    "total_market_cap": 2711304450540.7427
+    "total_market_cap": 2697542098748.625
   },
   "fear_greed": {
-    "value": 71,
+    "value": 73,
     "classification": "Greed",
     "history": [
+      {
+        "value": 73,
+        "classification": "Greed",
+        "date": "2026-08-28"
+      },
       {
         "value": 71,
         "classification": "Greed",
@@ -392,11 +397,6 @@
         "value": 28,
         "classification": "Fear",
         "date": "2026-07-30"
-      },
-      {
-        "value": 29,
-        "classification": "Fear",
-        "date": "2026-07-29"
       }
     ]
   },
@@ -751,7 +751,7 @@
       "next_earnings_date": "2026-11-17",
       "quarters": [
         {
-          "period": "2027-06-30",
+          "period": "2026-09-30",
           "quarter": 2,
           "year": 2027,
           "actual": 2.22,
