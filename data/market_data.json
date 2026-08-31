@@ -1275,6 +1275,155 @@
       "upside_pct": null
     }
   },
-  "hidden_gems": [],
+  "hidden_gems": [
+    {
+      "symbol": "MU",
+      "name": "Micron Technology Inc",
+      "sector": "Semiconductors",
+      "price": 946.08,
+      "pe": 21.5314,
+      "pe_vs_peers_pct": 60.9,
+      "revenue_growth_ttm": 166.98,
+      "eps_growth_ttm": 700.71,
+      "analyst_buy_pct": 91.1,
+      "analyst_counts": {
+        "strong_buy": 18,
+        "buy": 33,
+        "hold": 4,
+        "sell": 1,
+        "strong_sell": 0,
+        "total": 56
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.9361,
+      "thesis": {
+        "why": "Nvidia's largest HBM memory supplier. Despite triple-digit expected revenue growth, trades at a discount to semiconductor peers on a forward-earnings basis. Fiscal earnings beats have repeatedly acted as re-rating triggers.",
+        "catalyst": "Every new Nvidia GPU generation requires exponentially more HBM. Operating leverage means profits soar faster than revenue. AI memory supercycle is just beginning and the market hasn't priced it as structural.",
+        "source_url": "https://www.fool.com/investing/stock-market/types-of-stocks/value-stocks/undervalued-stocks/",
+        "source_label": "Motley Fool analysis"
+      }
+    },
+    {
+      "symbol": "RIOT",
+      "name": "Riot Platforms Inc",
+      "sector": "Technology",
+      "price": 18.68,
+      "pe": null,
+      "pe_vs_peers_pct": null,
+      "revenue_growth_ttm": 42.4,
+      "eps_growth_ttm": null,
+      "analyst_buy_pct": 92.9,
+      "analyst_counts": {
+        "strong_buy": 6,
+        "buy": 20,
+        "hold": 2,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 28
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.8824,
+      "thesis": null
+    },
+    {
+      "symbol": "CTRE",
+      "name": "CareTrust REIT Inc",
+      "sector": "Real Estate",
+      "price": 38.84,
+      "pe": 25.8169,
+      "pe_vs_peers_pct": 57.3,
+      "revenue_growth_ttm": 53.03,
+      "eps_growth_ttm": 32.2,
+      "analyst_buy_pct": 88.9,
+      "analyst_counts": {
+        "strong_buy": 5,
+        "buy": 11,
+        "hold": 2,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 18
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.8039,
+      "thesis": null
+    },
+    {
+      "symbol": "CLSK",
+      "name": "CleanSpark Inc",
+      "sector": "Technology",
+      "price": 11.59,
+      "pe": 8.0999,
+      "pe_vs_peers_pct": 89.3,
+      "revenue_growth_ttm": 7.49,
+      "eps_growth_ttm": null,
+      "analyst_buy_pct": 90.5,
+      "analyst_counts": {
+        "strong_buy": 5,
+        "buy": 14,
+        "hold": 2,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 21
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.7081,
+      "thesis": {
+        "why": "Trades below major bitcoin-mining peers despite strong unit economics. Vertically integrates its own power infrastructure \u2014 structurally lower electricity costs vs peers. Less debt, improving margins.",
+        "catalyst": "Green energy model attracts ESG institutional capital. As BTC mining competition intensifies, low-cost operators compound their advantage.",
+        "source_url": "https://www.mexc.com/news/417069",
+        "source_label": "Analyst coverage"
+      }
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corp",
+      "sector": "Aerospace & Defense",
+      "price": 63.79,
+      "pe": null,
+      "pe_vs_peers_pct": null,
+      "revenue_growth_ttm": 52.53,
+      "eps_growth_ttm": null,
+      "analyst_buy_pct": 77.8,
+      "analyst_counts": {
+        "strong_buy": 7,
+        "buy": 14,
+        "hold": 6,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 27
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.6062,
+      "thesis": null
+    },
+    {
+      "symbol": "WELL",
+      "name": "Welltower Inc",
+      "sector": "Real Estate",
+      "price": 237.75,
+      "pe": 107.0283,
+      "pe_vs_peers_pct": null,
+      "revenue_growth_ttm": 37.57,
+      "eps_growth_ttm": 22.25,
+      "analyst_buy_pct": 82.1,
+      "analyst_counts": {
+        "strong_buy": 6,
+        "buy": 17,
+        "hold": 5,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 28
+      },
+      "rsi14": null,
+      "ema50": null,
+      "score": 0.6057,
+      "thesis": null
+    }
+  ],
   "weekly_summary": ""
 }
