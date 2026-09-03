@@ -1,248 +1,98 @@
 {
-  "last_updated": "2026-09-03T17:28:14Z",
+  "last_updated": "2026-09-03T23:40:36Z",
   "market": {
-    "SPY": {
-      "price": 772.32,
-      "change": 7.16,
-      "pct": 0.9358,
-      "high": 773.32,
-      "low": 766.83,
-      "open": 766.83,
-      "prev_close": 765.16,
-      "name": "S&P 500"
-    },
-    "QQQ": {
-      "price": 716.55,
-      "change": 7.31,
-      "pct": 1.0307,
-      "high": 717.93,
-      "low": 709.69,
-      "open": 710.635,
-      "prev_close": 709.24,
-      "name": "Nasdaq-100"
-    },
     "DIA": {
-      "price": 536.68,
-      "change": 6.06,
-      "pct": 1.1421,
+      "price": 536.93,
+      "change": 6.31,
+      "pct": 1.1892,
       "high": 537.62,
       "low": 532.94,
-      "open": 532.945,
+      "open": 534.04,
       "prev_close": 530.62,
       "name": "Dow Jones"
     }
   },
   "megacap": {
-    "AAPL": {
-      "price": 327.72,
-      "change": 2.76,
-      "pct": 0.8493,
-      "high": 330.81,
-      "low": 324.11,
-      "open": 325.185,
-      "prev_close": 324.96,
-      "name": "Apple"
-    },
     "NVDA": {
-      "price": 227.22,
-      "change": 2.81,
-      "pct": 1.2522,
-      "high": 229.07,
+      "price": 228.45,
+      "change": 4.04,
+      "pct": 1.8003,
+      "high": 230.4,
       "low": 224.75,
-      "open": 225.86,
+      "open": 226.02,
       "prev_close": 224.41,
       "name": "NVIDIA"
     },
-    "MSFT": {
-      "price": 510.27,
-      "change": 13.45,
-      "pct": 2.7072,
-      "high": 514.98,
-      "low": 499.33,
-      "open": 499.33,
-      "prev_close": 496.82,
-      "name": "Microsoft"
-    },
-    "AMZN": {
-      "price": 258.56,
-      "change": 3.58,
-      "pct": 1.404,
-      "high": 259.4299,
-      "low": 256,
-      "open": 256.455,
-      "prev_close": 254.98,
-      "name": "Amazon"
-    },
-    "GOOGL": {
-      "price": 342.3,
-      "change": 5.18,
-      "pct": 1.5365,
-      "high": 344.68,
-      "low": 339.645,
-      "open": 339.645,
-      "prev_close": 337.12,
-      "name": "Alphabet"
-    },
-    "META": {
-      "price": 613.16,
-      "change": 20.31,
-      "pct": 3.4258,
-      "high": 619.46,
-      "low": 601.74,
-      "open": 601.74,
-      "prev_close": 592.85,
-      "name": "Meta Platforms"
-    },
     "AVGO": {
-      "price": 354.33,
-      "change": -12.91,
-      "pct": -3.5154,
-      "high": 357.42,
+      "price": 357.16,
+      "change": -10.08,
+      "pct": -2.7448,
+      "high": 359.4,
       "low": 342.3305,
-      "open": 356.66,
+      "open": 351.74,
       "prev_close": 367.24,
       "name": "Broadcom"
     },
     "TSLA": {
-      "price": 381.88,
-      "change": 24.87,
-      "pct": 6.9662,
+      "price": 376.365,
+      "change": 19.355,
+      "pct": 5.4214,
       "high": 384.04,
-      "low": 362.905,
-      "open": 362.905,
+      "low": 365.82,
+      "open": 365.82,
       "prev_close": 357.01,
       "name": "Tesla"
     }
   },
   "watchlist": {
-    "CRWV": {
-      "price": 83.69,
-      "change": 2.76,
-      "pct": 3.4104,
-      "high": 83.81,
-      "low": 79.03,
-      "open": 80.76,
-      "prev_close": 80.93,
-      "name": "CoreWeave"
-    },
-    "RIOT": {
-      "price": 20.78,
-      "change": 2.145,
-      "pct": 11.5106,
-      "high": 20.89,
-      "low": 18.47,
-      "open": 18.7325,
-      "prev_close": 18.635,
-      "name": "Riot Platforms"
-    },
-    "BE": {
-      "price": 237.54,
-      "change": 20.26,
-      "pct": 9.3244,
-      "high": 237.9373,
-      "low": 212.12,
-      "open": 219.5,
-      "prev_close": 217.28,
-      "name": "Bloom Energy"
-    },
     "CEG": {
-      "price": 283.7,
-      "change": -6.34,
-      "pct": -2.1859,
+      "price": 285.05,
+      "change": -4.99,
+      "pct": -1.7205,
       "high": 296.62,
-      "low": 283.655,
-      "open": 291.45,
+      "low": 282.25,
+      "open": 292.4,
       "prev_close": 290.04,
       "name": "Constellation Energy"
     },
     "CCJ": {
-      "price": 100.59,
-      "change": 4.21,
-      "pct": 4.3681,
+      "price": 100.62,
+      "change": 4.24,
+      "pct": 4.3993,
       "high": 101.53,
-      "low": 97.845,
-      "open": 97.845,
+      "low": 98.69,
+      "open": 98.99,
       "prev_close": 96.38,
       "name": "Cameco"
     },
     "RKLB": {
-      "price": 63.9,
-      "change": 0.8,
-      "pct": 1.2678,
-      "high": 64.91000000000001,
+      "price": 63.81,
+      "change": 0.71,
+      "pct": 1.1252,
+      "high": 64.9,
       "low": 62.36,
-      "open": 64.32,
+      "open": 64.64,
       "prev_close": 63.1,
       "name": "Rocket Lab"
-    },
-    "MU": {
-      "price": 941.07,
-      "change": -15.01,
-      "pct": -1.57,
-      "high": 959.76,
-      "low": 918.8801,
-      "open": 955.79,
-      "prev_close": 956.08,
-      "name": "Micron Technology"
-    },
-    "CLSK": {
-      "price": 12.4,
-      "change": 1.07,
-      "pct": 9.444,
-      "high": 12.54,
-      "low": 11.31,
-      "open": 11.41,
-      "prev_close": 11.33,
-      "name": "CleanSpark"
-    },
-    "OPFI": {
-      "price": 7.3,
-      "change": 0.06,
-      "pct": 0.8287,
-      "high": 7.48,
-      "low": 7.25,
-      "open": 7.36,
-      "prev_close": 7.24,
-      "name": "OppFi"
-    },
-    "TJX": {
-      "price": 131.47,
-      "change": 0.16,
-      "pct": 0.1218,
-      "high": 132.355,
-      "low": 130.15,
-      "open": 131.6675,
-      "prev_close": 131.31,
-      "name": "TJX Companies"
-    },
-    "CTRE": {
-      "price": 39.58,
-      "change": 0.01,
-      "pct": 0.0253,
-      "high": 39.8067,
-      "low": 39.23,
-      "open": 39.8,
-      "prev_close": 39.57,
-      "name": "CareTrust REIT"
     }
   },
   "crypto": {
     "BTC": {
-      "price": 81033,
-      "change_24h": 5.21,
-      "market_cap": 1627068412098.297
+      "price": 81179,
+      "change_24h": 5.28,
+      "market_cap": 1629988112923.5276
     },
     "ETH": {
-      "price": 2497.9,
-      "change_24h": 5.14,
-      "market_cap": 304802242294.1733
+      "price": 2500.69,
+      "change_24h": 4.92,
+      "market_cap": 305127812488.49115
     },
     "XRP": {
       "price": 1.45,
-      "change_24h": 9.31,
-      "market_cap": 91205579173.88454
+      "change_24h": 7.76,
+      "market_cap": 91048482482.78642
     },
-    "total_market_cap": 2738154553323.9067
+    "total_market_cap": 2738801275269.464
   },
   "fear_greed": {
     "value": 65,
@@ -402,135 +252,6 @@
   },
   "insiders": [],
   "earnings": {
-    "CRWV": {
-      "name": "CoreWeave",
-      "next_earnings_date": "2026-11-11",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": -1.03,
-          "estimate": -1.2303,
-          "surprise_pct": 16.2806,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": -1.12,
-          "estimate": -0.9157,
-          "surprise_pct": -22.3108,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": -0.56,
-          "estimate": -0.5036,
-          "surprise_pct": -11.1994,
-          "result": "miss"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": -0.08,
-          "estimate": -0.376,
-          "surprise_pct": 78.7234,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 15.37
-    },
-    "RIOT": {
-      "name": "Riot Platforms",
-      "next_earnings_date": "2026-10-28",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": -0.68,
-          "estimate": -0.2709,
-          "surprise_pct": -151.0151,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": -1.44,
-          "estimate": -0.6045,
-          "surprise_pct": -138.2134,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": -2.06,
-          "estimate": -0.2912,
-          "surprise_pct": -607.4176,
-          "result": "miss"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 0.26,
-          "estimate": 0.0683,
-          "surprise_pct": 280.6735,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": -153.99
-    },
-    "BE": {
-      "name": "Bloom Energy",
-      "next_earnings_date": "2026-10-26",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 0.78,
-          "estimate": 0.418,
-          "surprise_pct": 86.6029,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 0.44,
-          "estimate": 0.1339,
-          "surprise_pct": 228.6034,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 0.45,
-          "estimate": 0.3198,
-          "surprise_pct": 40.7129,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 0.15,
-          "estimate": 0.0967,
-          "surprise_pct": 55.1189,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 102.76
-    },
     "MU": {
       "name": "Micron Technology",
       "next_earnings_date": "2026-09-30",
@@ -573,530 +294,12 @@
         }
       ],
       "avg_surprise_pct": 16.21
-    },
-    "CLSK": {
-      "name": "CleanSpark",
-      "next_earnings_date": "2026-11-23",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 3,
-          "year": 2026,
-          "actual": -0.89,
-          "estimate": -0.3159,
-          "surprise_pct": -181.7347,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 2,
-          "year": 2026,
-          "actual": -1.52,
-          "estimate": -0.5757,
-          "surprise_pct": -164.0264,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": -1.34,
-          "estimate": -0.2318,
-          "surprise_pct": -478.0846,
-          "result": "miss"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 4,
-          "year": 2025,
-          "actual": -0.01,
-          "estimate": 0.3289,
-          "surprise_pct": -103.0404,
-          "result": "miss"
-        }
-      ],
-      "avg_surprise_pct": -231.72
-    },
-    "CEG": {
-      "name": "Constellation Energy",
-      "next_earnings_date": "2026-11-04",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 2.55,
-          "estimate": 2.3045,
-          "surprise_pct": 10.6531,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 2.74,
-          "estimate": 2.5928,
-          "surprise_pct": 5.6773,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 2.3,
-          "estimate": 2.2473,
-          "surprise_pct": 2.345,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 3.04,
-          "estimate": 3.1499,
-          "surprise_pct": -3.489,
-          "result": "miss"
-        }
-      ],
-      "avg_surprise_pct": 3.8
-    },
-    "CCJ": {
-      "name": "Cameco",
-      "next_earnings_date": "2026-11-03",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 0.18,
-          "estimate": 0.3806,
-          "surprise_pct": -52.7063,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 0.3,
-          "estimate": 0.3654,
-          "surprise_pct": -17.8982,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 0.5,
-          "estimate": 0.4444,
-          "surprise_pct": 12.5113,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 0.07,
-          "estimate": 0.307,
-          "surprise_pct": -77.1987,
-          "result": "miss"
-        }
-      ],
-      "avg_surprise_pct": -33.82
-    },
-    "AAPL": {
-      "name": "Apple",
-      "next_earnings_date": "2026-10-28",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 3,
-          "year": 2026,
-          "actual": 1.91,
-          "estimate": 1.9271,
-          "surprise_pct": -0.8873,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 2.01,
-          "estimate": 1.9884,
-          "surprise_pct": 1.0863,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 2.84,
-          "estimate": 2.7257,
-          "surprise_pct": 4.1934,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 1.85,
-          "estimate": 1.8075,
-          "surprise_pct": 2.3513,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 1.69
-    },
-    "NVDA": {
-      "name": "NVIDIA",
-      "next_earnings_date": "2026-11-17",
-      "quarters": [
-        {
-          "period": "2026-09-30",
-          "quarter": 2,
-          "year": 2027,
-          "actual": 2.22,
-          "estimate": 2.1384,
-          "surprise_pct": 3.8159,
-          "result": "beat"
-        },
-        {
-          "period": "2026-06-30",
-          "quarter": 1,
-          "year": 2027,
-          "actual": 1.87,
-          "estimate": 1.7922,
-          "surprise_pct": 4.341,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 4,
-          "year": 2026,
-          "actual": 1.62,
-          "estimate": 1.5634,
-          "surprise_pct": 3.6203,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 3,
-          "year": 2026,
-          "actual": 1.3,
-          "estimate": 1.2746,
-          "surprise_pct": 1.9928,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 3.44
-    },
-    "MSFT": {
-      "name": "Microsoft",
-      "next_earnings_date": "2026-10-27",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 4,
-          "year": 2026,
-          "actual": 4.74,
-          "estimate": 4.3274,
-          "surprise_pct": 9.5346,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 3,
-          "year": 2026,
-          "actual": 4.27,
-          "estimate": 4.1432,
-          "surprise_pct": 3.0604,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 4.14,
-          "estimate": 4.0345,
-          "surprise_pct": 2.6149,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 4.13,
-          "estimate": 3.7391,
-          "surprise_pct": 10.4544,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 6.42
-    },
-    "AMZN": {
-      "name": "Amazon",
-      "next_earnings_date": "2026-10-28",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 1.97,
-          "estimate": 1.8563,
-          "surprise_pct": 6.1251,
-          "result": "beat"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 1.61,
-          "estimate": 1.6679,
-          "surprise_pct": -3.4714,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 1.61,
-          "estimate": 1.6703,
-          "surprise_pct": -3.6101,
-          "result": "miss"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 1.95,
-          "estimate": 1.605,
-          "surprise_pct": 21.4953,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 5.13
-    },
-    "GOOGL": {
-      "name": "Alphabet",
-      "next_earnings_date": "2026-10-27",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 2.85,
-          "estimate": 2.9798,
-          "surprise_pct": -4.356,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 2.62,
-          "estimate": 2.7051,
-          "surprise_pct": -3.1459,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 2.82,
-          "estimate": 2.7063,
-          "surprise_pct": 4.2013,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 3.1,
-          "estimate": 2.3954,
-          "surprise_pct": 29.4147,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 6.53
-    },
-    "META": {
-      "name": "Meta Platforms",
-      "next_earnings_date": "2026-10-27",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 6.18,
-          "estimate": 7.3594,
-          "surprise_pct": -16.0258,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 7.31,
-          "estimate": 6.923,
-          "surprise_pct": 5.5901,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 8.88,
-          "estimate": 8.3992,
-          "surprise_pct": 5.7244,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 7.25,
-          "estimate": 6.8245,
-          "surprise_pct": 6.2349,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 0.38
-    },
-    "AVGO": {
-      "name": "Broadcom",
-      "next_earnings_date": "2026-12-09",
-      "quarters": [
-        {
-          "period": "2026-09-30",
-          "quarter": 3,
-          "year": 2026,
-          "actual": 3.32,
-          "estimate": 3.3013,
-          "surprise_pct": 0.5664,
-          "result": "beat"
-        },
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 2.44,
-          "estimate": 2.4458,
-          "surprise_pct": -0.2371,
-          "result": "met"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 2.05,
-          "estimate": 2.068,
-          "surprise_pct": -0.8704,
-          "result": "miss"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 1.95,
-          "estimate": 1.8996,
-          "surprise_pct": 2.6532,
-          "result": "beat"
-        }
-      ],
-      "avg_surprise_pct": 0.53
-    },
-    "TSLA": {
-      "name": "Tesla",
-      "next_earnings_date": "2026-10-20",
-      "quarters": [
-        {
-          "period": "2026-06-30",
-          "quarter": 2,
-          "year": 2026,
-          "actual": 0.33,
-          "estimate": 0.5191,
-          "surprise_pct": -36.4284,
-          "result": "miss"
-        },
-        {
-          "period": "2026-03-31",
-          "quarter": 1,
-          "year": 2026,
-          "actual": 0.41,
-          "estimate": 0.3773,
-          "surprise_pct": 8.6668,
-          "result": "beat"
-        },
-        {
-          "period": "2025-12-31",
-          "quarter": 4,
-          "year": 2025,
-          "actual": 0.5,
-          "estimate": 0.4541,
-          "surprise_pct": 10.1079,
-          "result": "beat"
-        },
-        {
-          "period": "2025-09-30",
-          "quarter": 3,
-          "year": 2025,
-          "actual": 0.5,
-          "estimate": 0.5586,
-          "surprise_pct": -10.4905,
-          "result": "miss"
-        }
-      ],
-      "avg_surprise_pct": -7.04
     }
   },
   "analysts": {
-    "CRWV": {
-      "name": "CoreWeave",
-      "current_price": 83.78,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 10,
-        "buy": 22,
-        "hold": 12,
-        "sell": 1,
-        "strong_sell": 1,
-        "total": 46
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
-    "RIOT": {
-      "name": "Riot Platforms",
-      "current_price": 20.76,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 6,
-        "buy": 20,
-        "hold": 2,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 28
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
-    "BE": {
-      "name": "Bloom Energy",
-      "current_price": 237.93,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 7,
-        "buy": 17,
-        "hold": 14,
-        "sell": 1,
-        "strong_sell": 0,
-        "total": 39
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
     "MU": {
       "name": "Micron Technology",
-      "current_price": 941.5,
+      "current_price": null,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 18,
@@ -1109,39 +312,9 @@
       "price_target": null,
       "upside_pct": null
     },
-    "CLSK": {
-      "name": "CleanSpark",
-      "current_price": 12.42,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 5,
-        "buy": 14,
-        "hold": 2,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 21
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
-    "CEG": {
-      "name": "Constellation Energy",
-      "current_price": 283.67,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 5,
-        "buy": 18,
-        "hold": 5,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 28
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
     "CCJ": {
       "name": "Cameco",
-      "current_price": 100.77,
+      "current_price": null,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 5,
@@ -1156,7 +329,7 @@
     },
     "AAPL": {
       "name": "Apple",
-      "current_price": 327.77,
+      "current_price": 328.21,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 12,
@@ -1171,7 +344,7 @@
     },
     "NVDA": {
       "name": "NVIDIA",
-      "current_price": 227.26,
+      "current_price": 228.45,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 24,
@@ -1184,24 +357,9 @@
       "price_target": null,
       "upside_pct": null
     },
-    "MSFT": {
-      "name": "Microsoft",
-      "current_price": 510.22,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 23,
-        "buy": 41,
-        "hold": 5,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 69
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
     "AMZN": {
       "name": "Amazon",
-      "current_price": 258.54,
+      "current_price": 258.9,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 20,
@@ -1216,7 +374,7 @@
     },
     "GOOGL": {
       "name": "Alphabet",
-      "current_price": 342.31,
+      "current_price": null,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 20,
@@ -1231,7 +389,7 @@
     },
     "META": {
       "name": "Meta Platforms",
-      "current_price": 613.16,
+      "current_price": 610.68,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 20,
@@ -1244,24 +402,9 @@
       "price_target": null,
       "upside_pct": null
     },
-    "AVGO": {
-      "name": "Broadcom",
-      "current_price": 354.11,
-      "ratings": {
-        "period": "2026-09-01",
-        "strong_buy": 17,
-        "buy": 35,
-        "hold": 5,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 57
-      },
-      "price_target": null,
-      "upside_pct": null
-    },
     "TSLA": {
       "name": "Tesla",
-      "current_price": 382.16,
+      "current_price": null,
       "ratings": {
         "period": "2026-09-01",
         "strong_buy": 10,
