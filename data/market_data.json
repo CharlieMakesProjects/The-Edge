@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-28T20:22:05Z",
+  "last_updated": "2026-09-29T01:21:23Z",
   "market": {
     "SPY": {
       "price": 765.61,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 83470,
-      "change_24h": -1.52,
-      "market_cap": 1676943783096.806
+      "price": 82923,
+      "change_24h": -1.2,
+      "market_cap": 1666161695447.1885
     },
     "ETH": {
-      "price": 2680.94,
-      "change_24h": -0.51,
-      "market_cap": 327298135432.9598
+      "price": 2666.06,
+      "change_24h": -0.09,
+      "market_cap": 325545319770.4769
     },
     "XRP": {
-      "price": 1.49,
-      "change_24h": -3.0,
-      "market_cap": 93560871826.60411
+      "price": 1.48,
+      "change_24h": -2.15,
+      "market_cap": 92969505349.92863
     },
-    "total_market_cap": 2875588634504.606
+    "total_market_cap": 2858446701471.882
   },
   "fear_greed": {
-    "value": 74,
+    "value": 73,
     "classification": "Greed",
     "history": [
+      {
+        "value": 73,
+        "classification": "Greed",
+        "date": "2026-09-29"
+      },
       {
         "value": 74,
         "classification": "Greed",
@@ -392,11 +397,6 @@
         "value": 62,
         "classification": "Greed",
         "date": "2026-08-31"
-      },
-      {
-        "value": 69,
-        "classification": "Greed",
-        "date": "2026-08-30"
       }
     ]
   },
@@ -490,7 +490,7 @@
     },
     "BE": {
       "name": "Bloom Energy",
-      "next_earnings_date": "2026-10-26",
+      "next_earnings_date": "2026-10-29",
       "quarters": [
         {
           "period": "2026-06-30",
@@ -662,7 +662,7 @@
     },
     "CCJ": {
       "name": "Cameco",
-      "next_earnings_date": "2026-11-03",
+      "next_earnings_date": "2026-10-30",
       "quarters": [
         {
           "period": "2026-06-30",
@@ -705,7 +705,7 @@
     },
     "AAPL": {
       "name": "Apple",
-      "next_earnings_date": "2026-10-28",
+      "next_earnings_date": "2026-10-29",
       "quarters": [
         {
           "period": "2026-06-30",
@@ -834,7 +834,7 @@
     },
     "AMZN": {
       "name": "Amazon",
-      "next_earnings_date": "2026-10-28",
+      "next_earnings_date": "2026-10-29",
       "quarters": [
         {
           "period": "2026-06-30",
@@ -920,7 +920,7 @@
     },
     "META": {
       "name": "Meta Platforms",
-      "next_earnings_date": "2026-10-27",
+      "next_earnings_date": "2026-10-28",
       "quarters": [
         {
           "period": "2026-06-30",
