@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12T21:58:41Z",
+  "last_updated": "2026-10-13T02:47:29Z",
   "market": {
     "SPY": {
       "price": 778.1,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 82618,
-      "change_24h": -1.0,
-      "market_cap": 1660512824560.9294
+      "price": 82763,
+      "change_24h": -1.25,
+      "market_cap": 1663318059092.6921
     },
     "ETH": {
-      "price": 2490.73,
-      "change_24h": -1.39,
-      "market_cap": 304187207518.2007
+      "price": 2480.42,
+      "change_24h": -2.73,
+      "market_cap": 302922642240.45483
     },
     "XRP": {
-      "price": 1.35,
-      "change_24h": -3.6,
-      "market_cap": 85378309990.24878
+      "price": 1.36,
+      "change_24h": -3.4,
+      "market_cap": 85758455834.65358
     },
-    "total_market_cap": 2801208405275.379
+    "total_market_cap": 2797362125115.993
   },
   "fear_greed": {
-    "value": 69,
+    "value": 57,
     "classification": "Greed",
     "history": [
+      {
+        "value": 57,
+        "classification": "Greed",
+        "date": "2026-10-13"
+      },
       {
         "value": 69,
         "classification": "Greed",
@@ -392,11 +397,6 @@
         "value": 57,
         "classification": "Greed",
         "date": "2026-09-14"
-      },
-      {
-        "value": 61,
-        "classification": "Greed",
-        "date": "2026-09-13"
       }
     ]
   },
@@ -447,7 +447,7 @@
     },
     "RIOT": {
       "name": "Riot Platforms",
-      "next_earnings_date": "2026-10-28",
+      "next_earnings_date": "2026-11-10",
       "quarters": [
         {
           "period": "2026-06-30",
@@ -619,7 +619,7 @@
     },
     "CEG": {
       "name": "Constellation Energy",
-      "next_earnings_date": "2026-11-04",
+      "next_earnings_date": "2026-11-09",
       "quarters": [
         {
           "period": "2026-06-30",
