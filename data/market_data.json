@@ -1280,9 +1280,9 @@
       "symbol": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "price": 989.04,
-      "pe": 13.6773,
-      "pe_vs_peers_pct": 68.9,
+      "price": 894.72,
+      "pe": 12.1294,
+      "pe_vs_peers_pct": 71.4,
       "revenue_growth_ttm": 256.33,
       "eps_growth_ttm": 878.77,
       "analyst_buy_pct": 91.4,
@@ -1294,7 +1294,7 @@
         "strong_sell": 0,
         "total": 58
       },
-      "rsi14": 42.0,
+      "rsi14": 23.3,
       "ema50": null,
       "score": 0.9432,
       "thesis": {
@@ -1308,7 +1308,7 @@
       "symbol": "AVAV",
       "name": "AeroVironment Inc",
       "sector": "Aerospace & Defense",
-      "price": 131.51,
+      "price": 121.88,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 84.44,
@@ -1322,7 +1322,7 @@
         "strong_sell": 0,
         "total": 28
       },
-      "rsi14": 19.9,
+      "rsi14": 22.6,
       "ema50": null,
       "score": 0.8604,
       "thesis": null
@@ -1331,7 +1331,7 @@
       "symbol": "RIOT",
       "name": "Riot Platforms Inc",
       "sector": "Technology",
-      "price": 16.47,
+      "price": 14.01,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 24.51,
@@ -1345,7 +1345,7 @@
         "strong_sell": 0,
         "total": 28
       },
-      "rsi14": 7.3,
+      "rsi14": 13.1,
       "ema50": null,
       "score": 0.7857,
       "thesis": null
@@ -1354,9 +1354,9 @@
       "symbol": "CTRE",
       "name": "CareTrust REIT Inc",
       "sector": "Real Estate",
-      "price": 36.64,
-      "pe": 23.9553,
-      "pe_vs_peers_pct": 56.1,
+      "price": 36.57,
+      "pe": 24.1415,
+      "pe_vs_peers_pct": 56.2,
       "revenue_growth_ttm": 53.03,
       "eps_growth_ttm": 32.2,
       "analyst_buy_pct": 84.2,
@@ -1368,44 +1368,16 @@
         "strong_sell": 0,
         "total": 19
       },
-      "rsi14": 30.0,
+      "rsi14": 43.6,
       "ema50": null,
       "score": 0.7535,
       "thesis": null
     },
     {
-      "symbol": "CLSK",
-      "name": "CleanSpark Inc",
-      "sector": "Technology",
-      "price": 10.3,
-      "pe": 7.3952,
-      "pe_vs_peers_pct": 82.6,
-      "revenue_growth_ttm": 7.49,
-      "eps_growth_ttm": null,
-      "analyst_buy_pct": 90.5,
-      "analyst_counts": {
-        "strong_buy": 5,
-        "buy": 14,
-        "hold": 2,
-        "sell": 0,
-        "strong_sell": 0,
-        "total": 21
-      },
-      "rsi14": 14.8,
-      "ema50": null,
-      "score": 0.6854,
-      "thesis": {
-        "why": "Trades below major bitcoin-mining peers despite strong unit economics. Vertically integrates its own power infrastructure \u2014 structurally lower electricity costs vs peers. Less debt, improving margins.",
-        "catalyst": "Green energy model attracts ESG institutional capital. As BTC mining competition intensifies, low-cost operators compound their advantage.",
-        "source_url": "https://www.mexc.com/news/417069",
-        "source_label": "Analyst coverage"
-      }
-    },
-    {
       "symbol": "BE",
       "name": "Bloom Energy Corp",
       "sector": "Electrical Equipment",
-      "price": 262.28,
+      "price": 225.8,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 90.98,
@@ -1419,9 +1391,32 @@
         "strong_sell": 0,
         "total": 39
       },
-      "rsi14": 54.8,
+      "rsi14": 29.2,
       "ema50": null,
       "score": 0.6526,
+      "thesis": null
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corp",
+      "sector": "Aerospace & Defense",
+      "price": 51.46,
+      "pe": null,
+      "pe_vs_peers_pct": null,
+      "revenue_growth_ttm": 52.53,
+      "eps_growth_ttm": null,
+      "analyst_buy_pct": 80.8,
+      "analyst_counts": {
+        "strong_buy": 7,
+        "buy": 14,
+        "hold": 5,
+        "sell": 0,
+        "strong_sell": 0,
+        "total": 26
+      },
+      "rsi14": 21.7,
+      "ema50": null,
+      "score": 0.631,
       "thesis": null
     }
   ],
