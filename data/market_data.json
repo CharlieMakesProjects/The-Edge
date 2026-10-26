@@ -1280,9 +1280,9 @@
       "symbol": "MU",
       "name": "Micron Technology Inc",
       "sector": "Semiconductors",
-      "price": 885.07,
-      "pe": 11.5782,
-      "pe_vs_peers_pct": 72.1,
+      "price": 910.39,
+      "pe": 11.6852,
+      "pe_vs_peers_pct": 69.5,
       "revenue_growth_ttm": 256.33,
       "eps_growth_ttm": 878.77,
       "analyst_buy_pct": 93.0,
@@ -1294,7 +1294,7 @@
         "strong_sell": 0,
         "total": 57
       },
-      "rsi14": 15.9,
+      "rsi14": 24.7,
       "ema50": null,
       "score": 0.9205,
       "thesis": {
@@ -1308,7 +1308,7 @@
       "symbol": "AVAV",
       "name": "AeroVironment Inc",
       "sector": "Aerospace & Defense",
-      "price": 121.22,
+      "price": 125.04,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 84.44,
@@ -1322,7 +1322,7 @@
         "strong_sell": 0,
         "total": 27
       },
-      "rsi14": 15.4,
+      "rsi14": 29.6,
       "ema50": null,
       "score": 0.8149,
       "thesis": null
@@ -1331,9 +1331,9 @@
       "symbol": "CLSK",
       "name": "CleanSpark Inc",
       "sector": "Technology",
-      "price": 8.03,
-      "pe": 5.6689,
-      "pe_vs_peers_pct": 87.2,
+      "price": 7.89,
+      "pe": 5.5526,
+      "pe_vs_peers_pct": 87.4,
       "revenue_growth_ttm": 7.49,
       "eps_growth_ttm": null,
       "analyst_buy_pct": 95.2,
@@ -1345,7 +1345,7 @@
         "strong_sell": 0,
         "total": 21
       },
-      "rsi14": 18.8,
+      "rsi14": 20.2,
       "ema50": null,
       "score": 0.746,
       "thesis": {
@@ -1359,7 +1359,7 @@
       "symbol": "RIOT",
       "name": "Riot Platforms Inc",
       "sector": "Technology",
-      "price": 12.73,
+      "price": 12.7,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 24.51,
@@ -1373,7 +1373,7 @@
         "strong_sell": 0,
         "total": 28
       },
-      "rsi14": 20.5,
+      "rsi14": 22.0,
       "ema50": null,
       "score": 0.7403,
       "thesis": null
@@ -1382,9 +1382,9 @@
       "symbol": "CTRE",
       "name": "CareTrust REIT Inc",
       "sector": "Real Estate",
-      "price": 36.5,
+      "price": 36.87,
       "pe": 24.3476,
-      "pe_vs_peers_pct": 56.6,
+      "pe_vs_peers_pct": 56.4,
       "revenue_growth_ttm": 53.03,
       "eps_growth_ttm": 32.2,
       "analyst_buy_pct": 85.0,
@@ -1396,7 +1396,7 @@
         "strong_sell": 0,
         "total": 20
       },
-      "rsi14": 57.3,
+      "rsi14": 61.4,
       "ema50": null,
       "score": 0.7308,
       "thesis": null
@@ -1405,7 +1405,7 @@
       "symbol": "RKLB",
       "name": "Rocket Lab Corp",
       "sector": "Aerospace & Defense",
-      "price": 52.39,
+      "price": 54.28,
       "pe": null,
       "pe_vs_peers_pct": null,
       "revenue_growth_ttm": 52.53,
@@ -1419,7 +1419,7 @@
         "strong_sell": 0,
         "total": 28
       },
-      "rsi14": 12.7,
+      "rsi14": 19.2,
       "ema50": null,
       "score": 0.6764,
       "thesis": null
