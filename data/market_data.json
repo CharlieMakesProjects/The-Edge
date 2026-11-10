@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-09T23:16:10Z",
+  "last_updated": "2026-11-10T03:53:40Z",
   "market": {
     "SPY": {
       "price": 752.69,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 75107,
-      "change_24h": 0.02,
-      "market_cap": 1510396597332.7683
+      "price": 74439,
+      "change_24h": -0.65,
+      "market_cap": 1496627938291.1992
     },
     "ETH": {
-      "price": 2130.56,
-      "change_24h": -0.99,
-      "market_cap": 260371949273.93204
+      "price": 2110.21,
+      "change_24h": -1.48,
+      "market_cap": 257818514500.1664
     },
     "XRP": {
-      "price": 1.1,
-      "change_24h": -2.17,
-      "market_cap": 69947987451.74164
+      "price": 1.092,
+      "change_24h": -1.78,
+      "market_cap": 69321849720.92009
     },
-    "total_market_cap": 2521232979437.04
+    "total_market_cap": 2503579709175.1567
   },
   "fear_greed": {
-    "value": 29,
+    "value": 32,
     "classification": "Fear",
     "history": [
+      {
+        "value": 32,
+        "classification": "Fear",
+        "date": "2026-11-10"
+      },
       {
         "value": 29,
         "classification": "Fear",
@@ -392,11 +397,6 @@
         "value": 69,
         "classification": "Greed",
         "date": "2026-10-12"
-      },
-      {
-        "value": 61,
-        "classification": "Greed",
-        "date": "2026-10-11"
       }
     ]
   },
@@ -619,7 +619,7 @@
     },
     "CEG": {
       "name": "Constellation Energy",
-      "next_earnings_date": "2026-11-09",
+      "next_earnings_date": "2027-02-22",
       "quarters": [
         {
           "period": "2026-09-30",
@@ -963,7 +963,7 @@
     },
     "AVGO": {
       "name": "Broadcom",
-      "next_earnings_date": "2026-12-09",
+      "next_earnings_date": "2026-12-10",
       "quarters": [
         {
           "period": "2026-09-30",
