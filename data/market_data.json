@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T21:18:14Z",
+  "last_updated": "2026-11-13T02:13:50Z",
   "market": {
     "SPY": {
       "price": 757.12,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 71427,
-      "change_24h": -4.27,
-      "market_cap": 1436405691848.8145
+      "price": 70722,
+      "change_24h": -4.15,
+      "market_cap": 1422452322220.3013
     },
     "ETH": {
-      "price": 2014.38,
-      "change_24h": -3.1,
-      "market_cap": 246182576104.52234
+      "price": 2005.07,
+      "change_24h": -2.49,
+      "market_cap": 245130144531.46948
     },
     "XRP": {
-      "price": 1.036,
-      "change_24h": -2.91,
-      "market_cap": 65815569881.50989
+      "price": 1.027,
+      "change_24h": -2.38,
+      "market_cap": 65267047342.17938
     },
-    "total_market_cap": 2404812990466.992
+    "total_market_cap": 2390314341242.2607
   },
   "fear_greed": {
-    "value": 28,
-    "classification": "Fear",
+    "value": 20,
+    "classification": "Extreme Fear",
     "history": [
+      {
+        "value": 20,
+        "classification": "Extreme Fear",
+        "date": "2026-11-13"
+      },
       {
         "value": 28,
         "classification": "Fear",
@@ -392,11 +397,6 @@
         "value": 53,
         "classification": "Neutral",
         "date": "2026-10-15"
-      },
-      {
-        "value": 62,
-        "classification": "Greed",
-        "date": "2026-10-14"
       }
     ]
   },
@@ -668,9 +668,9 @@
           "period": "2026-09-30",
           "quarter": 3,
           "year": 2026,
-          "actual": -0.004,
+          "actual": 0,
           "estimate": 0.3191,
-          "surprise_pct": -101.2535,
+          "surprise_pct": -100,
           "result": "miss"
         },
         {
@@ -686,10 +686,10 @@
           "period": "2026-03-31",
           "quarter": 1,
           "year": 2026,
-          "actual": 0.3,
+          "actual": 0.47,
           "estimate": 0.3654,
-          "surprise_pct": -17.8982,
-          "result": "miss"
+          "surprise_pct": 28.6262,
+          "result": "beat"
         },
         {
           "period": "2025-12-31",
@@ -701,7 +701,7 @@
           "result": "beat"
         }
       ],
-      "avg_surprise_pct": -39.84
+      "avg_surprise_pct": -27.89
     },
     "AAPL": {
       "name": "Apple",
