@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20T21:40:49Z",
+  "last_updated": "2026-11-21T02:55:03Z",
   "market": {
     "SPY": {
       "price": 689.81,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 58735,
-      "change_24h": -4.5,
-      "market_cap": 1181158969684.4846
+      "price": 58555,
+      "change_24h": -5.17,
+      "market_cap": 1178081074841.8247
     },
     "ETH": {
-      "price": 1616.35,
-      "change_24h": -7.12,
-      "market_cap": 197538280649.5171
+      "price": 1616.94,
+      "change_24h": -6.84,
+      "market_cap": 197701333753.762
     },
     "XRP": {
-      "price": 0.900519,
-      "change_24h": -5.6,
-      "market_cap": 57188430585.52564
+      "price": 0.902416,
+      "change_24h": -5.16,
+      "market_cap": 57318390502.27334
     },
-    "total_market_cap": 2040851770346.251
+    "total_market_cap": 2035024054985.7297
   },
   "fear_greed": {
     "value": 12,
     "classification": "Extreme Fear",
     "history": [
+      {
+        "value": 12,
+        "classification": "Extreme Fear",
+        "date": "2026-11-21"
+      },
       {
         "value": 12,
         "classification": "Extreme Fear",
@@ -392,11 +397,6 @@
         "value": 50,
         "classification": "Neutral",
         "date": "2026-10-23"
-      },
-      {
-        "value": 68,
-        "classification": "Greed",
-        "date": "2026-10-22"
       }
     ]
   },
@@ -533,7 +533,7 @@
     },
     "MU": {
       "name": "Micron Technology",
-      "next_earnings_date": "2026-12-15",
+      "next_earnings_date": "2026-12-17",
       "quarters": [
         {
           "period": "2026-09-30",
