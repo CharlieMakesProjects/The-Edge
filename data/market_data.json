@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-24T01:27:26Z",
+  "last_updated": "2026-11-24T05:39:24Z",
   "market": {
     "SPY": {
       "price": 722.29,
@@ -228,21 +228,21 @@
   },
   "crypto": {
     "BTC": {
-      "price": 61518,
-      "change_24h": 1.0,
-      "market_cap": 1237530544559.9292
+      "price": 60616,
+      "change_24h": -1.28,
+      "market_cap": 1219549523101.9316
     },
     "ETH": {
-      "price": 1718.88,
-      "change_24h": 0.35,
-      "market_cap": 210124406610.58072
+      "price": 1705.41,
+      "change_24h": -1.34,
+      "market_cap": 208563572366.88083
     },
     "XRP": {
-      "price": 0.952415,
-      "change_24h": 3.66,
-      "market_cap": 60494179983.400604
+      "price": 0.957003,
+      "change_24h": 2.26,
+      "market_cap": 60750657749.89078
     },
-    "total_market_cap": 2124560882177.5786
+    "total_market_cap": 2107281724782.5198
   },
   "fear_greed": {
     "value": 11,
