@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-25T22:54:53Z",
+  "last_updated": "2026-11-26T03:51:09Z",
   "market": {
     "SPY": {
       "price": 716.7,
@@ -228,26 +228,31 @@
   },
   "crypto": {
     "BTC": {
-      "price": 60123,
-      "change_24h": 0.29,
-      "market_cap": 1209690934020.8281
+      "price": 60762,
+      "change_24h": 2.46,
+      "market_cap": 1222505071300.4634
     },
     "ETH": {
-      "price": 1686.22,
-      "change_24h": 0.12,
-      "market_cap": 206142180042.28116
+      "price": 1697.11,
+      "change_24h": 2.22,
+      "market_cap": 207478619348.51135
     },
     "XRP": {
-      "price": 0.936999,
-      "change_24h": 1.34,
-      "market_cap": 59514984263.68326
+      "price": 0.958286,
+      "change_24h": 4.3,
+      "market_cap": 60866088760.24668
     },
-    "total_market_cap": 2089489705199.1992
+    "total_market_cap": 2110878877870.7883
   },
   "fear_greed": {
-    "value": 13,
+    "value": 11,
     "classification": "Extreme Fear",
     "history": [
+      {
+        "value": 11,
+        "classification": "Extreme Fear",
+        "date": "2026-11-26"
+      },
       {
         "value": 13,
         "classification": "Extreme Fear",
@@ -392,11 +397,6 @@
         "value": 51,
         "classification": "Neutral",
         "date": "2026-10-28"
-      },
-      {
-        "value": 48,
-        "classification": "Neutral",
-        "date": "2026-10-27"
       }
     ]
   },
